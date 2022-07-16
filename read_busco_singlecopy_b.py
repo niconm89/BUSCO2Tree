@@ -21,13 +21,14 @@ for genome in genomes_dirs:
 		with open(fulltablepath, 'rt') as tsvfile:
 			tsvreader = csv.reader(tsvfile, delimiter="\t")
 			for line in tsvreader:
-				print(line)
-				buscoid,status = line[0:2]
-				if status == "complete": #test time for if line[1] == "complete": and work with line[0] for buscoid
-					if buscoid not in gene_dict:
-						gene_dict[buscoid] = 1
-					else:
-						gene_dict[buscoid] += 1
+				if '#' not in line:
+					print(line)
+					buscoid,status = line[0:2]
+					if status == "complete": #test time for if line[1] == "complete": and work with line[0] for buscoid
+						if buscoid not in gene_dict:
+							gene_dict[buscoid] = 1
+						else:
+							gene_dict[buscoid] += 1
 		'''
 		with open(fulltablepath, 'rt') as tsvfile:
 			tsvreader = tsvfile.readlines()
