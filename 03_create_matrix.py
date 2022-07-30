@@ -82,7 +82,7 @@ def usage():
 
 	parser.add_argument('-a', '--aligndir', type=str, required=True, help='Path to the directory containing the alignments in fasta format.')
 	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to save the phylogenetic matrix and the coordinates. If it does not exists, it will be created.')
-	parser.add_argument('-f', '--outformat', type=str, required=False, choices=['nexus','phylip'], default='nexus', help='Format for the phylogenetic matrix.')
+	parser.add_argument('-f', '--outformat', type=str, required=False, choices=['nexus','phylip'], default='phylip', help='Format for the phylogenetic matrix.')
 
 	return parser.parse_args()
 
