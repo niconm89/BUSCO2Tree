@@ -23,7 +23,7 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, PREFIX, BOOTSTRAP, THREA
 		raise ValueError("Output directory %s can not be created." % OUTDIR)
 		
 	print("Starting the phylogenetic analysis with IQ-Tree")#using arguments: %s\t%s\t%s\t%n\t%n")
-	IQTree_MFP = "/home/nmoreyra/Soft/miniconda3/envs/spyder/bin/iqtree -s " + MATRIXFILE + " -p " + PARTITIONFILE + " -m MFP --seqtype AA --prefix " + PREFIX + " -B " + str(BOOTSTRAP) + " -T " + str(THREADS)
+	IQTree_MFP = "iqtree -s " + MATRIXFILE + " -p " + PARTITIONFILE + " -m MFP --seqtype AA --prefix " + PREFIX + " -B " + str(BOOTSTRAP) + " -T " + str(THREADS)
 	print(IQTree_MFP)
 	#process = subprocess.Popen(IQTree_MFP.split(), stdout=subprocess.PIPE)
 	#output, error = process.communicate()
