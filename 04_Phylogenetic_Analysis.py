@@ -13,7 +13,7 @@ import subprocess
 from time import time	
 
 #%% Functionts definition
-def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, PREFIX, BOOTSTRAP, THREADS):
+def model_partitions(MATRIXFILE, PARTITIONFILE, SEQTYPE, OUTDIR, PREFIX, BOOTSTRAP, THREADS):
 	#iqtree -s supermatrix.aln.faa.phy -p partitions-scheme.txt -m MFP 
 	#--seqtype AA --prefix Drosophila -B 1000 --mem 50 -T 8
 	try:
@@ -23,7 +23,7 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, PREFIX, BOOTSTRAP, THREA
 		raise ValueError("Output directory %s can not be created." % OUTDIR)
 		
 	print("Starting the phylogenetic analysis with IQ-Tree")#using arguments: %s\t%s\t%s\t%n\t%n")
-	IQTree_MFP = "iqtree -s " + MATRIXFILE + " -p " + PARTITIONFILE + " -m MFP --seqtype AA --prefix " + PREFIX + " -B " + str(BOOTSTRAP) + " -T " + str(THREADS)
+	IQTree_MFP = "iqtree -s " + MATRIXFILE + " -p " + PARTITIONFILE + " -m MFP --seqtype " + SEQTYPE + " --prefix " + PREFIX + " -B " + str(BOOTSTRAP) + " -T " + str(THREADS)
 	print(IQTree_MFP)
 	#process = subprocess.Popen(IQTree_MFP.split(), stdout=subprocess.PIPE)
 	#output, error = process.communicate()
@@ -39,12 +39,12 @@ def usage():
 
 	parser.add_argument('-m', '--matrix', type=str, required=True, help='Path to the phylogenetic matrix file to run.')
 	parser.add_argument('-p', '--partitions', type=str, required=True, help='Partitions file in nexus format.')
+	parser.add_argument('-s', '--seqtype', type=str, required=False, choices=["DNA","AA"], default="AA", help='Sequence type')
+	#seqtype not implemented
 	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to save the phylogenetic analysis results. If it does not exists, it will be created.')
 	parser.add_argument('-P', '--prefix', type=str, required=False, default="iqtree", help='Prefix to name the output dataset and results.')
 	parser.add_argument('-b', '--bootstrap', type=int, required=False, default="1000", help='Number of bootstrap replicate to run.')
 	parser.add_argument('-t', '--threads', type=int, required=False, default="16", help='Number of threads to use in IQ-Tree.')
-	parser.add_argument('-s', '--seqtype', type=str, required=False, choices=["NUC","AA"], default="AA", help='Sequence type')
-	#seqtype not implemented
 
 	return parser.parse_args()
 
@@ -52,7 +52,7 @@ def usage():
 if __name__ == '__main__':
 	args = usage()
 	start = time()
-	model_partitions(args.matrix, args.partitions, args.outdir, args.prefix, args.bootstrap, args.threads)
+	model_partitions(args.matrix, args.partitions, args.seqtype, args.outdir, args.prefix, args.bootstrap, args.threads)
 	print("Phylogenetic matrix created...")
 	print(f'Time taken to run: {time() - start} seconds.')
 #
