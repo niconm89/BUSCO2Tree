@@ -30,7 +30,8 @@ def align_mafft(BUSCODIR, OUTDIR, CONFIG_FILE=False):
 		settings = parse_maff_config(CONFIG_FILE)
 		mafft_cmline = generate_cmdline(infile, settings)
 		stdout, stderr = mafft_cmline()
-		outfile = os.path.join(OUTDIR, busco[:-4] + ".aln.fa")
+		#outfile = os.path.join(OUTDIR, busco[:-4] + ".aln.fa")
+		outfile = os.path.join(OUTDIR, busco.split('.')[0] + ".aln.fa")
 		with open(outfile, "wt") as handle:
 			handle.write(stdout)
 #end
