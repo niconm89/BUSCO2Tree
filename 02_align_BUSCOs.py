@@ -24,7 +24,6 @@ def align_mafft(BUSCODIR, OUTDIR, CONFIG_FILE=False):
 	except:
 		raise ValueError("Outputdir can not be created in %s." % OUTDIR)
 
-	print("Starting Mafft alignments...")
 	for busco in files:
 		infile = os.path.join(BUSCODIR, busco)
 		settings = parse_maff_config(CONFIG_FILE)
