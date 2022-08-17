@@ -168,6 +168,7 @@ def align_command_mafft(BUSCODIR, OUTDIR, COMMAND):
         run_mafft = subprocess.call([cmd_mafft], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 #end
 def trim_alns(OUTDIR, TRIMPARAMS):
+    'Receive parameters to run TrimAl, avoiding input and output files.'
     #do something
     list_of_alns = os.listdir(OUTDIR)
     for aln in list_of_alns:
