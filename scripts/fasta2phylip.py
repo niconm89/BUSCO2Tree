@@ -9,7 +9,6 @@ import argparse
 import os
 import re
 
-
 #%% Function definitions
 def convert_fasta2phylip(infile, outfile, mode, aln_type, aln_format):
 	dict_seqs = {}
@@ -75,8 +74,8 @@ def read_phylip_sequential(PHYLIP_FILE):
 	for line in PHYLIP_FILE:
 		line = line.strip()
 		if line != '':
-			taxon_id = line[:-nchar].rstrip()
-			taxon_seq = line[-nchars:]
+			taxon_id = line[:-nchar].rstrip() #ARREGLAR ACÁ 
+			taxon_seq = line[-nchars:] #ARREGLAR ACÁ
 	return taxon_id,taxon_seq
 
 def read_phylip_interleaved(PHYLIP_FILE,nseqs,nchars):
