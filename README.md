@@ -3,11 +3,10 @@
 **Author of BUSCO2Tree:**
 
 Nicolás Nahuel Moreyra
-Affiliation:
 * Instituto de Ecología, Genética y Evolución de Buenos Aires (IEGEBA), CONICET, Argentina
 * Departamento de Ecología, Genética y Evolución (EGE), Facultad de Ciencias Exactas y Naturales (FCEN), Universidad de Buenos Aires (UBA), Argentina
-E-mail: niconm89@gmail.com |  nmoreyra@ege.fcen.uba.ar
-Twitter: @nicomoreyra
++ E-mail: niconm89@gmail.com |  nmoreyra@ege.fcen.uba.ar
++ Twitter: @nicomoreyra
 
 ---
 **About BUSCO2Tree**
