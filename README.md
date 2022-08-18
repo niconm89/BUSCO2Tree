@@ -6,7 +6,7 @@ Nicolás Nahuel Moreyra
 * Instituto de Ecología, Genética y Evolución de Buenos Aires (IEGEBA), CONICET, Argentina
 * Departamento de Ecología, Genética y Evolución (EGE), Facultad de Ciencias Exactas y Naturales (FCEN), Universidad de Buenos Aires (UBA), Argentina
 + E-mail: niconm89@gmail.com |  nmoreyra@ege.fcen.uba.ar
-+ Twitter: @nicomoreyra(https://twitter.com/NicoMoreyra)
++ Twitter: [@nicomoreyra](https://twitter.com/NicoMoreyra)
 
 ---
 **About BUSCO2Tree**
