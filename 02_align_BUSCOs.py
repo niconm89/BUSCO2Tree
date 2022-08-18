@@ -171,9 +171,12 @@ def trim_alns(OUTDIR, TRIMPARAMS):
     'Receive parameters to run TrimAl, avoiding input and output files.'
     #do something
     list_of_alns = os.listdir(OUTDIR)
+    trimal_dir = os.path.join(OUTDIR, "TrimAl")
+    if not os.path.isdir(trimal_dir):
+        os.mkdir(trimal_dir)
     for aln in list_of_alns:
         infile = os.path.join(OUTDIR, aln)
-        outfile = os.path.join(OUTDIR, aln.split(".")[0] + ".aln.trimmed.fa")
+        outfile = os.path.join(trimal_dir, aln.split(".")[0] + ".aln.trimmed.fa")
         cmd_trimal = "trimal -in " + infile + " -out " + outfile + " "
         if TRIMPARAMS:
             cmd_trimal += TRIMPARAMS
@@ -208,7 +211,7 @@ def usage():
 #end
 #%% Main program
 if __name__ == '__main__':
-	args = usage() #reading arguments
+	args = usage()
 	start = time() #time 0
 	print("Step 0: Checking paths...")
 	check_arguments(args.buscodir, args.outdir, args.config, args.command)
