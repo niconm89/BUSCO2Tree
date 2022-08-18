@@ -1,8 +1,8 @@
 # BUSCO2Tree User Guide
 
-**Author of BUSCO2Tree:**
+**Author of BUSCO2Tree**
 
-Nicolás Nahuel Moreyra
+[Nicolás Nahuel Moreyra](https://github.com/niconm89/Curriculum_Vitae)
 * Instituto de Ecología, Genética y Evolución de Buenos Aires (IEGEBA), CONICET, Argentina
 * Departamento de Ecología, Genética y Evolución (EGE), Facultad de Ciencias Exactas y Naturales (FCEN), Universidad de Buenos Aires (UBA), Argentina
 + E-mail: niconm89@gmail.com |  nmoreyra@ege.fcen.uba.ar
