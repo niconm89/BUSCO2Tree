@@ -13,21 +13,16 @@ from time import time
 import subprocess
 
 #%% Function definition
-def align_config_mafft(BUSCODIR, OUTDIR, CONFIG_FILE=False):
+def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False):
 	'Receive directory with common BUSCO multi FASTA files, output directory and config file (optional) and generate alignments using MAFFT.'
-	try: #check if input directory with fasta files exists
-		files = os.listdir(BUSCODIR)
-		print("%s busco fasta files found in buscodir." % str(len(files)))
-	except:
-		raise ValueError("buscodir %s can not be found." % BUSCODIR)
-	try: #check if output directory exists, otherwise it will be created
-		if not os.path.isdir(OUTDIR):
-			os.mkdir(OUTDIR)
-	except:
-		raise ValueError("Outputdir can not be created in %s." % OUTDIR)
-
+	check_arguments(FASTADIR, OUTDIR, CONFIG_FILE)
+	files = os.listdir(FASTADIR)
+	if len(files) > 0:
+		print("%s busco fasta files found in fastadir." % str(len(files)))
+	else:
+		raise RuntimeError("fastadir %s has no file." % FASTADIR)
 	for busco in files:
-		infile = os.path.join(BUSCODIR, busco) #multi FASTA file to align
+		infile = os.path.join(FASTADIR, busco) #multi FASTA file to align
 		settings = parse_mafft_config(CONFIG_FILE) #reading alignment settings
 		mafft_cmline = generate_cmdline(infile, settings) #generating MAFFT command
 		stdout, stderr = mafft_cmline() #running MAFFT
@@ -39,70 +34,70 @@ def generate_cmdline(infile, settings):
 	mafft_cmline = MafftCommandline(settings['mafft_bin'], input=infile)
 	#
 	if settings['align_method'] == 'auto':
-		print("Running Mafft in auto mode.")
+		#print("Running Mafft in auto mode.")
 		mafft_cmline.set_parameter("--auto", True)
 		mafft_cmline.set_parameter("--thread", 8)
 		#
 	else:
 		if settings['align_method'] == 'AOM1':
-			print("Running Mafft in Accuracy-oriented mode: %s." % settings['align_method'])
+			#print("Running Mafft in Accuracy-oriented mode: %s." % settings['align_method'])
 			#AOM1: mafft --localpair --maxiterate 1000 input [> output]
 			mafft_cmline.set_parameter("--localpair", True)
 			mafft_cmline.set_parameter("--maxiterate", 1000) #mafft_call.maxiterate = 1000
 			#
 		elif settings['align_method'] == 'AOM2':
-			print("Running Mafft in Accuracy-oriented mode: %s." % settings['align_method'])
+			#print("Running Mafft in Accuracy-oriented mode: %s." % settings['align_method'])
 			#AOM2: mafft --globalpair --maxiterate 1000 input [> output]
 			mafft_cmline.set_parameter("--globalpair", True)
 			mafft_cmline.set_parameter("--maxiterate", 1000) #mafft_call.maxiterate = 1000
 			#
 		elif settings['align_method'] == 'AOM3':
-			print("Running Mafft in Accuracy-oriented mode: %s." % settings['align_method'])
+			#print("Running Mafft in Accuracy-oriented mode: %s." % settings['align_method'])
 			#AOM3: mafft --ep 0 --genafpair --maxiterate 1000 input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 1000)
 			mafft_cmline.set_parameter("--genafpair", True)
 			mafft_cmline.set_parameter("--ep", 0)
 			#
 		elif settings['align_method'] == 'SOM1':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM1: mafft --retree 2 --maxiterate 2 input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 2)
 			mafft_cmline.set_parameter("--retree", 2)
 			#
 		elif settings['align_method'] == 'SOM2':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM2: mafft --retree 2 --maxiterate 1000 input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 2)
 			mafft_cmline.set_parameter("--retree", 2)
 			#
 		elif settings['align_method'] == 'SOM3':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM3: mafft --retree 2 --maxiterate 0 input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 0)
 			mafft_cmline.set_parameter("--retree", 2)
 			#
 		elif settings['align_method'] == 'SOM4':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM4: mafft --retree 1 --maxiterate 0 input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 0)
 			mafft_cmline.set_parameter("--retree", 1)
 			#
 		elif settings['align_method'] == 'SOM5':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM5: mafft --retree 2 --maxiterate 2 --nofft input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 2)
 			mafft_cmline.set_parameter("--retree", 2)
 			mafft_cmline.set_parameter("--nofft", True)
 			#
 		elif settings['align_method'] == 'SOM6':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM6: mafft --retree 2 --maxiterate 0 --nofft input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 0)
 			mafft_cmline.set_parameter("--retree", 2)
 			mafft_cmline.set_parameter("--nofft", True)
 			#
 		elif settings['align_method'] == 'SOM7':
-			print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
+			#print("Running Mafft in Speed-oriented mode: %s " % settings['align_method'])
 			#SOM7: mafft --retree 1 --maxiterate 0 --nofft --parttree input [> output]
 			mafft_cmline.set_parameter("--maxiterate", 0)
 			mafft_cmline.set_parameter("--retree", 1)
@@ -110,7 +105,7 @@ def generate_cmdline(infile, settings):
 			mafft_cmline.set_parameter("--parttree", True)
 			#
 		elif settings['align_method'] == 'manual':
-			print("Running Mafft in manual mode.")
+			#print("Running Mafft in manual mode.")
 			mafft_cmline.set_parameter("--maxiterate", int(settings['maxiterate']))
 			if settings['type_method'] == 'accuracy':
 				if settings['pairwise_method'] == 'genafpair':
@@ -125,6 +120,8 @@ def generate_cmdline(infile, settings):
 				mafft_cmline.set_parameter("--nofft", int(settings['nofft']))
 				mafft_cmline.set_parameter("--parttree", int(settings['parttree']))
 			#
+		else:
+			raise ValueError("The value entered for align_method=%s is not recognized." % settings['align_method'])
 		if settings['output_setting'] == 'manual':
 			# Output options in manual mode
 			mafft_cmline.set_parameter("--thread", int(settings['threads']))
@@ -145,7 +142,7 @@ def parse_mafft_config(CONFIG_FILE):
 		try:
 			with open(CONFIG_FILE, "rt") as INPUT:
 				for line in INPUT:
-					if line[0] == '#' or line[0] == '\n' or line[0] == ' ': #avoiding lines
+					if line[0] == '#' or line[0] == '\n' or line[0] == ' ': #avoid these lines
 						continue
 					line = line.strip()
 					param,value = line.split('=')
@@ -154,38 +151,38 @@ def parse_mafft_config(CONFIG_FILE):
 				raise ValueError("Config file %s can not be found." % CONFIG_FILE)
 	return settings
 #end
-def align_command_mafft(BUSCODIR, OUTDIR, COMMAND):
+def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
     'Receive directory with common BUSCO multi FASTA files, output directory and a MAFFT command (file) to generate alignments.' 
-    if not COMMAND:
-        raise ValueError("Command for MAFFT alignment is empty.")
+    check_arguments(FASTADIR, OUTDIR)
     base_cmd_mafft = COMMAND
-    for busco in os.listdir(BUSCODIR):
-        infile = os.path.join(BUSCODIR, busco)
-        outfile = os.path.join(OUTDIR, busco.split(".")[0] + ".mafft.fa")
+    for busco in os.listdir(FASTADIR):
+        infile = os.path.join(FASTADIR, busco)
+        outfile = os.path.join(OUTDIR, busco.split(".")[0] + ".aln.fa")
         cmd_mafft = base_cmd_mafft + " " + infile + " > " + outfile
         #print(cmd_mafft)
         #subprocess.call([cmd_mafft], shell=True)
         run_mafft = subprocess.call([cmd_mafft], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 #end
-def trim_alns(OUTDIR, TRIMPARAMS):
+def trim_alns(MAFFTDIR, TRIMPARAMS):
     'Receive parameters to run TrimAl, avoiding input and output files.'
     #do something
-    list_of_alns = os.listdir(OUTDIR)
-    trimal_dir = os.path.join(OUTDIR, "TrimAl")
+    list_of_alns = os.listdir(MAFFTDIR)
+    trimal_dir = os.path.join(MAFFTDIR, "TrimAl")
     if not os.path.isdir(trimal_dir):
         os.mkdir(trimal_dir)
     for aln in list_of_alns:
-        infile = os.path.join(OUTDIR, aln)
+        infile = os.path.join(MAFFTDIR, aln)
         outfile = os.path.join(trimal_dir, aln.split(".")[0] + ".aln.trimmed.fa")
         cmd_trimal = "trimal -in " + infile + " -out " + outfile + " "
         if TRIMPARAMS:
             cmd_trimal += TRIMPARAMS
-            subprocess.call([cmd_trimal], shell=True)
+        subprocess.call([cmd_trimal], shell=True)
+		
 #end
-def check_arguments(BUSCODIR, OUTDIR, CONFIG_FILE=False, COMMAND_FILE=False):
+def check_arguments(FASTADIR, OUTDIR, CONFIG_FILE=False):
 	'Checks argumments of 02_align_BUSCOs.py script.'
-	if not os.path.isdir(BUSCODIR):
-		raise ValueError("buscodir with fasta files %s does not exists." % BUSCODIR)
+	if not os.path.isdir(FASTADIR):
+		raise ValueError("fastadir with fasta files %s does not exists." % FASTADIR)
 	try:#check if output directory exists and (if not) can be created
 		if not os.path.isdir(OUTDIR):
 			os.mkdir(OUTDIR)
@@ -198,9 +195,9 @@ def check_arguments(BUSCODIR, OUTDIR, CONFIG_FILE=False, COMMAND_FILE=False):
 #%% Menu -> is executed when the script is called independently
 def usage():
 	parser = argparse.ArgumentParser(
-		description='''02_align_concatenate.py takes multi FASTA files with common BUSCO groups (orthologs), generate the alignment of each one usign MAFFT and concatenate all alignments into a matrix.''',
+		description='''02_align_BUSCOs.py takes multi FASTA files with common BUSCO groups (orthologs), generate the alignment of each one usign MAFFT and concatenate all alignments into a matrix.''',
 		epilog="""End of the help""")
-	parser.add_argument('-b', '--buscodir', type=str, required=True, help='Path to the directory containing BUSCO multi FASTA files with the ortholog sequences of all genomes, e.g. "common_busco_seqs" directory that is created as part of the 01_find_singlecopy.py output.')
+	parser.add_argument('-f', '--fastadir', type=str, required=True, help='Path to the directory containing BUSCO multi FASTA files with the ortholog sequences of all genomes, e.g. "common_busco_seqs" directory that is created as part of the 01_find_singlecopy.py output.')
 	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to the directory where the aligments, phylogenetic matrix and coordinates will be placed. If it does not exists, it will be created.')
 	parser.add_argument('-c', '--config', metavar='<config file>', type=str, required=False, help='Configuration file for alignment settings. You can find a template of this file in the example directory. If no file is provided, the alignments will be done using default parameters of MAFFT.')
 	parser.add_argument('-m', '--command', metavar='<command>', type=str, required=False, help='Command (between quote marks) to use in the MAFFT alingment. The names of input and out files must be avoided, e.g. "mafft --thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
@@ -213,14 +210,12 @@ def usage():
 if __name__ == '__main__':
 	args = usage()
 	start = time() #time 0
-	print("Step 0: Checking paths...")
-	check_arguments(args.buscodir, args.outdir, args.config, args.command)
-	print("Step 1: Starting Mafft alignments...")
+	print("Starting Mafft alignments...")
 	if args.command:
 		print("MAFFT will be excecuted using a command introduced by the user.")
-		align_command_mafft(args.buscodir, args.outdir, args.command)
+		align_command_mafft(args.fastadir, args.outdir, args.command)
 	else:
-		align_config_mafft(args.buscodir, args.outdir, args.config)
+		align_config_mafft(args.fastadir, args.outdir, args.config)
 	print("Alignments completed...")
 	if args.trim: #trimming alingments
 		print("Step 2: Trimming alignments...")
