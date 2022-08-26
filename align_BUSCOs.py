@@ -13,16 +13,16 @@ from time import time
 import subprocess
 
 #%% Function definition
-def align_config_mafft(ALIGNDIR, OUTDIR, CONFIG_FILE=False):
+def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False):
 	'Receive directory with common BUSCO multi FASTA files, output directory and config file (optional) and generate alignments using MAFFT.'
-	check_arguments(ALIGNDIR, OUTDIR, CONFIG_FILE)
-	files = os.listdir(ALIGNDIR)
+	check_arguments(FASTADIR, OUTDIR, CONFIG_FILE)
+	files = os.listdir(FASTADIR)
 	if len(files) > 0:
-		print("%s busco fasta files found in aligndir." % str(len(files)))
+		print("%s busco fasta files found in fastadir." % str(len(files)))
 	else:
-		raise RuntimeError("aligndir %s has no file." % ALIGNDIR)
+		raise RuntimeError("fastadir %s has no file." % FASTADIR)
 	for busco in files:
-		infile = os.path.join(ALIGNDIR, busco) #multi FASTA file to align
+		infile = os.path.join(FASTADIR, busco) #multi FASTA file to align
 		settings = parse_mafft_config(CONFIG_FILE) #reading alignment settings
 		mafft_cmline = generate_cmdline(infile, settings) #generating MAFFT command
 		stdout, stderr = mafft_cmline() #running MAFFT
@@ -151,12 +151,12 @@ def parse_mafft_config(CONFIG_FILE):
 				raise ValueError("Config file %s can not be found." % CONFIG_FILE)
 	return settings
 #end
-def align_command_mafft(ALIGNDIR, OUTDIR, COMMAND):
+def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
     'Receive directory with common BUSCO multi FASTA files, output directory and a MAFFT command (file) to generate alignments.' 
-    check_arguments(ALIGNDIR, OUTDIR)
+    check_arguments(FASTADIR, OUTDIR)
     base_cmd_mafft = COMMAND
-    for busco in os.listdir(ALIGNDIR):
-        infile = os.path.join(ALIGNDIR, busco)
+    for busco in os.listdir(FASTADIR):
+        infile = os.path.join(FASTADIR, busco)
         outfile = os.path.join(OUTDIR, busco.split(".")[0] + ".aln.fa")
         cmd_mafft = base_cmd_mafft + " " + infile + " > " + outfile
         #print(cmd_mafft)
@@ -179,10 +179,10 @@ def trim_alns(MAFFTDIR, TRIMPARAMS):
         subprocess.call([cmd_trimal], shell=True)
 		
 #end
-def check_arguments(ALIGNDIR, OUTDIR, CONFIG_FILE=False):
+def check_arguments(FASTADIR, OUTDIR, CONFIG_FILE=False):
 	'Checks argumments of 02_align_BUSCOs.py script.'
-	if not os.path.isdir(ALIGNDIR):
-		raise ValueError("aligndir with fasta files %s does not exists." % ALIGNDIR)
+	if not os.path.isdir(FASTADIR):
+		raise ValueError("fastadir with fasta files %s does not exists." % FASTADIR)
 	try:#check if output directory exists and (if not) can be created
 		if not os.path.isdir(OUTDIR):
 			os.mkdir(OUTDIR)
@@ -197,7 +197,7 @@ def usage():
 	parser = argparse.ArgumentParser(
 		description='''02_align_BUSCOs.py takes multi FASTA files with common BUSCO groups (orthologs), generate the alignment of each one usign MAFFT and concatenate all alignments into a matrix.''',
 		epilog="""End of the help""")
-	parser.add_argument('-b', '--aligndir', type=str, required=True, help='Path to the directory containing BUSCO multi FASTA files with the ortholog sequences of all genomes, e.g. "common_busco_seqs" directory that is created as part of the 01_find_singlecopy.py output.')
+	parser.add_argument('-f', '--fastadir', type=str, required=True, help='Path to the directory containing BUSCO multi FASTA files with the ortholog sequences of all genomes, e.g. "common_busco_seqs" directory that is created as part of the 01_find_singlecopy.py output.')
 	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to the directory where the aligments, phylogenetic matrix and coordinates will be placed. If it does not exists, it will be created.')
 	parser.add_argument('-c', '--config', metavar='<config file>', type=str, required=False, help='Configuration file for alignment settings. You can find a template of this file in the example directory. If no file is provided, the alignments will be done using default parameters of MAFFT.')
 	parser.add_argument('-m', '--command', metavar='<command>', type=str, required=False, help='Command (between quote marks) to use in the MAFFT alingment. The names of input and out files must be avoided, e.g. "mafft --thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
@@ -210,14 +210,12 @@ def usage():
 if __name__ == '__main__':
 	args = usage()
 	start = time() #time 0
-	#print("Step 0: Checking paths...")
-	#check_arguments(args.aligndir, args.outdir, args.config, args.command)
 	print("Starting Mafft alignments...")
 	if args.command:
 		print("MAFFT will be excecuted using a command introduced by the user.")
-		align_command_mafft(args.aligndir, args.outdir, args.command)
+		align_command_mafft(args.fastadir, args.outdir, args.command)
 	else:
-		align_config_mafft(args.aligndir, args.outdir, args.config)
+		align_config_mafft(args.fastadir, args.outdir, args.config)
 	print("Alignments completed...")
 	if args.trim: #trimming alingments
 		print("Step 2: Trimming alignments...")
