@@ -27,6 +27,22 @@ def validate_steps(STEPS):
     if not checkConsecutive(STEPS):
         raise ValueError("You must enter consecutive step numbers (e.g. '1 2 3 4', '1 2', '1 2 3', '2 3 4', '3 4')")
 #end
+def validate_params(ARGUMENTS):
+	mandatory_args = {}
+	if 1 in ARGUMENTS.steps:
+		if not BUSCODIR:
+			raise RuntimeError("The buscodir parameter was not introduced.")
+	if 2 in ARGUMENTS.steps:
+		if not arguments.fastadir:
+			raise RuntimeError("The fastadir parameter was not introduced.")
+	if 3 in ARGUMENTS.steps:
+		if not ARGUMENTS.aligndir:
+			raise RuntimeError("The aligndir parameter was not introduced.")
+	if 4 in ARGUMENTS.steps:
+		if not ARGUMENTS.matrix and not ARGUMENTS.partitions:
+			raise RuntimeError("You must introduce the matrix and partitions files when selecting step 4.")
+			
+#end
 def checkConsecutive(l):
     return sorted(l) == list(range(min(l), max(l)+1))
 #end
@@ -62,10 +78,10 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 			
 			if COMMAND:
 				print("MAFFT will be excecuted using a command introduced by the user.")
-				step2.align_command_mafft(ALIGNDIR, step2_dir, COMMAND)
+				step2.align_command_mafft(FASTADIR, step2_dir, COMMAND)
 			else:
 				print("MAFFT will be excecuted using a configuration file.")
-				step2.align_config_mafft(ALIGNDIR, step2_dir, CONFIG)
+				step2.align_config_mafft(FASTADIR, step2_dir, CONFIG)
 			print("Alignments completed...")
 			if TRIM: #trimming alingments
 				print("Trimming alignments...")
@@ -74,7 +90,7 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 			print("Generating the phylogenetic matrix.")
 			step3_dir = os.path.join(OUTDIR, "03_matrix")
 			os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
-			step3.cat_alignments(FASTADIR, step3_dir, FORMAT)
+			step3.cat_alignments(ALIGNDIR, step3_dir, FORMAT)
 		if step == 4:
 			print("Creating the phylogenetic tree with IQTree.")
 			step4_dir = os.path.join(OUTDIR, "04_phylogenetic_tree")
@@ -123,6 +139,8 @@ if __name__ == '__main__':
     #first we validate that steps introduced are ok...
     print("Validating steps selected...")
     validate_steps(args.steps)
+	print("Validating parameters...")
+    validate_params(args)
     #now we see which steps we have to do...
     print("\t\tSteps " + str(args.steps) + " selected.")
     #validating parameters
