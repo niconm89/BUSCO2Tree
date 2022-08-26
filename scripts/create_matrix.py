@@ -22,7 +22,7 @@ def cat_alignments(ALIGNDIR, OUTDIR, FORMAT):
 		if not os.path.isdir(OUTDIR):
 			os.mkdir(OUTDIR)
 	except:
-		raise ValueError("Output directory %s can not be created." % ALIGNDIR)
+		raise ValueError("Output directory %s can not be created." % OUTDIR)
 	#start reading alignments and concatenating into a dictionart
 	matrix = {} #phylogenetic matrix. Taxa will be keys and sequences will be the values.
     #Sequences will made by concatenating the all alignments for each taxon.
@@ -42,12 +42,15 @@ def cat_alignments(ALIGNDIR, OUTDIR, FORMAT):
 		
 	#once the matrix is ready, we need yo save it in the outformat selected.
 	do_matrix(matrix, OUTDIR, FORMAT) #do the matrix
+	do_partitions(OUTDIR, coordinates)
+#end
+def do_partitions(OUTDIR, COORDINATES):
 	coords_out = os.path.join(OUTDIR, "busco_coords.partitions.tsv") #saving coordinates of each locus
 	with open(coords_out, 'wt') as COORDS:
 		COORDS.write("#nexus\nbegin sets;\n")
-		for buscoid, x_y in coordinates.items():
+		for buscoid, x_y in COORDINATES.items():
 			COORDS.write("\tcharset " + buscoid + '\t=\t' + str(x_y[0]) + '-' + str(x_y[1]) + ';\n')
-		COORDS.write("end;\n")
+		COORDS.write("end;\n")	
 #end
 def do_matrix(matrix, OUTDIR, out_format):
 	'Receive a matrix in a dictionary, the output directory and format to generate the phylogenetic matrix file.'
@@ -90,7 +93,7 @@ def usage():
 if __name__ == '__main__':
 	args = usage() #reading arguments
 	start = time() #time 0
-	print("Step1: Starting the cancatenation of alignments files...")
+	print("Starting the cancatenation of alignments files...")
 	cat_alignments(args.aligndir, args.outdir, args.outformat) #do what it has to do
 	print("Phylogenetic matrix created...")
 	print(f'Time taken to run: {time() - start} seconds.')
