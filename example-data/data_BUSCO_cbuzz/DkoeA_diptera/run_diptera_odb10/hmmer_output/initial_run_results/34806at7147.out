@@ -1,0 +1,15 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DkoeA00015757-RA     -            472 34806at7147          -            406  1.4e-209  695.8   0.3   1   1    2e-213  1.7e-209  695.4   0.3     8   406    41   471    37   471 0.94 -
+DkoeA00007229-RA     -            418 34806at7147          -            406   2.1e-11   43.1   0.0   1   1   4.2e-15   3.6e-11   42.3   0.0   225   356   223   356   213   377 0.93 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/34806at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeA_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/DkoeA_diptera/run_diptera_odb10/hmmer_output/initial_run_results/34806at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/34806at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeA_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:58:57 2021
+# [ok]

@@ -1,0 +1,44 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DkoeB00010827-RA     -            555 63305at7147          -            263    6e-102  340.1  38.9   1   4   6.4e-18     9e-15   54.3   5.0     5    99    25   124    15   132 0.73 -
+DkoeB00010827-RA     -            555 63305at7147          -            263    6e-102  340.1  38.9   2   4    0.0067       9.3    5.1   0.9    41    61   128   148   121   179 0.71 -
+DkoeB00010827-RA     -            555 63305at7147          -            263    6e-102  340.1  38.9   3   4   8.8e-09   1.2e-05   24.4   6.1    66   126   238   310   205   335 0.70 -
+DkoeB00010827-RA     -            555 63305at7147          -            263    6e-102  340.1  38.9   4   4   5.8e-84   8.1e-81  270.8   6.6    85   263   338   536   313   536 0.85 -
+DkoeB00009080-RA     -            962 63305at7147          -            263   4.1e-30  104.6  13.9   1   4   1.3e-10   1.9e-07   30.4   0.5   108   147   369   407   360   409 0.88 -
+DkoeB00009080-RA     -            962 63305at7147          -            263   4.1e-30  104.6  13.9   2   4   1.7e-12   2.4e-09   36.6   3.0   117   182   409   475   406   484 0.74 -
+DkoeB00009080-RA     -            962 63305at7147          -            263   4.1e-30  104.6  13.9   3   4   3.1e-07   0.00044   19.3   0.2    96   148   465   522   458   527 0.75 -
+DkoeB00009080-RA     -            962 63305at7147          -            263   4.1e-30  104.6  13.9   4   4   2.1e-09   2.9e-06   26.5   0.0   111   147   529   565   522   579 0.87 -
+DkoeB00002045-RA     -           1097 63305at7147          -            263   4.6e-18   65.2  23.6   1   4   4.5e-08   6.3e-05   22.1   0.4   109   147   215   253   161   273 0.69 -
+DkoeB00002045-RA     -           1097 63305at7147          -            263   4.6e-18   65.2  23.6   2   4       4.1   5.8e+03   -4.0   2.1    40    81   470   510   446   516 0.64 -
+DkoeB00002045-RA     -           1097 63305at7147          -            263   4.6e-18   65.2  23.6   3   4   1.2e-11   1.7e-08   33.7   1.6    46   161   552   666   540   670 0.73 -
+DkoeB00002045-RA     -           1097 63305at7147          -            263   4.6e-18   65.2  23.6   4   4   2.4e-09   3.4e-06   26.2   0.5   115   149   668   703   661   735 0.75 -
+DkoeB00006605-RA     -           1069 63305at7147          -            263   1.4e-12   47.2   4.0   1   3   1.4e-07    0.0002   20.4   0.1   117   148   163   194   153   219 0.82 -
+DkoeB00006605-RA     -           1069 63305at7147          -            263   1.4e-12   47.2   4.0   2   3     0.069        97    1.8   0.2   115   147   522   554   512   566 0.84 -
+DkoeB00006605-RA     -           1069 63305at7147          -            263   1.4e-12   47.2   4.0   3   3   1.2e-08   1.8e-05   23.9   0.0   115   147   570   602   558   611 0.86 -
+DkoeB00006647-RA     -           1291 63305at7147          -            263   6.5e-11   41.7   0.3   1   3       1.6   2.2e+03   -2.7   3.9   158   195    69   109    46   122 0.48 -
+DkoeB00006647-RA     -           1291 63305at7147          -            263   6.5e-11   41.7   0.3   2   3   4.6e-14   6.5e-11   41.7   0.3   113   184   338   423   293   425 0.71 -
+DkoeB00006647-RA     -           1291 63305at7147          -            263   6.5e-11   41.7   0.3   3   3        10   1.4e+04   -5.9   9.9    35    87   425   476   421   488 0.59 -
+DkoeB00006468-RA     -            383 63305at7147          -            263   4.9e-10   38.8   6.7   1   3       1.6   2.2e+03   -2.7   0.1   191   216   140   164   112   183 0.63 -
+DkoeB00006468-RA     -            383 63305at7147          -            263   4.9e-10   38.8   6.7   2   3   1.1e-08   1.6e-05   24.0   0.8   102   147   214   260   201   277 0.77 -
+DkoeB00006468-RA     -            383 63305at7147          -            263   4.9e-10   38.8   6.7   3   3     1e-06    0.0014   17.7   0.0   116   155   298   337   278   343 0.86 -
+DkoeB00012841-RA     -           1140 63305at7147          -            263   9.6e-10   37.9   1.1   1   2   5.6e-10   7.9e-07   28.3   0.1   112   154   734   775   729   807 0.76 -
+DkoeB00012841-RA     -           1140 63305at7147          -            263   9.6e-10   37.9   1.1   2   2   0.00088       1.2    8.0   0.1   117   164   923   971   900  1012 0.76 -
+DkoeB00005115-RA     -           1194 63305at7147          -            263   3.5e-05   22.9   0.1   1   1   1.1e-07   0.00015   20.8   0.1   120   150   458   488   453   520 0.85 -
+DkoeB00004507-RA     -           1255 63305at7147          -            263       6.9    5.6  10.0   1   3   0.00022      0.31   10.0   0.0   117   173    33    83    17    98 0.77 -
+DkoeB00004507-RA     -           1255 63305at7147          -            263       6.9    5.6  10.0   2   3       1.1   1.6e+03   -2.2   0.8    35   105   492   563   483   583 0.54 -
+DkoeB00004507-RA     -           1255 63305at7147          -            263       6.9    5.6  10.0   3   3      0.15   2.1e+02    0.7   0.7    71   117   838   885   816   888 0.84 -
+DkoeB00008402-RA     -           1525 63305at7147          -            263       7.3    5.5  16.4   1   4    0.0012       1.7    7.6   0.3   118   144   161   187   154   194 0.91 -
+DkoeB00008402-RA     -           1525 63305at7147          -            263       7.3    5.5  16.4   2   4   0.00038      0.53    9.2   0.4   113   147   197   229   190   234 0.85 -
+DkoeB00008402-RA     -           1525 63305at7147          -            263       7.3    5.5  16.4   3   4         2   2.8e+03   -3.0   0.1   117   150   716   747   712   763 0.69 -
+DkoeB00008402-RA     -           1525 63305at7147          -            263       7.3    5.5  16.4   4   4         3   4.2e+03   -3.6   1.1    37    80   818   864   812   899 0.55 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/63305at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeB_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/DkoeB_diptera/run_diptera_odb10/hmmer_output/initial_run_results/63305at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/63305at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeB_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 14:14:15 2021
+# [ok]

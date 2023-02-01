@@ -1,0 +1,26 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz03622-RA         -           1055 8820at7147           -            606  8.9e-285  945.6  22.4   1   5     3e-70   9.5e-67  225.5   0.1     1   131     6   142     6   156 0.94 -
+Dbuz03622-RA         -           1055 8820at7147           -            606  8.9e-285  945.6  22.4   2   5   9.6e-21   3.1e-17   61.9   0.1   113   164   178   229   152   243 0.85 -
+Dbuz03622-RA         -           1055 8820at7147           -            606  8.9e-285  945.6  22.4   3   5  1.8e-193  5.8e-190  632.4   6.8   164   544   256   686   239   710 0.90 -
+Dbuz03622-RA         -           1055 8820at7147           -            606  8.9e-285  945.6  22.4   4   5   2.2e-07    0.0007   17.8   0.0   491   562   748   818   728   834 0.88 -
+Dbuz03622-RA         -           1055 8820at7147           -            606  8.9e-285  945.6  22.4   5   5   3.8e-06     0.012   13.7   0.1   559   601   981  1025   955  1033 0.79 -
+Dbuz12323-RA         -            887 8820at7147           -            606   6.2e-26   90.7   1.5   1   3   2.6e-08   8.3e-05   20.9   0.0   164   198    14    48     5    56 0.89 -
+Dbuz12323-RA         -            887 8820at7147           -            606   6.2e-26   90.7   1.5   2   3   1.3e-07   0.00041   18.6   0.0   232   370    57   202    54   213 0.67 -
+Dbuz12323-RA         -            887 8820at7147           -            606   6.2e-26   90.7   1.5   3   3   8.7e-17   2.8e-13   48.9   0.1   317   570   215   505   210   523 0.74 -
+Dbuz00092-RA         -            750 8820at7147           -            606   1.3e-25   89.6   4.8   1   4   2.1e-06    0.0067   14.6   0.0   161   198     9    46     2    50 0.86 -
+Dbuz00092-RA         -            750 8820at7147           -            606   1.3e-25   89.6   4.8   2   4   6.7e-12   2.1e-08   32.7   0.1   232   311    50   130    47   169 0.83 -
+Dbuz00092-RA         -            750 8820at7147           -            606   1.3e-25   89.6   4.8   3   4   5.4e-14   1.7e-10   39.7   1.3   315   477   168   344   159   349 0.79 -
+Dbuz00092-RA         -            750 8820at7147           -            606   1.3e-25   89.6   4.8   4   4     0.033     1e+02    0.7   0.0   543   573   674   704   659   713 0.80 -
+Dbuz00091-RA         -            593 8820at7147           -            606      0.42    8.7   1.5   1   1   0.00019      0.59    8.2   1.5   198   276   160   240   153   252 0.77 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/8820at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbuz_diptera/run_diptera_odb10/hmmer_output/initial_run_results/8820at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/8820at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:22:49 2021
+# [ok]

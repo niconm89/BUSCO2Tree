@@ -1,0 +1,37 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DkoeB00009330-RA     -           1153 11951at7147          -            646  1.3e-252  839.4  41.4   1   4   7.2e-41   7.7e-38  129.9   7.6    26   122   307   410   287   423 0.80 -
+DkoeB00009330-RA     -           1153 11951at7147          -            646  1.3e-252  839.4  41.4   2   4   2.2e-28   2.4e-25   88.6   2.3   106   176   422   501   411   505 0.81 -
+DkoeB00009330-RA     -           1153 11951at7147          -            646  1.3e-252  839.4  41.4   3   4   8.8e-87   9.5e-84  281.5   3.5   183   407   544   821   541   825 0.85 -
+DkoeB00009330-RA     -           1153 11951at7147          -            646  1.3e-252  839.4  41.4   4   4  6.5e-107    7e-104  348.1   5.7   401   645   842  1147   834  1148 0.87 -
+DkoeB00001981-RA     -            375 11951at7147          -            646   6.4e-10   37.6   1.0   1   3     6e-13   6.4e-10   37.6   1.0    25    98    23   105     7   114 0.85 -
+DkoeB00001981-RA     -            375 11951at7147          -            646   6.4e-10   37.6   1.0   2   3      0.75   8.1e+02   -2.4   0.1    87   123   146   183   132   195 0.59 -
+DkoeB00001981-RA     -            375 11951at7147          -            646   6.4e-10   37.6   1.0   3   3      0.73   7.9e+02   -2.3   1.5    93   137   275   316   239   329 0.62 -
+DkoeB00012733-RA     -            403 11951at7147          -            646   1.8e-08   32.8   1.7   1   1   2.4e-11   2.6e-08   32.3   1.7    25   101    53   142    38   201 0.78 -
+DkoeB00011400-RA     -            412 11951at7147          -            646   0.00014   20.0   1.0   1   2   2.6e-05     0.028   12.4   0.1    29    60   236   267   218   270 0.81 -
+DkoeB00011400-RA     -            412 11951at7147          -            646   0.00014   20.0   1.0   2   2    0.0018         2    6.3   0.1    67   108   305   347   302   394 0.82 -
+DkoeB00009312-RA     -            736 11951at7147          -            646   0.00014   20.0   2.4   1   2      0.12   1.3e+02    0.3   0.3   441   540   139   244   136   252 0.66 -
+DkoeB00009312-RA     -            736 11951at7147          -            646   0.00014   20.0   2.4   2   2   2.5e-07   0.00027   19.1   0.1    30    82   353   410   349   418 0.89 -
+DkoeB00002944-RA     -            159 11951at7147          -            646   0.00014   20.0   2.2   1   1   1.3e-07   0.00014   19.9   2.2    33    93    39   102    33   155 0.82 -
+DkoeB00006852-RA     -            465 11951at7147          -            646   0.00016   19.8   1.4   1   2   1.5e-07   0.00016   19.8   1.4    32    89    39   105    33   117 0.87 -
+DkoeB00006852-RA     -            465 11951at7147          -            646   0.00016   19.8   1.4   2   2       3.6   3.9e+03   -4.6   2.9   110   143   324   356   315   411 0.67 -
+DkoeB00007176-RA     -            400 11951at7147          -            646   0.00028   19.0   0.7   1   2      0.93     1e+03   -2.7   2.9   110   144    35    68    30    74 0.81 -
+DkoeB00007176-RA     -            400 11951at7147          -            646   0.00028   19.0   0.7   2   2   2.6e-07   0.00028   19.0   0.7    39    85   102   155    94   173 0.81 -
+DkoeB00005732-RA     -            703 11951at7147          -            646    0.0003   18.9   2.9   1   2    0.0026       2.8    5.8   0.0    29    84    11    75     7    95 0.76 -
+DkoeB00005732-RA     -            703 11951at7147          -            646    0.0003   18.9   2.9   2   2   3.7e-05      0.04   11.9   1.4    18    88   486   565   473   572 0.79 -
+DkoeB00005300-RA     -            276 11951at7147          -            646   0.00072   17.6   1.0   1   1     1e-06    0.0011   17.0   1.0    30    93    69   138    61   155 0.79 -
+DkoeB00005730-RA     -            359 11951at7147          -            646   0.00089   17.3   0.8   1   1   1.3e-06    0.0014   16.7   0.8    29    90   161   228   137   243 0.77 -
+DkoeB00007747-RA     -            647 11951at7147          -            646     0.061   11.3   0.0   1   2   5.6e-05     0.061   11.3   0.0    29    97     9    83     4    96 0.74 -
+DkoeB00007747-RA     -            647 11951at7147          -            646     0.061   11.3   0.0   2   2       2.9   3.1e+03   -4.3   0.4   331   363   330   364   329   369 0.68 -
+DkoeB00005527-RA     -            675 11951at7147          -            646      0.08   10.9   0.3   1   1   0.00013      0.14   10.1   0.3    37    98    66   134    50   146 0.81 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/11951at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeB_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/DkoeB_diptera/run_diptera_odb10/hmmer_output/initial_run_results/11951at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/11951at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeB_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 14:04:09 2021
+# [ok]

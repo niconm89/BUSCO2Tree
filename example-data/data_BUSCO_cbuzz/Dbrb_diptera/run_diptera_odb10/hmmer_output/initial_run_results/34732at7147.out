@@ -1,0 +1,33 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbrb04854-RA         -            401 34732at7147          -            348  1.5e-191  635.9   2.3   1   1    2e-194  3.5e-191  634.7   2.3     1   348    10   396    10   396 0.94 -
+Dbrb13787-RA         -            779 34732at7147          -            348     1e-43  149.8   0.0   1   1   1.2e-46     2e-43  148.8   0.0     8   331    19   377    12   389 0.77 -
+Dbrb12398-RA         -            688 34732at7147          -            348   1.7e-38  132.5   0.6   1   1   1.6e-41   2.8e-38  131.9   0.6    46   347   357   686   328   687 0.80 -
+Dbrb01208-RA         -           1074 34732at7147          -            348   0.00015   20.9   0.2   1   4      0.03        51    2.7   0.0     4    56    24    79    21   123 0.77 -
+Dbrb01208-RA         -           1074 34732at7147          -            348   0.00015   20.9   0.2   2   4     0.011        19    4.2   0.0   305   336   393   424   385   431 0.85 -
+Dbrb01208-RA         -           1074 34732at7147          -            348   0.00015   20.9   0.2   3   4     0.017        29    3.5   0.0     4    56   598   653   595   704 0.80 -
+Dbrb01208-RA         -           1074 34732at7147          -            348   0.00015   20.9   0.2   4   4      0.01        17    4.3   0.0   305   336   967   998   959  1005 0.84 -
+Dbrb12169-RA         -           1175 34732at7147          -            348    0.0033   16.5   0.0   1   2    0.0045       7.5    5.4   0.0    19    60   412   452   392   458 0.81 -
+Dbrb12169-RA         -           1175 34732at7147          -            348    0.0033   16.5   0.0   2   2   0.00053       0.9    8.5   0.0   291   337   785   835   775   840 0.82 -
+Dbrb14171-RA         -            465 34732at7147          -            348    0.0034   16.4   0.0   1   2     0.015        25    3.8   0.0    20    75    48   106    33   147 0.83 -
+Dbrb14171-RA         -            465 34732at7147          -            348    0.0034   16.4   0.0   2   2   0.00016      0.27   10.2   0.0   300   335   359   394   333   401 0.88 -
+Dbrb17695-RA         -            701 34732at7147          -            348     0.037   13.0   0.0   1   2     0.027        47    2.9   0.0    20    74    48   105    36   144 0.82 -
+Dbrb17695-RA         -            701 34732at7147          -            348     0.037   13.0   0.0   2   2   0.00098       1.7    7.6   0.0   300   335   359   394   333   400 0.89 -
+Dbrb17543-RA         -            379 34732at7147          -            348     0.071   12.1   0.2   1   2      0.82   1.4e+03   -2.0   0.0    33    57    57    81    29    83 0.62 -
+Dbrb17543-RA         -            379 34732at7147          -            348     0.071   12.1   0.2   2   2   0.00011      0.19   10.7   0.1   262   337   284   360   252   369 0.79 -
+Dbrb11671-RA         -            445 34732at7147          -            348      0.11   11.5   1.3   1   3      0.77   1.3e+03   -1.9   0.0    22    55    40    78    27    82 0.53 -
+Dbrb11671-RA         -            445 34732at7147          -            348      0.11   11.5   1.3   2   3    0.0041         7    5.6   0.1   272   335   329   394   269   404 0.66 -
+Dbrb11671-RA         -            445 34732at7147          -            348      0.11   11.5   1.3   3   3     0.012        21    4.0   0.1   329   348   414   436   405   436 0.78 -
+Dbrb13634-RA         -            438 34732at7147          -            348      0.16   11.0   0.1   1   2         1   1.7e+03   -2.3   0.0    34    57    58    81    30    83 0.62 -
+Dbrb13634-RA         -            438 34732at7147          -            348      0.16   11.0   0.1   2   2   0.00025      0.43    9.5   0.1   262   334   318   391   286   396 0.80 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/34732at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbrb_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbrb_diptera/run_diptera_odb10/hmmer_output/initial_run_results/34732at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/34732at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbrb_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:09:34 2021
+# [ok]

@@ -1,0 +1,23 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DkoeA00007185-RA     -            277 46967at7147          -            197   9.8e-74  247.3   3.1   1   2     8e-51     2e-47  161.4   0.0     1   122     3   147     3   174 0.87 -
+DkoeA00007185-RA     -            277 46967at7147          -            197   9.8e-74  247.3   3.1   2   2   4.1e-27     1e-23   84.0   1.1   122   197   174   274   161   274 0.85 -
+DkoeA00012123-RA     -            324 46967at7147          -            197   6.7e-14   52.0   0.0   1   2     1e-12   2.6e-09   37.0   0.0    51   123   128   207   107   214 0.78 -
+DkoeA00012123-RA     -            324 46967at7147          -            197   6.7e-14   52.0   0.0   2   2     3e-05     0.076   12.7   0.0   125   151   234   260   225   292 0.80 -
+DkoeA00009506-RA     -            244 46967at7147          -            197   6.4e-07   29.2   0.3   1   2   1.9e-07   0.00049   19.8   0.0    55   106    55   106    16   133 0.79 -
+DkoeA00009506-RA     -            244 46967at7147          -            197   6.4e-07   29.2   0.3   2   2     0.001       2.5    7.7   0.3   121   152   147   178   118   204 0.79 -
+DkoeA00014193-RA     -            388 46967at7147          -            197    0.0023   17.6   0.2   1   1   2.1e-06    0.0053   16.5   0.2    67   127    95   157    88   169 0.81 -
+DkoeA00010126-RA     -            502 46967at7147          -            197     0.038   13.6   0.1   1   1   3.6e-05      0.09   12.4   0.1    67   118   222   279   217   285 0.69 -
+DkoeA00013412-RA     -            502 46967at7147          -            197     0.038   13.6   0.1   1   1   3.6e-05      0.09   12.4   0.1    67   118   222   279   217   285 0.69 -
+DkoeA00011689-RA     -            341 46967at7147          -            197     0.043   13.5   0.2   1   1   7.2e-05      0.18   11.4   0.2    67    93    31    57    26   103 0.75 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/46967at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeA_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/DkoeA_diptera/run_diptera_odb10/hmmer_output/initial_run_results/46967at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/46967at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeA_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 14:00:50 2021
+# [ok]

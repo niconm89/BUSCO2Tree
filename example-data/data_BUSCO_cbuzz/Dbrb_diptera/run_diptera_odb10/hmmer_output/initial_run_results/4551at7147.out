@@ -1,0 +1,24 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   1  11   1.4e-47   2.4e-43  148.6  11.6     4   110    44   170    41   196 0.78 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   2  11      0.34   5.7e+03   -4.4   5.0   100   134   217   251   190   302 0.56 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   3  11   7.7e-08    0.0013   17.5   4.1   108   187   373   458   351   464 0.65 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   4  11   4.9e-23   8.3e-19   67.6  16.9   165   239   480   554   450   607 0.62 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   5  11   1.1e-09   1.9e-05   23.6   5.1   209   286   669   771   654   790 0.71 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   6  11   5.6e-14   9.4e-10   37.7   6.9   286   338   838   893   816   906 0.81 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   7  11    0.0084   1.4e+02    0.8   3.5   292   347   884   937   880   945 0.77 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   8  11   9.2e-10   1.6e-05   23.8   0.3   343   375   984  1025   969  1029 0.82 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8   9  11   5.3e-15     9e-11   41.1   1.8   385   426  1078  1132  1064  1139 0.78 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8  10  11   3.4e-06     0.058   12.0   0.0   429   446  1159  1176  1140  1189 0.83 -
+Dbrb08646-RA         -           1461 4551at7147           -            520  1.8e-117  393.2 115.8  11  11   4.8e-19   8.1e-15   54.5   1.5   442   519  1203  1316  1199  1317 0.70 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/4551at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbrb_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbrb_diptera/run_diptera_odb10/hmmer_output/initial_run_results/4551at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/4551at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbrb_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:09:30 2021
+# [ok]

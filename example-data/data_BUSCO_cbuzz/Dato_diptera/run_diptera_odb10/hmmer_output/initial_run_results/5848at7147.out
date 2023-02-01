@@ -1,0 +1,23 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   1   8         2   1.6e+04  -12.9   8.8   677   693   277   293   254   314 0.42 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   2   8         0         0 1268.7   8.7     1   600   361   990   361   997 0.97 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   3   8   9.7e-10   7.9e-06   24.0   0.0   598   636  1088  1129  1079  1144 0.79 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   4   8   5.8e-05      0.48    8.2   0.1   631   649  1159  1177  1152  1186 0.86 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   5   8   7.4e-09   6.1e-05   21.1   0.0   645   678  1324  1357  1308  1373 0.84 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   6   8   1.6e-11   1.3e-07   29.9   0.3   674   719  1395  1442  1378  1452 0.79 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   7   8     3e-07    0.0024   15.8   0.0   717   749  1519  1553  1513  1589 0.74 -
+Dato07682-RA         -           2122 5848at7147           -            870         0 1392.9  40.5   8   8   5.7e-16   4.6e-12   44.6   0.1   750   856  1662  1818  1627  1830 0.74 -
+Dato00437-RA         -            494 5848at7147           -            870     0.027   12.3   0.1   1   2    0.0004       3.2    5.4   0.0   720   752   211   243   201   246 0.91 -
+Dato00437-RA         -            494 5848at7147           -            870     0.027   12.3   0.1   2   2   0.00061         5    4.8   0.1   693   786   344   440   291   475 0.73 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/5848at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dato_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dato_diptera/run_diptera_odb10/hmmer_output/initial_run_results/5848at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/5848at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dato_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 12:59:14 2021
+# [ok]

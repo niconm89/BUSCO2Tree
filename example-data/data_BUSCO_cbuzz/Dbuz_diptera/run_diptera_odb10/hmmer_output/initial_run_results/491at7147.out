@@ -1,0 +1,35 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   1  22   2.7e-99   3.5e-95  319.0   6.1     5   210    38   251    24   256 0.92 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   2  22   3.5e-17   4.4e-13   46.8   3.8   211   303   280   402   276   416 0.75 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   3  22     1e-06     0.013   12.1   2.4   265   308   478   519   459   540 0.73 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   4  22   3.2e-06     0.041   10.4   1.2   294   328   538   576   518   585 0.78 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   5  22   3.4e-28   4.3e-24   83.3   0.3   334   402   694   766   678   797 0.87 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   6  22    0.0019        25    1.2   0.0   398   415   816   833   809   866 0.72 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   7  22   6.8e-17   8.7e-13   45.8   0.0   433   503   925  1013   905  1015 0.75 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   8  22   4.5e-16   5.8e-12   43.1   0.3   488   529  1145  1186  1140  1213 0.88 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5   9  22   2.8e-10   3.5e-06   23.9   0.1   518   560  1227  1270  1220  1290 0.85 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  10  22   8.2e-05       1.1    5.7   0.0   555   585  1299  1329  1283  1338 0.81 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  11  22   6.4e-45   8.2e-41  138.7   0.0   573   692  1403  1536  1394  1541 0.88 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  12  22   1.9e-42   2.4e-38  130.5   0.0   689   803  1558  1696  1554  1703 0.87 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  13  22   3.6e-53   4.6e-49  166.1   5.4   806   931  1772  1906  1768  1910 0.93 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  14  22   3.9e-09   4.9e-05   20.1   0.2   928   977  1947  2000  1933  2024 0.76 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  15  22   2.9e-12   3.7e-08   30.4   0.2   970  1044  2036  2122  2024  2126 0.75 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  16  22   7.5e-40   9.6e-36  121.9   0.1  1045  1194  2484  2676  2454  2704 0.75 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  17  22   3.1e-15     4e-11   40.3   0.1  1211  1272  2755  2837  2747  2843 0.83 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  18  22   1.9e-55   2.4e-51  173.6   3.3  1262  1383  2878  3012  2872  3018 0.91 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  19  22   1.1e-98   1.3e-94  317.0  13.8  1377  1605  3048  3259  3035  3264 0.95 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  20  22   1.7e-55   2.1e-51  173.8   0.9  1646  1736  3267  3357  3262  3363 0.97 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  21  22   8.3e-36   1.1e-31  108.5   0.2  1723  1795  3370  3442  3366  3450 0.90 -
+Dbuz00575-RA         -           3532 491at7147            -           1840         0 1990.6 137.5  22  22   4.4e-13   5.6e-09   33.2   0.3  1795  1840  3483  3532  3480  3532 0.89 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/491at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbuz_diptera/run_diptera_odb10/hmmer_output/initial_run_results/491at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/491at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:21:25 2021
+# [ok]

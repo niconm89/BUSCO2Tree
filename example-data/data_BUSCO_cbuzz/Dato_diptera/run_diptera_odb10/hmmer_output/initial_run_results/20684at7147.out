@@ -1,0 +1,35 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dato02448-RA         -            612 20684at7147          -            543         0 1056.0   0.0   1   1         0         0 1055.8   0.0     1   543    17   610    17   610 0.95 -
+Dato13944-RA         -            626 20684at7147          -            543  7.9e-140  466.6   0.0   1   1  1.6e-142  1.3e-139  465.9   0.0    39   541    59   620    45   622 0.86 -
+Dato13934-RA         -            684 20684at7147          -            543  4.8e-137  457.4   0.0   1   1  8.8e-140  7.2e-137  456.9   0.0    38   541    55   617    39   619 0.85 -
+Dato13935-RA         -            616 20684at7147          -            543  1.9e-131  438.9   0.0   1   1  4.7e-134  3.8e-131  438.0   0.0    30   543    34   606    19   606 0.86 -
+Dato13932-RA         -            619 20684at7147          -            543  5.5e-117  391.2   0.0   1   2   1.6e-87   1.3e-84  284.4   0.0    35   325    53   364    29   376 0.88 -
+Dato13932-RA         -            619 20684at7147          -            543  5.5e-117  391.2   0.0   2   2   3.9e-33   3.2e-30  104.9   0.0   386   542   445   616   432   617 0.88 -
+Dato13942-RA         -            636 20684at7147          -            543  2.2e-116  389.3   0.0   1   1  3.6e-119    3e-116  388.8   0.0    39   541    56   627    50   629 0.85 -
+Dato13937-RA         -            546 20684at7147          -            543    6e-115  384.5   0.0   1   1  1.3e-117    1e-114  383.7   0.0   102   541    11   508     3   510 0.83 -
+Dato13933-RA         -            651 20684at7147          -            543    1e-112  377.1   0.0   1   1    5e-115  4.1e-112  375.2   0.0    26   540    72   647    54   650 0.82 -
+Dato02408-RA         -            605 20684at7147          -            543  2.6e-105  352.7   0.0   1   1  1.2e-107  9.8e-105  350.8   0.0    34   542    41   598    24   599 0.85 -
+Dato13931-RA         -            624 20684at7147          -            543  1.7e-101  340.1   0.0   1   1  6.8e-104  5.6e-101  338.4   0.0    39   541    58   623    50   624 0.85 -
+Dato13930-RA         -            614 20684at7147          -            543   1.1e-97  327.6   0.0   1   2   2.4e-71   1.9e-68  231.0   0.0    38   326    46   356    24   396 0.90 -
+Dato13930-RA         -            614 20684at7147          -            543   1.1e-97  327.6   0.0   2   2   4.7e-30   3.9e-27   94.7   0.0   400   541   457   613   441   614 0.90 -
+Dato13940-RA         -            640 20684at7147          -            543   1.7e-92  310.5   0.0   1   1   4.2e-95   3.5e-92  309.4   0.0    39   542    68   628    58   629 0.82 -
+Dato13939-RA         -            624 20684at7147          -            543     7e-91  305.1   0.0   1   1   1.3e-93     1e-90  304.5   0.0    32   541    50   615    42   617 0.82 -
+Dato09893-RA         -            535 20684at7147          -            543     2e-87  293.7   0.0   1   1     3e-90   2.4e-87  293.4   0.0    37   537     3   530     1   533 0.85 -
+Dato09392-RA         -            555 20684at7147          -            543   2.4e-76  257.1   0.0   1   1   3.7e-79     3e-76  256.8   0.0    39   539     2   533     1   536 0.81 -
+Dato13943-RA         -            680 20684at7147          -            543   1.1e-73  248.4   0.0   1   1   2.1e-76   1.7e-73  247.7   0.0    30   539    67   632    64   634 0.78 -
+Dato10832-RA         -           1014 20684at7147          -            543   1.6e-70  237.9   0.0   1   1   2.7e-73   2.2e-70  237.4   0.0    34   539   482  1012   478  1014 0.82 -
+Dato02271-RA         -            592 20684at7147          -            543   4.5e-43  147.3   0.0   1   1   1.9e-43   1.5e-40  138.9   0.0    35   537    42   584    14   588 0.75 -
+Dato13938-RA         -            210 20684at7147          -            543   5.3e-17   61.2   0.0   1   1   7.7e-20   6.3e-17   61.0   0.0    37    98    92   153    51   163 0.84 -
+Dato05206-RA         -            222 20684at7147          -            543     0.012   13.9   0.1   1   1   2.2e-05     0.018   13.3   0.1   310   351    70   115    63   121 0.84 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/20684at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dato_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dato_diptera/run_diptera_odb10/hmmer_output/initial_run_results/20684at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/20684at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dato_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 12:51:52 2021
+# [ok]

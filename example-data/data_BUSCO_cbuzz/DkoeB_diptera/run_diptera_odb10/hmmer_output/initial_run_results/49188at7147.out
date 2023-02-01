@@ -1,0 +1,18 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DkoeB00005760-RA     -            284 49188at7147          -            245  2.2e-127  423.2  60.8   1   2   1.5e-26   6.8e-23   81.0  11.7     1    54     1    54     1    63 0.94 -
+DkoeB00005760-RA     -            284 49188at7147          -            245  2.2e-127  423.2  60.8   2   2  5.5e-108  2.6e-104  347.7  42.6    44   245    62   284    51   284 0.92 -
+DkoeB00005759-RA     -            462 49188at7147          -            245   3.3e-59  199.9  50.9   1   2     2e-33   9.4e-30  103.5  25.4    26   165    15   157    10   159 0.89 -
+DkoeB00005759-RA     -            462 49188at7147          -            245   3.3e-59  199.9  50.9   2   2     4e-33   1.9e-29  102.5  18.3   141   231   158   253   155   277 0.86 -
+DkoeB00005757-RA     -             85 49188at7147          -            245   6.8e-15   54.8  11.7   1   1   1.7e-18   7.8e-15   54.6  11.7     1    60     1    60     1    85 0.81 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/49188at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeB_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/DkoeB_diptera/run_diptera_odb10/hmmer_output/initial_run_results/49188at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/49188at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/DkoeB_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 14:12:12 2021
+# [ok]

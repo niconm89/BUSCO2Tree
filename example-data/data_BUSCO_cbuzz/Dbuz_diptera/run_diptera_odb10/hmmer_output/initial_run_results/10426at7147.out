@@ -1,0 +1,38 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   1   9   2.7e-26   5.7e-23   80.8   0.3     1    67     1    79     1    84 0.93 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   2   9      0.01        22    3.0  35.2    66   117   229   291   222   297 0.77 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   3   9         6   1.3e+04  -11.5  12.6    78   120   306   348   285   352 0.60 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   4   9   7.8e-34   1.7e-30  105.7   0.2   114   169   393   452   385   456 0.91 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   5   9    0.0001      0.22    9.6   0.0   166   182   527   543   517   546 0.89 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   6   9     2e-65   4.2e-62  209.9   4.9   182   295   565   690   561   716 0.89 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   7   9   7.8e-31   1.7e-27   95.8  26.0   291   399   803   925   794   936 0.87 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   8   9     2e-39   4.2e-36  124.1   0.0   394   478   961  1048   957  1051 0.95 -
+Dbuz09053-RA         -           1119 10426at7147          -            496  2.3e-183  609.9 115.9   9   9   1.4e-05     0.029   12.5   0.3   477   496  1100  1119  1066  1119 0.86 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   1  10   2.4e-07    0.0005   18.3  14.3    59   114   129   185   101   190 0.75 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   2  10         6   1.3e+04  -10.4  17.9    70   106   263   297   258   311 0.53 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   3  10         6   1.3e+04  -22.3  46.0    63   119   309   358   291   384 0.46 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   4  10         6   1.3e+04  -11.4  17.1    79   123   373   417   354   421 0.59 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   5  10       5.5   1.2e+04   -6.0  13.4    76   103   452   479   446   492 0.50 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   6  10         6   1.3e+04   -7.8  27.6    73   119   659   706   634   710 0.82 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   7  10         6   1.3e+04  -13.7  19.4    69   110   831   873   819   894 0.46 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   8  10         6   1.3e+04  -18.2  22.9    65   115   908   963   882   970 0.50 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3   9  10         6   1.3e+04  -11.8  17.7    58   110   934   990   929  1004 0.54 -
+Dbuz12061-RA         -           1098 10426at7147          -            496    0.0005   18.3  14.3  10  10         6   1.3e+04  -16.7  23.6    85   117  1000  1032   973  1062 0.49 -
+Dbuz02539-RA         -            428 10426at7147          -            496    0.0054   14.9   2.6   1   2   0.00057       1.2    7.2   1.1   119   170   164   220   145   223 0.74 -
+Dbuz02539-RA         -            428 10426at7147          -            496    0.0054   14.9   2.6   2   2   0.00062       1.3    7.0   0.0   406   480   228   309   224   319 0.76 -
+Dbuz01844-RA         -            244 10426at7147          -            496       1.1    7.2   0.0   1   2   0.00054       1.1    7.2   0.0   206   266     2    61     1    66 0.85 -
+Dbuz01844-RA         -            244 10426at7147          -            496       1.1    7.2   0.0   2   2       5.6   1.2e+04   -6.0  15.2    77   113   206   242   201   244 0.70 -
+Dbuz12403-RA         -            225 10426at7147          -            496       4.2    5.4  14.9   1   1    0.0026       5.6    5.0  14.9    72   107     6    41     2    48 0.78 -
+Dbuz09449-RA         -           1085 10426at7147          -            496       4.5    5.3  22.0   1   1    0.0037       7.9    4.5  22.0    68   118    24    74    17    85 0.86 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/10426at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbuz_diptera/run_diptera_odb10/hmmer_output/initial_run_results/10426at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/10426at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:15:37 2021
+# [ok]

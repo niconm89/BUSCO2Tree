@@ -1,0 +1,23 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz10331-RA         -            223 61929at7147          -            159   3.1e-63  211.9   0.1   1   2   1.6e-62   2.8e-59  199.0   0.0     2   144    14   180    13   193 0.90 -
+Dbuz10331-RA         -            223 61929at7147          -            159   3.1e-63  211.9   0.1   2   2   0.00012      0.22   10.8   0.1   141   159   200   218   191   218 0.92 -
+Dbuz10186-RA         -            533 61929at7147          -            159   7.1e-34  116.5   0.0   1   3   1.2e-11   2.3e-08   33.6   0.0    64   139    46   121    17   142 0.81 -
+Dbuz10186-RA         -            533 61929at7147          -            159   7.1e-34  116.5   0.0   2   3   1.3e-12   2.3e-09   36.8   0.1    43   142   151   258   145   270 0.77 -
+Dbuz10186-RA         -            533 61929at7147          -            159   7.1e-34  116.5   0.0   3   3     3e-14   5.5e-11   42.1   0.0    30   155   352   492   320   495 0.75 -
+Dbuz05703-RA         -            269 61929at7147          -            159   1.4e-20   73.2   0.0   1   1   1.3e-23   2.3e-20   72.6   0.0     2   142    69   223    68   239 0.85 -
+Dbuz12124-RA         -            219 61929at7147          -            159   9.9e-13   47.8   0.0   1   1   8.4e-16   1.5e-12   47.1   0.0     4   139    26   176    23   183 0.79 -
+Dbuz10809-RA         -            213 61929at7147          -            159   4.4e-11   42.4   0.0   1   1   6.1e-14   1.1e-10   41.1   0.0    60   141    91   172    18   179 0.73 -
+Dbuz10187-RA         -            213 61929at7147          -            159     6e-10   38.7   0.0   1   1   6.9e-13   1.3e-09   37.7   0.0     5   141    18   172    14   177 0.73 -
+Dbuz10188-RA         -            204 61929at7147          -            159   1.2e-07   31.3   0.0   1   1   9.1e-11   1.7e-07   30.8   0.0    64   139    86   161    47   181 0.84 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/61929at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbuz_diptera/run_diptera_odb10/hmmer_output/initial_run_results/61929at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/61929at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:22:26 2021
+# [ok]

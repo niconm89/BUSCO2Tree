@@ -1,0 +1,43 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz06001-RA         -            526 38651at7147          -            320  1.2e-147  490.9  16.2   1   3   2.3e-41   1.4e-38  132.5   0.7     2   111     6   134     5   180 0.83 -
+Dbuz06001-RA         -            526 38651at7147          -            320  1.2e-147  490.9  16.2   2   3     1e-92   6.2e-90  301.2   0.0    99   276   238   429   230   439 0.92 -
+Dbuz06001-RA         -            526 38651at7147          -            320  1.2e-147  490.9  16.2   3   3   1.8e-19   1.1e-16   60.5   8.2   277   319   479   521   467   522 0.90 -
+Dbuz05060-RA         -           1204 38651at7147          -            320   1.7e-09   36.9  26.0   1   3   5.8e-09   3.5e-06   26.0   3.2   284   319   959   994   948   995 0.87 -
+Dbuz05060-RA         -           1204 38651at7147          -            320   1.7e-09   36.9  26.0   2   3   4.2e-06    0.0026   16.6   5.6   290   319  1012  1041   997  1042 0.80 -
+Dbuz05060-RA         -           1204 38651at7147          -            320   1.7e-09   36.9  26.0   3   3    0.0094       5.7    5.6   1.9   285   319  1153  1185  1142  1186 0.79 -
+Dbuz00644-RA         -           1263 38651at7147          -            320     2e-09   36.7   0.0   1   1   6.3e-12   3.8e-09   35.8   0.0    29   223    79   287    64   299 0.79 -
+Dbuz11755-RA         -           1728 38651at7147          -            320   9.7e-09   34.4   0.0   1   1   3.9e-11   2.4e-08   33.2   0.0     5   218    66   310    63   322 0.68 -
+Dbuz02786-RA         -            998 38651at7147          -            320   1.2e-08   34.1   0.0   1   1   3.5e-11   2.1e-08   33.3   0.0     5   218    96   342    93   358 0.71 -
+Dbuz09630-RA         -            498 38651at7147          -            320   5.9e-08   31.9   0.4   1   1   1.4e-10   8.5e-08   31.4   0.4   283   318   441   476   429   478 0.88 -
+Dbuz09074-RA         -            974 38651at7147          -            320   2.9e-07   29.6   0.0   1   1   8.1e-10   4.9e-07   28.9   0.0    25   218   109   318    96   326 0.73 -
+Dbuz03644-RA         -            473 38651at7147          -            320   8.9e-07   28.0   1.1   1   2       3.2     2e+03   -2.7   0.1   156   191    29    65    18    80 0.69 -
+Dbuz03644-RA         -            473 38651at7147          -            320   8.9e-07   28.0   1.1   2   2   1.5e-09   8.9e-07   28.0   1.1   289   319   422   452   407   453 0.89 -
+Dbuz11711-RA         -            715 38651at7147          -            320   1.5e-05   24.0   3.4   1   1   4.4e-08   2.7e-05   23.2   3.4   286   318   661   693   640   695 0.86 -
+Dbuz09525-RA         -           1323 38651at7147          -            320   4.5e-05   22.4   0.2   1   1   1.3e-07   8.1e-05   21.6   0.2   241   270  1164  1193  1157  1204 0.88 -
+Dbuz05220-RA         -            585 38651at7147          -            320   0.00011   21.2   0.0   1   2     4e-07   0.00024   20.0   0.0     5    88    48   145    45   181 0.76 -
+Dbuz05220-RA         -            585 38651at7147          -            320   0.00011   21.2   0.0   2   2       8.3     5e+03   -4.0   0.0    21    39   554   572   551   578 0.82 -
+Dbuz12522-RA         -            773 38651at7147          -            320   0.00032   19.6   2.2   1   1   9.6e-07   0.00059   18.7   2.2   280   319   297   337   287   338 0.81 -
+Dbuz11961-RA         -            653 38651at7147          -            320   0.00079   18.3   2.2   1   1     2e-06    0.0012   17.7   2.2   277   320   598   643   577   643 0.69 -
+Dbuz02105-RA         -            745 38651at7147          -            320    0.0019   17.1   1.3   1   2       1.5   8.9e+02   -1.6   0.2    50    97     9    56     6    72 0.56 -
+Dbuz02105-RA         -            745 38651at7147          -            320    0.0019   17.1   1.3   2   2   3.1e-06    0.0019   17.1   1.3   283   319   681   718   661   719 0.80 -
+Dbuz04325-RA         -            338 38651at7147          -            320     0.002   17.0   2.8   1   1   6.5e-06    0.0039   16.0   2.8   268   320   265   317   247   317 0.79 -
+Dbuz11057-RA         -            199 38651at7147          -            320     0.011   14.6   0.0   1   1   2.3e-05     0.014   14.2   0.0   132   184   133   185   119   197 0.88 -
+Dbuz09374-RA         -           1262 38651at7147          -            320     0.015   14.1   1.4   1   1   6.4e-05     0.039   12.8   1.4   279   318   204   243   184   245 0.88 -
+Dbuz02234-RA         -           1428 38651at7147          -            320     0.071   11.9   0.0   1   1   0.00021      0.13   11.0   0.0    24    82   114   174   109   182 0.81 -
+Dbuz12238-RA         -            296 38651at7147          -            320     0.096   11.5   0.2   1   1    0.0002      0.12   11.1   0.2   285   313   135   164   116   170 0.74 -
+Dbuz03225-RA         -           1329 38651at7147          -            320      0.11   11.2   2.1   1   2       6.9   4.2e+03   -3.8   0.0   116   144   304   332   301   341 0.86 -
+Dbuz03225-RA         -           1329 38651at7147          -            320      0.11   11.2   2.1   2   2   0.00043      0.26   10.0   1.9   288   318  1260  1289  1233  1291 0.85 -
+Dbuz12088-RA         -           1071 38651at7147          -            320      0.39    9.5   9.8   1   2    0.0081       4.9    5.8   2.5   292   319   939   966   930   967 0.88 -
+Dbuz12088-RA         -           1071 38651at7147          -            320      0.39    9.5   9.8   2   2    0.0031       1.9    7.2   0.8   286   319  1021  1052  1010  1053 0.82 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/38651at7147.hmm
+# Target file:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta
+# Option settings: /home/nmoreyra/Software/miniconda3/envs/busco4/bin/hmmsearch --domtblout /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/Dbuz_diptera/run_diptera_odb10/hmmer_output/initial_run_results/38651at7147.out --cpu 1 /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/busco_downloads/lineages/diptera_odb10/hmms/38651at7147.hmm /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10/../00_proteins/Dbuz_proteins.fasta 
+# Current dir:     /home/nmoreyra/Documents/Genomics/03_orthologs_search/00_Phylogenomics_BUSCO-groups/busco4_odb10
+# Date:            Mon Jan 25 13:19:58 2021
+# [ok]
