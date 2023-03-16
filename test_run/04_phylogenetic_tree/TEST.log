@@ -1,0 +1,173 @@
+IQ-TREE multicore version 2.0.3 for Linux 64-bit built Dec 20 2020
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    aldebaran (AVX2, FMA3, 15 GB RAM)
+Command: iqtree -s /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_run/03_matrix/phylomatrix.phylip -p /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_run/03_matrix/busco_coords.partitions.tsv -m MFP --seqtype AA --prefix TEST -B 1000 -T 6
+Seed:    252114 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Aug 25 21:36:44 2022
+Kernel:  AVX+FMA - 6 threads (8 CPU cores detected)
+
+Reading partition model file /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_run/03_matrix/busco_coords.partitions.tsv ...
+Reading alignment file /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_run/03_matrix/phylomatrix.phylip ... Phylip format detected
+Alignment most likely contains protein sequences
+Alignment has 12 sequences with 7387 columns, 3168 distinct patterns
+1311 parsimony-informative, 1560 singleton sites, 4516 constant sites
+                       Gap/Ambiguity  Composition  p-value
+   1  Cactoblastis_cactorum   11.59%    passed     99.88%
+   2  Amyelois_transitella    21.23%    passed     73.16%
+   3  Acrobasis_suavella      23.09%    passed     48.74%
+   4  Hypsopygia_costalis     22.69%    passed     53.58%
+   5  Cactoblastis_bucyrus    13.84%    passed     95.27%
+   6  Cactoblastis_spp        11.38%    passed     99.94%
+   7  Plodia_interpunctella   13.63%    passed     74.52%
+   8  Galleria_mellonella     32.91%    passed     41.26%
+   9  Ephestia_elutella       22.04%    passed     70.84%
+  10  Ephestia_kuehniella     33.99%    failed      0.02%
+  11  Endotricha_flammealis   11.75%    passed     88.20%
+  12  Cactoblastis_doddi      12.43%    passed     97.05%
+****  TOTAL                   19.21%  1 sequences failed composition chi2 test (p-value<5%; df=19)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 7 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	AA	12	530	65	387	MFP	4878at7088
+2	AA	12	237	28	183	MFP	13793at7088
+3	AA	12	881	127	556	MFP	6464at7088
+4	AA	12	898	137	624	MFP	1922at7088
+5	AA	12	429	112	216	MFP	6503at7088
+6	AA	12	931	190	583	MFP	3279at7088
+7	AA	12	3481	652	1967	MFP	817at7088
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.004 seconds
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Initial log-likelihood: -51381.025
+Current log-likelihood at step 1: -50808.399
+Current log-likelihood at step 2: -50799.661
+Current log-likelihood at step 3: -50799.477
+Parameters optimization took 2 rounds (1.380 sec)
+
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+Initial log-likelihood: -50799.477
+Current log-likelihood at step 1: -50799.318
+Partition-specific rates:  0.462 0.511 1.103 0.543 1.098 0.723 1.269
+Parameters optimization took 0 rounds (0.290 sec)
+
+Time for fast ML tree search: 2.025 seconds
+
+NOTE: ModelFinder requires 79 MB RAM!
+Selecting individual models for 7 charsets using BIC...
+ No. Model        Score       TreeLen     Charset
+   1 JTT+G4       7341.914    1.265       6503at7088
+   2 LG+G4        2491.547    0.598       13793at7088
+   3 JTT+G4       6084.376    0.539       4878at7088
+   4 JTT+G4       10795.558   0.597       1922at7088
+   5 JTT+F+G4     12217.954   0.839       3279at7088
+   6 JTT+F+R2     11281.008   1.245       6464at7088
+   7 JTT+F+G4     50362.290   1.543       817at7088
+Full partition model BIC score: 100880.929 (LnL: -50030.720  df:92)
+Partition information was printed to TEST.best_scheme.nex
+Partition information in Raxml format was printed to TEST.best_scheme
+
+All model information printed to TEST.model.gz
+CPU time for ModelFinder: 782.367 seconds (0h:13m:2s)
+Wall-clock time for ModelFinder: 508.192 seconds (0h:8m:28s)
+Generating 1000 samples for ultrafast bootstrap (seed: 252114)...
+
+NOTE: 39 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -50030.720
+Current log-likelihood at step 1: -50030.471
+Current log-likelihood at step 2: -50030.465
+Partition-specific rates:  0.455 0.505 1.049 0.504 1.070 0.709 1.301
+Parameters optimization took 1 rounds (0.602 sec)
+
+Computing ML distances based on estimated model parameters... 0.165 sec
+Computing BIONJ tree...
+0.000 seconds
+Log-likelihood of BIONJ tree: -50094.281
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.630 second
+Computing log-likelihood of 95 initial trees ... 7.519 seconds
+Current best score: -50030.465
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -50030.465
+Current log-likelihood at step 1: -50030.463
+Parameters optimization took 0 rounds (0.268 sec)
+
+BETTER TREE FOUND at iteration 1: -50030.463
+Iteration 10 / LogL: -50030.472 / Time: 0h:0m:16s
+Iteration 20 / LogL: -50030.464 / Time: 0h:0m:25s
+Finish initializing candidate tree set (1)
+Current best tree score: -50030.463 / CPU time: 24.074
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -50030.481 / Time: 0h:0m:35s (0h:1m:27s left)
+Iteration 40 / LogL: -50030.472 / Time: 0h:0m:46s (0h:1m:13s left)
+UPDATE BEST LOG-LIKELIHOOD: -50030.463
+Iteration 50 / LogL: -50030.469 / Time: 0h:0m:57s (0h:0m:59s left)
+Log-likelihood cutoff on original alignment: -50094.297
+Iteration 60 / LogL: -50030.561 / Time: 0h:1m:6s (0h:0m:46s left)
+Iteration 70 / LogL: -50030.607 / Time: 0h:1m:16s (0h:0m:34s left)
+UPDATE BEST LOG-LIKELIHOOD: -50030.463
+Iteration 80 / LogL: -50030.464 / Time: 0h:1m:26s (0h:0m:22s left)
+Iteration 90 / LogL: -50030.475 / Time: 0h:1m:36s (0h:0m:11s left)
+Iteration 100 / LogL: -50030.472 / Time: 0h:1m:48s (0h:0m:1s left)
+Log-likelihood cutoff on original alignment: -50094.357
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 1.000
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:1m:50s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -50030.463
+Current log-likelihood at step 1: -50030.462
+Partition-specific rates:  0.455 0.505 1.049 0.504 1.069 0.708 1.302
+Parameters optimization took 0 rounds (0.260 sec)
+
+Partition information was printed to TEST.best_model.nex
+BEST SCORE FOUND : -50030.462
+Creating bootstrap support values...
+Split supports printed to NEXUS file TEST.splits.nex
+Total tree length: 1.183
+
+Total number of iterations: 102
+CPU time used for tree search: 651.926 sec (0h:10m:51s)
+Wall-clock time used for tree search: 109.331 sec (0h:1m:49s)
+Total CPU time used: 658.012 sec (0h:10m:58s)
+Total wall-clock time used: 110.810 sec (0h:1m:50s)
+
+Computing bootstrap consensus tree...
+Reading input file TEST.splits.nex...
+12 taxa and 22 splits.
+Consensus tree written to TEST.contree
+Reading input trees file TEST.contree
+Log-likelihood of consensus tree: -50030.462
+
+Analysis results written to: 
+  IQ-TREE report:                TEST.iqtree
+  Maximum-likelihood tree:       TEST.treefile
+  Likelihood distances:          TEST.mldist
+  Best partitioning scheme:      TEST.best_scheme.nex
+           in RAxML format:      TEST.best_scheme
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          TEST.splits.nex
+  Consensus tree:                TEST.contree
+  Screen log file:               TEST.log
+
+Date and Time: Thu Aug 25 21:47:03 2022

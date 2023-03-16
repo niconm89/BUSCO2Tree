@@ -1,8 +1,10 @@
 # BUSCO2Tree User Guide
 
-**Author of BUSCO2Tree**
+**This GIT README is in being created!!!!**
 
+**Author of BUSCO2Tree**
 [Nicolás Nahuel Moreyra](https://github.com/niconm89/Curriculum_Vitae)
+
 * Instituto de Ecología, Genética y Evolución de Buenos Aires (IEGEBA), CONICET, Argentina
 * Departamento de Ecología, Genética y Evolución (EGE), Facultad de Ciencias Exactas y Naturales (FCEN), Universidad de Buenos Aires (UBA), Argentina
 + E-mail: niconm89@gmail.com |  nmoreyra@ege.fcen.uba.ar
@@ -11,8 +13,8 @@
 ---
 **About BUSCO2Tree**
 
-This pipeline was developed to automatize the downstream phylogenomic analyses to obtain a species tree after running BUSCO. 
-We provide data example to test funcionallity. Data was obtained from a study we have recently published [1]. Briefly, thirteen Drosophila genomes were assessed using BUSCO v5.4.2 to obtain completeness scores and Eukaryote single-copy orthologs (BUSCO groups). Common BUSCOs among all genomes were the input of this pipeline.
+This pipeline was developed to automatize the downstream phylogenomic analyses to obtain a species tree after running BUSCO over several genomes/proteomes/transcriptomes.
+We provide one data example to test funcionallity. Data was obtained from a study we have recently published [1]. Briefly, thirteen Drosophila genomes were assessed using BUSCO v5.4.2 to obtain completeness scores and dipteran single-copy orthologs. Common BUSCOs among all genomes were the input of this pipeline.
 
 ---
 
@@ -25,9 +27,7 @@ Contents
 -   [Installation](#installation)
     -   [Supported software versions](#supported-software-versions)
     -   [BUSCO2tree](#BUSCO2tree)
-        -   [Perl pipeline dependencies](#perl-pipeline-dependencies)
-        -   [BRAKER components](#braker-components)
-        -   [Bioinformatics software dependencies](#bioinformatics-software-dependencies)
+        -   [Dependencies](#dependencies)
             -   [Mandatory tools](#mandatory-tools)
             -   [Optional tools](#optional-tools)
 -   [Running BUSCO2tree](#running-BUSCO2tree)

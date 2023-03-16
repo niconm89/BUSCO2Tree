@@ -10,14 +10,14 @@ Created on Mon Aug  1 14:13:22 2022
 import argparse
 import os
 from time import time
-import find_singlecopy_BUSCOs as step1
-import align_BUSCOs as step2
-import create_matrix as step3
-import phylogenetic_analysis as step4
-#from scripts import find_singlecopy_BUSCOs as step1
-#from scripts import align_BUSCOs as step2
-#from scripts import create_matrix as step3
-#from scripts import phylogenetic_analysis as step4
+#import find_singlecopy_BUSCOs as step1
+#import align_BUSCOs as step2
+#import create_matrix as step3
+#import phylogenetic_analysis as step4
+from scripts import find_singlecopy_BUSCOs as step1
+from scripts import align_BUSCOs as step2
+from scripts import create_matrix as step3
+from scripts import phylogenetic_analysis as step4
 
 #%% Functions definition
 def validate_steps(STEPS):
@@ -151,7 +151,4 @@ if __name__ == '__main__':
     print("BUSCO2Tree has finished.")
     print(f'Time taken to run: {time() - start} seconds.')
 #%% End
-
-
-
 

@@ -1,0 +1,1 @@
+mafft --thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000
