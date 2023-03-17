@@ -1,6 +1,6 @@
 # BUSCO2Tree User Guide
 
-**This GIT README is in being created!!!!**
+**This GIT README is being created!!!!**
 
 **Author of BUSCO2Tree**
 [Nicolás Nahuel Moreyra](https://github.com/niconm89/Curriculum_Vitae)
