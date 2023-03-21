@@ -1,4 +1,4 @@
-#!/home/nmoreyra/Software/miniconda3/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 9 11:03:02 2022
@@ -9,18 +9,16 @@ Created on Mon Jul 9 11:03:02 2022
 import os
 import argparse
 from time import time
-
 #%% Functions definition
 def check_paths(BUSCODIR, OUTDIR):
     'Check paths of BUSCO and output directories.'
     if not os.path.isdir(BUSCODIR):
         raise ValueError("Error: BUSCO output directory %s does not exist. Check your paths! " % BUSCODIR)
-
     if '/' in OUTDIR:
         elements_path = OUTDIR.split('/')
         parentdir = '/'.join(elements_path[:-1])
         if not os.path.isdir(parentdir):
-            raise ValueError("Output directory %s can not be found or created in the path you have passed. Parent directory does not exist! " % parentdir)
+            raise ValueError("Error: Output directory %s can not be found or created in the path. Parent directory does not exist! " % parentdir)
 #end
 def find_singlecopy(BUSCODIR, OUTDIR, ODB, LINEAGE):
 	'Find common BUSCO groups among several genomes (BUSCO output directories) and creates a multi FASTA file per BUSCO group.'

@@ -6,34 +6,30 @@ Created on Mon Aug  1 14:13:22 2022
 @author: Nicolás Nahuel Moreyra (niconm89@gmail.com)
 """
 #%% Imports
-#import os
 import argparse
 import os
 from time import time
-#import find_singlecopy_BUSCOs as step1
-#import align_BUSCOs as step2
-#import create_matrix as step3
-#import phylogenetic_analysis as step4
 from scripts import find_singlecopy_BUSCOs as step1
 from scripts import align_BUSCOs as step2
 from scripts import create_matrix as step3
 from scripts import phylogenetic_analysis as step4
 
-#%% Functions definition
+#%% Function definition
 def validate_steps(STEPS):
     for n in STEPS:
         if n > 4 or n < 1:
             raise ValueError("You must enter step numbers between 1 and 4...")
     if not checkConsecutive(STEPS):
         raise ValueError("You must enter consecutive step numbers (e.g. '1 2 3 4', '1 2', '1 2 3', '2 3 4', '3 4')")
-#end
+#end validate_steps
 def validate_params(ARGUMENTS):
+	'It receives the object of arguments and validates mandatory arguments to run the pipeline.'
 	mandatory_args = {}
 	if 1 in ARGUMENTS.steps:
-		if not BUSCODIR:
+		if not ARGUMENTS.buscodir:
 			raise RuntimeError("The buscodir parameter was not introduced.")
 	if 2 in ARGUMENTS.steps:
-		if not arguments.fastadir:
+		if not ARGUMENTS.fastadir:
 			raise RuntimeError("The fastadir parameter was not introduced.")
 	if 3 in ARGUMENTS.steps:
 		if not ARGUMENTS.aligndir:
@@ -41,41 +37,39 @@ def validate_params(ARGUMENTS):
 	if 4 in ARGUMENTS.steps:
 		if not ARGUMENTS.matrix and not ARGUMENTS.partitions:
 			raise RuntimeError("You must introduce the matrix and partitions files when selecting step 4.")
-			
-#end
+#end validate_params
 def checkConsecutive(l):
+    'It receives a list of steps selected to run and return TRUE or FALSE whether the steps are consecutive or not. On the last case, the program will exit.'
     return sorted(l) == list(range(min(l), max(l)+1))
 #end
 def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND, TRIM, TRIMPARAMS, ALIGNDIR, FORMAT, MATRIX, PARTITIONS, SEQTYPE, PREFIX, BOOTSTRAP, THREADS):
-	#BUSCO2Tree(args.steps, args.inputdir, args.outdir, args.odb, args.lineage, 
-	#args.aligndir, args.config, args.command, args.trim, args.trimparams, 
-	#args.aligndir, args.outformat)
-	#args.matrix, args.partitions, args.outdir, args.seqtype, args.prefix, args.bootstrap, args.threads)
+	'''
+	Main function that receives several arguments and run this pipeline.
+	BUSCO2Tree(args.steps, args.inputdir, args.outdir, args.odb, args.lineage, 
+	args.aligndir, args.config, args.command, args.trim, args.trimparams, 
+	args.aligndir, args.outformat)
+	Additional arguments: args.matrix, args.partitions, args.outdir, args.seqtype, args.prefix, args.bootstrap, args.threads
+	'''
 	try:
 		if not os.path.isdir(OUTDIR):
 			os.mkdir(OUTDIR)
 	except:
 		raise RuntimeError("Output directory can not be created. Check your path!")
-	step1_dir = ""
-	step2_dir = ""
-	step3_dir = ""
-	step4_dir = ""
+	step1_dir, step2_dir, step3_dir, step4_dir = ["","","",""]
 	for step in STEPS:
+		#01_single-copy 02_alignments 02_Matrix 03_Tree
 		if step == 1: #Finding single-copy BUSCOs...
-			print("Finding single-copy BUSCOs...")
-			#01_single-copy 02_alignments 02_Matrix 03_Tree
+			print("Looking for single-copy BUSCOs...")
 			step1_dir = os.path.join(OUTDIR, "01_single-copy")
 			os.mkdir(step1_dir) #creating output dir OUTDIR/01_single-copy
             #first we find common single-copy BUSCOs among genomes
 			genomes_names, common_busco_ids = step1.find_singlecopy(BUSCODIR, step1_dir, ODB, LINEAGE)
 			#now we create multifasta files with common single-copy BUSCOs
 			step1.create_busco_fasta(BUSCODIR, step1_dir, ODB, LINEAGE, genomes_names, common_busco_ids, common_busco_dir="common_busco_sequences")
-		#print("")
 		if step == 2: #Aligning BUSCOs multifasta files...
 			print("Aligning common single-copy BUSCOs...")
 			step2_dir = os.path.join(OUTDIR, "02_alignments")
 			os.mkdir(step2_dir) #creating output dir OUTDIR/02_alignments
-			
 			if COMMAND:
 				print("MAFFT will be excecuted using a command introduced by the user.")
 				step2.align_command_mafft(FASTADIR, step2_dir, COMMAND)
@@ -84,7 +78,7 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 				step2.align_config_mafft(FASTADIR, step2_dir, CONFIG)
 			print("Alignments completed...")
 			if TRIM: #trimming alingments
-				print("Trimming alignments...")
+				print("Trimming alignments to remove poorly aligned regions...")
 				step2.trim_alns(step2_dir, TRIMPARAMS)
 		if step == 3:
 			print("Generating the phylogenetic matrix.")
@@ -98,12 +92,10 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 			step4.model_partitions(args.matrix, args.partitions, step4_dir, args.seqtype, args.prefix, args.bootstrap, args.threads)
 			#step4.run_IQTree_manual(args.matrix, args.partitions, args.outdir, args.command)
 #end
-
-
-#%% Menu -> is executed when the script is called independently
+#%% Menu -> is executed when this script is called as main program
 def usage():
 	parser = argparse.ArgumentParser(
-		description='''BUSCO2Tree.py helps the processing of BUSCO outputs to create a phylogenetic tree.''',
+		description='''BUSCO2Tree.py helps to process the BUSCO outputs over several genomes/proteomes/transcriptomes to create a species tree.''',
 		epilog="""End of the help""")
 	#general arguments
 	parser.add_argument('-s', '--steps', nargs='+', type=int, required=True, help='Number of the steps to run. Only consecutive steps are possible to select. Options are: 1: find common single copy BUSCOs; 2: align common single copy BUSCOs; 3: create phylogenetic matrix by concatenating BUSCO alignmets; 4: Generate the phylogenetic tree.')
@@ -134,21 +126,14 @@ def usage():
 #%% Main program
 if __name__ == '__main__':
     start = time() #time 0
-    args = usage()	
-    #print(args)
-    #first we validate that steps introduced are ok...
-    print("Validating steps selected...")
+    args = usage()
+    print("Validating steps selected...") #first we validate that steps introduced are ok
     validate_steps(args.steps)
-	print("Validating parameters...")
+    print("Validating parameters...") #now we validate parameters
     validate_params(args)
-    #now we see which steps we have to do...
-    print("\t\tSteps " + str(args.steps) + " selected.")
-    #validating parameters
-    print("Validating parameters...")
-    #DO SOMETHING TO VALIDATE PARAMETERS
-    print("Running BUSCO2Tree...")
+    print("\t\tSteps " + str(args.steps) + " selected.") #now we see which steps were requested
+    print("Running BUSCO2Tree pipeline...")
     BUSCO2Tree(args.steps, args.buscodir, args.outdir, args.odb, args.lineage, args.fastadir, args.config, args.command, args.trim, args.trimparams, args.aligndir, args.format, args.matrix, args.partitions, args.seqtype, args.prefix, args.bootstrap, args.threads)
     print("BUSCO2Tree has finished.")
     print(f'Time taken to run: {time() - start} seconds.')
 #%% End
-
