@@ -57,6 +57,7 @@ def find_singlecopy(BUSCODIR, OUTDIR, ODB, LINEAGE):
 				common_busco_ids.append(busco[:-4])
 	namesfile = os.path.join(OUTDIR,"genomes_names.txt") #name of outputfile
 	with open(namesfile,'wt') as NAMES:#we save the name of the genomes
+		genomes_names = sorted(genomes_names)
 		for name in genomes_names:
 			NAMES.write(name + "\n") 
 	return genomes_names, common_busco_ids
@@ -84,7 +85,7 @@ def usage():
 		description='''find_singlecopy.py recover common ID sequences from several BUSCO output directories and creates a multi FASTA file of each common BUSCO group.''',
 		epilog="""End of the help""")
 	parser.add_argument('-b', '--buscodir', type=str, required=True, help='Path to the BUSCO output directory. Whithin this directory must be placed the directories of each genome (BUSCO output). The names of the directories will be used as genome names.')
-	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to the directory to save output files. If it does not exists, it will be created.')
+	parser.add_argument('-o', '--outdir', type=str, required=False, default='01_single-copy' , help='Path to the directory to save output files. If it does not exists, it will be created. Default: 01_single-copy')
 	parser.add_argument('-d', '--odb', type=int, required=False, default=10, help='OrthoDB version. This parameter is only use to complete the path of the single copy sequences directory. Please note that the BUSCO2tree pipeline was developed to process the results of BUSCO v5, so some path and name of directories within BUSCO output may change in past and future versions.')
 	parser.add_argument('-l', '--lineage', type=str, required=False, default='eukaryota', help='OrthoDB lineage. This parameter is only use to complete the path of the single copy sequences directory.Please note that the BUSCO2tree pipeline was developed to process the results of BUSCO v5, so some path and name of directories within BUSCO output may change in past and future versions.')
 	return parser.parse_args()
@@ -93,9 +94,9 @@ def usage():
 if __name__ == '__main__':
 	args = usage()
 	start = time() #time 0
-	print("Step 1: Finding single-copy BUSCOs...")
+	print("Step 1.1: Looking for single-copy BUSCO groups in the lineage %s obtained from the ODB v%d database..." % (args.lineage,args.odb))
 	genomes_names, common_busco_ids = find_singlecopy(args.buscodir, args.outdir, args.odb, args.lineage)
-	print("Step 2: Creating single-copy BUSCO multifasta files...")
+	print("Step 1.2: Creating single-copy BUSCO multifasta files...")
 	create_busco_fasta(args.buscodir, args.outdir, args.odb, args.lineage, genomes_names, common_busco_ids)
 	print("The search for common BUSCO groups has been completed.")
 	print(f'Time taken to run: {time() - start} seconds.') #time out

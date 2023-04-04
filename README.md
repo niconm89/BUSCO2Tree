@@ -24,8 +24,8 @@ We provide one data example to test funcionallity. Data was obtained from a stud
 Contents
 ========
 
--   [Authors](#Author)
--   [What is BUSCO2tree?](#About-BUSCO2tree)
+-   [Authors](#author)
+-   [What is BUSCO2tree?](#about)
 -   [Installation](#installation)
     -   [Dependencies](#dependencies)
             -   [Mandatory tools](#mandatory-tools)
@@ -47,8 +47,7 @@ Contents
 Installation
 ========
 
-## Dependencies
-The long way around is to manually install all dependencies of GALBA.
+# Dependencies
 
 Supported software versions
 ---------------------------
@@ -61,10 +60,9 @@ At the time of release, this pipeline was tested with:
 
 -   Mafft v7.520
 
--   TrimAl v1.4.1
+-   [trimAl v1.4.1](http://trimal.cgenomics.org/downloads)
 
--   IQTree v2.2.0.3
-
+-   [IQTree v2.2.0.3](http://www.iqtree.org/)
 
 -------
 Bioinformatics software dependencies
@@ -72,33 +70,28 @@ Bioinformatics software dependencies
 
 BUSCO2Tree calls upon various bioinformatics software tools and uses python modules that are not part of this pipeline. Some tools are mandatory while others are optional. Please install all tools that are required for running BUSCO2Tree in the mode of your choice.
 
-### Mandatory tools and Python modules
+## Mandatory tools and Python modules
 Running BUSCO2Tree requires a Linux-system with `bash`, Python, several python modules, TrimAl and IQTree.
 
-#### Python3
+### Python3
 
-On Ubuntu, Python3 is usually installed by default, `python3` will be in your `$PATH` variable, by default, and GALBA will automatically locate it. However, you have the option to specify the `python3` binary location in two other ways:
+On Ubuntu, Python3 is usually installed by default, and `python3` will be in your `$PATH` variable, by default, and BUSCO2Tree will automatically locate it. In case your system is not configured in this way, you must call the pipeline's main script BUSCO2Tree.py using a command like:
 
-1.  Export an environment variable `$PYTHON3_PATH`, e.g. in your `~/.bashrc` file:
+`/path/to/python3 BUSCO2Tree.py -h`
 
-        export PYTHON3_PATH=/path/to/python3/
+Note: In the command example shown above the BUSCO2Tree scripts are assummed to be in the $PATH variable, and otherwise you must call them using their path.
 
-2.  Specify the command line option `--PYTHON3_PATH=/path/to/python3/` to `galba.pl`.
+### Python modules
 
-#### Python modules
-
-BUSCO2Tree requires the following Python modules to be installed:
+BUSCO2Tree requires the following Python modules to be installed (except to Biopython, the remiaining modules are commonly installed by default with Python):
 
 -   argparse
 -   os
 -   time
--   Biopython
 -   subprocess
+-   Biopython
 
-#### Biopython
-If Biopython is installed, GALBA can generate FASTA-files with coding sequences and protein sequences predicted by AUGUSTUS and generate track data hubs for visualization of a GALBA run with MakeHub <sup name="a8">[R8](#f8)</sup>.
-These are optional steps. The first can be disabled with the command-line flag `--skipGetAnnoFromFasta`, the second can be activated by using the command-line options `--makehub --email=your@mail.de`, Biopython is not required if neither of these optional steps shall be performed.
-
+### Biopython
 On Ubuntu, install Python3 package manager with:
 
     `sudo apt-get install python3-pip`
@@ -107,35 +100,37 @@ Then, install Biopython with:
 
     `sudo pip3 install biopython`
 
-#### TrimAl
+In case you do not have root permitions, you can follow the steps shown in [Installing dependencies with Anaconda](#installing-dependencies-with-anaconda).
 
-#### IQTree
+### trimAl
+trimAl automatically removes spurious sequences or poorly aligned regions from a multiple sequence alignment.
+Download trimAl from [http://trimal.cgenomics.org/downloads](http://trimal.cgenomics.org/downloads) or install it using [Anaconda](#installing-dependencies-with-anaconda).
 
-Download AUGUSTUS from its master branch at <https://github.com/Gaius-Augustus/Augustus>. Unpack AUGUSTUS and install AUGUSTUS according to AUGUSTUS `README.TXT`. ***Do not use outdated AUGUSTUS versions from other sources, e.g. Debian package or the Bioconda package! GALBA highly depends in particular on an up-to-date Augustus/scripts directory, and other sources are often lagging behind.***
+### IQTree
+
+Download IQTree from [http://www.iqtree.org/#download](http://www.iqtree.org/#download) or install it using [Anaconda](#installing-dependencies-with-anaconda).
 
 You should compile AUGUSTUS on your own system in order to avoid problems with versions of libraries used by AUGUSTUS. Compilation instructions are provided in the AUGUSTUS `README.TXT` file (`Augustus/README.txt`).
 
 In order to make the variable available to all Bash sessions, add the above line to a startup script, e.g., `~/.bashrc`.
 
-##### Important:
+##### **Important: modification of the $PATH variable**
 
-##### Modification of $PATH
+Adding directories containing binaries and scripts to your `$PATH` variable enables your system to automatically locate these tools. It is a requirement for running BUSCO2Tree to do this, because BUSCO2Tree will try to find them from the location of the `$PATH` variable. To do this:
 
-Adding directories of binaries and scripts to your `$PATH` variable enables your system to locate these tools,
-automatically. It is a requirement for running BUSCO2Tree to do this, because BUSCO2Tree will try to find them from the location of the `$PATH` variable we recommend to add them to your `$PATH` variable. 
-
-a) For your current bash session, type:
+a) For your current `bash` session (you will have to repeat these steps after you close your terminal or finish the current bash sessions), type:
 
 ```
 PATH="/home/nmoreyra/Soft/miniconda3/bin:/home/nmoreyra/Soft/bin:$PATH"
 export PATH
 ```
 
-b) For all your BASH sessions, add the above lines to a startup script (e.g.`~/.bashrc`).
+b) For all your BASH sessions, add the above lines to a linux startup script (e.g.`~/.bashrc`). 
 
 ### Optional tools
 
 #### Mafft
+
 
 -------
 Installing dependencies with Anaconda

@@ -157,10 +157,8 @@ def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
     for busco in os.listdir(FASTADIR):
         infile = os.path.join(FASTADIR, busco)
         outfile = os.path.join(OUTDIR, busco.split(".")[0] + ".aln.fa")
-        cmd_mafft = base_cmd_mafft + " " + infile + " > " + outfile
-        #print(cmd_mafft)
-        #subprocess.call([cmd_mafft], shell=True)
-        run_mafft = subprocess.call([cmd_mafft], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
+        cmd_mafft = "mafft " + base_cmd_mafft + " " + infile + " > " + outfile
+        subprocess.call([cmd_mafft], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 #end
 def trim_alns(MAFFTDIR, TRIMPARAMS=False):
     'Receive parameters to run TrimAl, avoiding input and output files.'
@@ -175,6 +173,7 @@ def trim_alns(MAFFTDIR, TRIMPARAMS=False):
         cmd_trimal = "trimal -in " + infile + " -out " + outfile + " "
         if TRIMPARAMS:
             cmd_trimal += TRIMPARAMS
+        print(cmd_trimal)
         subprocess.call([cmd_trimal], shell=True)
 #end
 #%% Menu -> is executed when the script is called independently
@@ -183,11 +182,11 @@ def usage():
 		description='''02_align_BUSCOs.py takes multi FASTA files with common BUSCO groups (orthologs), generate the alignment of each one usign MAFFT and concatenate all alignments into a matrix.''',
 		epilog="""End of the help""")
 	parser.add_argument('-f', '--fastadir', type=str, required=True, help='Path to the directory containing BUSCO multi FASTA files with the ortholog sequences of all genomes, e.g. "common_busco_seqs" directory that is created as part by the find_singlecopy.py script.')
-	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to save results (aligments, phylogenetic matrix and partition files). If the output directory does not exists, it will be created.')
+	parser.add_argument('-o', '--outdir', type=str, required=False, default='02_alignments', help='Path to save results (aligments, phylogenetic matrix and partition files). If the output directory does not exists, it will be created. Default: 02_alignments')
 	parser.add_argument('-c', '--config', metavar='<config file>', type=str, required=False, help='Configuration file for the alignment. Users can find a template of this file in the example_data directory. If no file is provided, the alignments will be done using default parameters.')
-	parser.add_argument('-m', '--command', metavar='<command>', type=str, required=False, help='MAFFT command (between quote marks) to apply to the alingment. The names of input and output files must be avoided, e.g. "mafft --thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
+	parser.add_argument('-m', '--command', metavar='<command>', type=str, required=False, help='MAFFT parameters to apply to each alingment. The parmeters must be define in a command line style, between quote marks, and the avoiding the names of in/output files, e.g. "--thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
 	parser.add_argument('-t', '--trim', action='store_true', required=False, help='Trim poorlig regions of alignments using TrimAl. TrimAl will be run in automated mode and must be available in the system $PATH variable.')
-	parser.add_argument('-p', '--trimparams', required=False, help='Parameters to use in TrimAl. User must ONLY pass parameters that want to apply in TrimAl in quotes marks, and avoid file or the name of the program (e.g. "-gt 0.3 -nogaps -phylip").')
+	parser.add_argument('-p', '--trimparams', type=str, required=False, help='Parameters to use in TrimAl. User must ONLY pass parameters that want to apply in TrimAl in quotes marks, and avoid file or the name of the program (e.g. "-gt 0.3 -nogaps -phylip").')
 	return parser.parse_args()
 #end
 #%% Main program
@@ -196,14 +195,19 @@ if __name__ == '__main__':
 	start = time() #time 0
 	print("Starting Mafft alignments...")
 	if args.command:
-		print("MAFFT will be excecuted using a command introduced by the user.")
+		print("MAFFT will be excecuted using a user-defined command.")
 		align_command_mafft(args.fastadir, args.outdir, args.command)
 	else:
 		align_config_mafft(args.fastadir, args.outdir, args.config)
 	print("Alignments completed.")
 	if args.trim: #trimming alingments
-		print("Trimming alignments...")
+		print("Trimming alignments to remove poorly aligned regions......")
 		trim_alns(args.outdir, args.trimparams)
 		print("Poorly aligned regiones have been removed.")
+	else:
+		if args.trimparams:
+			print("Trimming alignments to remove poorly aligned regions......")
+			trim_alns(args.outdir, args.trimparams)
+			print("Poorly aligned regiones have been removed.")
 	print(f'Time taken to run: {time() - start} seconds.')
 #end

@@ -28,6 +28,8 @@ def cat_alignments(ALIGNDIR, OUTDIR, FORMAT):
 	matrixlen = 0
 	for n, file in enumerate(aln_files): #reading alignments
 		infile = os.path.join(ALIGNDIR, file)
+		if os.path.isdir(infile):
+			continue
 		alignment = AlignIO.read(infile, "fasta")
 		for i, taxon in enumerate(alignment):
 			if i == 0:
@@ -56,11 +58,11 @@ def do_matrix(matrix, OUTDIR, out_format):
 	out_matrix_path = ''
 	#set output format for the matrix
 	if out_format == 'nexus':
-		out_matrix_path = os.path.join(OUTDIR, "phylomatrix.nexus")
+		out_matrix_path = os.path.join(OUTDIR, "matrix.nexus")
 		header = "#nexus\nbegin data;\n" + ' '*8 + "DIMENSIONS  NTAX=" + str(ntaxa) + " NCHAR=" + str(nchars) + ";\n" + ' '*8 + "FORMAT DATATYPE = DNA GAP = - MISSING = ?;\n" + ' '*8 + "MATRIX\n"
 		tail = ";\nend;\n"
 	elif out_format == 'phylip':
-		out_matrix_path = os.path.join(OUTDIR, "phylomatrix.phylip")
+		out_matrix_path = os.path.join(OUTDIR, "matrix.phylip")
 		header = ' '*8 + str(ntaxa) + ' ' + str(nchars) + '\n'
 	else:
 		raise ValueError("The output format %s is not recognized. Available options are nexus or phylip." % out_format)
@@ -79,7 +81,7 @@ def usage():
 		description='''create_matrix.py creates a phylogenetic matrix by concatenating alignments and a loci coordinates file.''',
 		epilog="""End of the help""")
 	parser.add_argument('-a', '--aligndir', type=str, required=True, help='Path to the directory containing the alignment files in fasta format.')
-	parser.add_argument('-o', '--outdir', type=str, required=True, help='Path to save the phylogenetic matrix and the loci coordinate file. If it does not exists, it will be created.')
+	parser.add_argument('-o', '--outdir', type=str, required=False, default='03_matrix', help='Path to save the phylogenetic matrix and the loci coordinate file. If it does not exists, it will be created. Default: 03_matrix')
 	parser.add_argument('-f', '--outformat', type=str, required=False, choices=['nexus','phylip'], default='phylip', help='Format for the phylogenetic matrix.')
 	return parser.parse_args()
 #end
