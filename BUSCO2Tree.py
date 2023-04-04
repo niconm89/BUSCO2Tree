@@ -112,7 +112,7 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 						MATRIX = os.path.join(step3_dir, file)
 					else:
 						PARTITIONS = os.path.join(step3_dir, "busco_coords.partitions.tsv")
-			step4.model_partitions(MATRIX, PARTITIONS, OUTDIR, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
+			step4.model_partitions(MATRIX, PARTITIONS, step4_dir, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
 #end
 #%% Menu -> is executed when this script is called as main program
 def usage():
