@@ -173,7 +173,6 @@ def trim_alns(MAFFTDIR, TRIMPARAMS=False):
         cmd_trimal = "trimal -in " + infile + " -out " + outfile + " "
         if TRIMPARAMS:
             cmd_trimal += TRIMPARAMS
-        print(cmd_trimal)
         subprocess.call([cmd_trimal], shell=True)
 #end
 #%% Menu -> is executed when the script is called independently
