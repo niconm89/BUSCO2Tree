@@ -91,7 +91,7 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 					step2.trim_alns(step2_dir, TRIMPARAMS)
 					print("Poorly aligned regiones have been removed.")
 		if step == 3: #Generating the phylogenetic matrix
-			print("4. Generating the phylogenetic matrix.")
+			print("3. Generating the phylogenetic matrix.")
 			step3_dir = os.path.join(OUTDIR, "03_matrix")
 			os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
 			if 2 in STEPS and TRIM:
