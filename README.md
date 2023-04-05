@@ -166,8 +166,8 @@ It is important that the `x` in `-rwxr-xr-x` is present for each script when you
 You may find it helpful to add the directories in which `BUSCO2Tree.py` and supplementary python scripts reside to your `$PATH` environment variable. For a single bash session, enter:
 
 ```
-    PATH=/your_path_to_galba/:$PATH
-    export PATH
+PATH=/your_path_to_galba/:$PATH
+export PATH
 ```
 
 To make this `$PATH` modification available to all bash sessions, add the above lines to a startup script (e.g.`~/.bashrc`).
@@ -176,7 +176,7 @@ To make this `$PATH` modification available to all bash sessions, add the above 
 
 Example data
 ========
-The example data provide here was obtained from a study that was part of my PhD, in which I and my collegues search for genomic innovations that could be associated with cactophily and host plant specialization. The study is [Phylogenomics provides insights into the evolution of cactophily and host plant shifts in Drosophila](https://doi.org/10.1016/j.ympev.2022.107653). I employed the genomes of the thirteen species included in this study and run [BUSCO v5.4.6](https://busco.ezlab.org/) on each one in search of [BUSCO groups for the eukaryota lineage obtained from ODB v10](https://busco-data.ezlab.org/v5/data/lineages/eukaryota_odb10.2020-09-10.tar.gz).
+The example data provide here was obtained from a study that was part of my PhD, in which I and my collegues search for genomic innovations that could be associated with cactophily and host plant specialization. The study is [Phylogenomics provides insights into the evolution of cactophily and host plant shifts in *Drosophila*](https://doi.org/10.1016/j.ympev.2022.107653). I employed the genomes of the thirteen species included in this study and run [BUSCO v5.4.6](https://busco.ezlab.org/) on each one in search of [BUSCO groups for the eukaryota lineage obtained from ODB v10](https://busco-data.ezlab.org/v5/data/lineages/eukaryota_odb10.2020-09-10.tar.gz).
 
 To test BUSCO2Tree, please decompress the [BUSCO results zip file](/example/BUSCO_results.zip) in the [example](/example) directory.
 
