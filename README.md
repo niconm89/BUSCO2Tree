@@ -30,7 +30,7 @@ Contents
     -   [Dependencies](#dependencies)
         -   [Mandatory tools](#mandatory-tools-and-python-modules)
         -   [Optional tools](#optional-tools)
-    -   [BUSCO2tree](#BUSCO2tree)
+    -   [BUSCO2tree](#busco2tree-components)
 -   [Running BUSCO2tree](#running-BUSCO2tree)
     -   [BUSCO2tree pipeline modes](#different-BUSCO2tree-pipeline-modes)
     -   [Description of command line options](#description-of-command-line-options)
