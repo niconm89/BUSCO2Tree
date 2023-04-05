@@ -5,8 +5,8 @@
 ## and, then, continue using the following stages of this pipeline.
 
 ### Mafft bin location
-mafft_bin=/home/nmoreyra/Soft/miniconda3/envs/spyder/bin/mafft
-#mafft_bin=mafft
+#mafft_bin=/path/to/mafft
+mafft_bin=mafft
 ## leave as default if mafft is available in your PATH. Otherwise, enter the full path to the binary file.
 
 
@@ -14,8 +14,8 @@ mafft_bin=/home/nmoreyra/Soft/miniconda3/envs/spyder/bin/mafft
 ## You can choose among several methods recommended in the Mafft manual in which parameters can not be modified.
 ## By default, Mafft will run using the 'auto' mode with default parameters.
 #align_method=auto
-align_method=manual
-#align_method=AOM2
+#align_method=manual
+align_method=AOM2
 ## You can also manually set the alignment method and parameters by enter 'manual', 
 ## otherwise enter one of the methods detailed below or just leave 'auto' mode as default.
 

@@ -75,7 +75,7 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 			if 1 in STEPS: #se hace en cadena
 				FASTADIR = os.path.join(step1_dir, "common_busco_sequences")
 			if COMMAND:
-				print("MAFFT will be excecuted using a command introduced by the user.")
+				print("MAFFT will be excecuted using a user-defined command.")
 				step2.align_command_mafft(FASTADIR, step2_dir, COMMAND)
 			else:
 				print("MAFFT will be excecuted using a configuration file.")
@@ -133,7 +133,7 @@ def usage():
 	step2_arguments = parser.add_argument_group('Step2: Align common BUSCO groups')
 	step2_arguments.add_argument('-f', '--fastadir', type=str, required=False, help='Path to the directory containing the BUSCO groups in fasta format.')
 	step2_arguments.add_argument('-cnf', '--config', metavar='<config file>', type=str, required=False, help='Config file for alignment setting. Users can find a config file template in the docs directory. If no file is provided, the alignments will be done using default parameters.')
-	step2_arguments.add_argument('-cmd', '--command', metavar='<command>', type=str, required=False, help='MAFFT parameters to apply to each alingment. The parmeters must be defined in a command line style, between quote marks, and the avoiding the names of in/output files, e.g. "--thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
+	step2_arguments.add_argument('-cmd', '--command', metavar='<command>', type=str, required=False, help='MAFFT parameters to apply to each alingment. The parmeters must be defined in a command line style, between quote marks, and the avoiding the names of in/output files, e.g. "--unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
 	step2_arguments.add_argument('--trim', action='store_true', required=False, help='Trim alignments using TrimAl in automated mode, which must be available in the path.')
 	step2_arguments.add_argument('--trimparams', required=False, help='TrimAl parameters to apply when removing poorly aligned regions. The parameters must be defined in quotes marks and avoiding in/output files, e.g. "-gt 0.3 -nogaps -phylip".')
 	#step 3

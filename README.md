@@ -24,8 +24,8 @@ We provide one data example to test funcionallity. Data was obtained from a stud
 Contents
 ========
 
--   [Authors](#author)
--   [What is BUSCO2tree?](#about)
+-   [Author](#author)
+-   [About BUSCO2tree?](#about)
 -   [Installation](#installation)
     -   [Dependencies](#dependencies)
             -   [Mandatory tools](#mandatory-tools)
@@ -54,11 +54,11 @@ Supported software versions
 
 At the time of release, this pipeline was tested with:
 
--   BUSCO v5.4.6
+-   [BUSCO v5.4.6](https://busco.ezlab.org/)
 
--   Python v3.11.0
+-   [Python v3.11.0](https://www.python.org/downloads/)
 
--   Mafft v7.520
+-   [Mafft v7.520](https://mafft.cbrc.jp/alignment/software/)
 
 -   [trimAl v1.4.1](http://trimal.cgenomics.org/downloads)
 
@@ -71,15 +71,15 @@ Bioinformatics software dependencies
 BUSCO2Tree calls upon various bioinformatics software tools and uses python modules that are not part of this pipeline. Some tools are mandatory while others are optional. Please install all tools that are required for running BUSCO2Tree in the mode of your choice.
 
 ## Mandatory tools and Python modules
-Running BUSCO2Tree requires a Linux-system with `bash`, Python, several python modules, TrimAl and IQTree.
+Running BUSCO2Tree requires a Linux-system (only tested on this platform) with `bash` and `Python3` (and some modules), but depending on user requirements it may be usefull to install `TrimAl` and `IQTree` as well (see [Running BUSCO2tree](#running-BUSCO2tree)).
 
 ### Python3
 
-On Ubuntu, Python3 is usually installed by default, and `python3` will be in your `$PATH` variable, by default, and BUSCO2Tree will automatically locate it. In case your system is not configured in this way, you must call the pipeline's main script BUSCO2Tree.py using a command like:
+On Ubuntu, Python3 is usually installed by default, and `python3` will be in your `$PATH` variable, and BUSCO2Tree will automatically locate it. In case your system is not configured in this way, you may include the directory containing the python3 binary to the `$PATH` or just call the pipeline's main script BUSCO2Tree.py using a command like:
 
-`/path/to/python3 BUSCO2Tree.py -h`
+`/path/to/python3 /path/to/BUSCO2Tree.py -h`
 
-Note: In the command example shown above the BUSCO2Tree scripts are assummed to be in the $PATH variable, and otherwise you must call them using their path.
+Note: You may want to simplify
 
 ### Python modules
 
@@ -107,12 +107,7 @@ trimAl automatically removes spurious sequences or poorly aligned regions from a
 Download trimAl from [http://trimal.cgenomics.org/downloads](http://trimal.cgenomics.org/downloads) or install it using [Anaconda](#installing-dependencies-with-anaconda).
 
 ### IQTree
-
 Download IQTree from [http://www.iqtree.org/#download](http://www.iqtree.org/#download) or install it using [Anaconda](#installing-dependencies-with-anaconda).
-
-You should compile AUGUSTUS on your own system in order to avoid problems with versions of libraries used by AUGUSTUS. Compilation instructions are provided in the AUGUSTUS `README.TXT` file (`Augustus/README.txt`).
-
-In order to make the variable available to all Bash sessions, add the above line to a startup script, e.g., `~/.bashrc`.
 
 ##### **Important: modification of the $PATH variable**
 
@@ -127,52 +122,48 @@ export PATH
 
 b) For all your BASH sessions, add the above lines to a linux startup script (e.g.`~/.bashrc`). 
 
-### Optional tools
+## Optional tools
 
-#### Mafft
-
+### Mafft
+It is not necessary to install mafft since it is executed using `MafftCommandline` module available in Biopython. However, in case you need to make run Mafft by your own, you can download it from [here](https://mafft.cbrc.jp/alignment/software/) or install it using [Anaconda](#installing-dependencies-with-anaconda).
 
 -------
 Installing dependencies with Anaconda
 ------------------------------------
-
-
 On Ubuntu, if you do not have root permissions on the Linux machine, you can install the modules with by setting up an **Anaconda** (<https://www.anaconda.com/distribution/>) environment as follows:
 
 ```
 conda create -n BUSCO2Tree -c anaconda python #it will create an environment with python including os, argparse, time and subprocess modules
 conda activate BUSCO2Tree
 conda install -c conda-forge biopython
-conda install -c bioconda mafft 
+conda install -c bioconda mafft
 conda install -c bioconda trimal 
 conda install -c bioconda iqtree
 ```
 
-Subsequently, install other software "as usual" in your conda environment.
+Alternatively, user may install dependencies from each software's website.
 
 -------
 BUSCO2Tree components
 ------------------------------------
 
-BUSCO2Tree is a collection of Python scripts. The main script that will be called in order to run the pipeline is `BUSCO2Tree.py`. Additional Python components are:
+BUSCO2Tree is a collection of five Python scripts. The main script that will be called in order to run the pipeline is [BUSCO2Tree.py](/BUSCO2Tree.py), and additional four Python scripts that employ different stages of the analysis are:
 
--   [find_singlecopy_BUSCOs.py]()
+-   Step 1: [find_singlecopy_BUSCOs.py](/scripts/find_singlecopy_BUSCOs.py)
 
--   [align_BUSCOs.py]()
+-   Step 2: [align_BUSCOs.py](/scripts/align_BUSCOs.py)
 
--   [create_matrix.py]()
+-   Step 3: [create_matrix.py](/scripts/create_matrix.py)
 
--   [phylogenetic_analysis.py]()
+-   Step 4: [phylogenetic_analysis.py](/scripts/phylogenetic_analysis.py)
 
-All scripts (files ending with `*.py`) that are part of this pipeline must be executable in order to run BUSCO2Tree. This should already be the case if you download BUSCO2Tree from GitHub.
+It is recommended to give executable permissions to all python scripts that are part of BUSCO2Tree as this facilitates the use of the entire pipeline or each script individually. This should already be the case if you download BUSCO2Tree from GitHub.
 
-It is important that the `x` in `-rwxr-xr-x` is present for each script. If that is not the case, run
+It is important that the `x` in `-rwxr-xr-x` is present for each script when you run `ls -l BUSCO2Tree.py scripts/*py` . If that is not the case, you may run the following command in order to change file attributes:
 
-    `chmod a+x *.pl *.py`
+    chmod a+x BUSCO2Tree.py scripts/*py
 
-in order to change file attributes.
-
-You may find it helpful to add the directory in which GALBA perl scripts reside to your `$PATH` environment variable. For a single bash session, enter:
+You may find it helpful to add the directories in which `BUSCO2Tree.py` and supplementary python scripts reside to your `$PATH` environment variable. For a single bash session, enter:
 
 ```
     PATH=/your_path_to_galba/:$PATH
@@ -185,5 +176,11 @@ To make this `$PATH` modification available to all bash sessions, add the above 
 
 Example data
 ========
-[BUSCO groups for the eukaryota lineage obtained from ODB v10](https://busco-data.ezlab.org/v5/data/lineages/eukaryota_odb10.2020-09-10.tar.gz)
+The example data provide here was obtained from a study that was part of my PhD, in which I and my collegues search for genomic innovations that could be associated with cactophily and host plant specialization. The study is [Phylogenomics provides insights into the evolution of cactophily and host plant shifts in Drosophila](https://doi.org/10.1016/j.ympev.2022.107653). I employed the genomes of the thirteen species included in this study and run [BUSCO v5.4.6](https://busco.ezlab.org/) on each one in search of [BUSCO groups for the eukaryota lineage obtained from ODB v10](https://busco-data.ezlab.org/v5/data/lineages/eukaryota_odb10.2020-09-10.tar.gz).
+
+To test BUSCO2Tree, please decompress the [BUSCO results zip file](/example/BUSCO_results.zip) in the [example](/example) directory.
+
+---
+Running BUSCO2Tree
+========
 

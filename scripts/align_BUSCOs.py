@@ -8,6 +8,7 @@ Created on Thu Jul 21 13:58:34 2022
 #%% Imports
 import os
 import argparse
+from Bio import SeqIO
 from Bio.Align.Applications import MafftCommandline
 from time import time
 import subprocess
@@ -25,6 +26,11 @@ def check_arguments(FASTADIR, OUTDIR, CONFIG_FILE=False):
 		if not os.path.isfile(CONFIG_FILE):
 			raise ValueError("Config file %s does not exists." % CONFIG_FILE)
 #end
+def is_fasta(filename):
+    with open(filename, "r") as handle:
+        fasta = SeqIO.parse(handle, "fasta")
+        return any(fasta)  # False when fasta is empty, i.e. wasn't a FASTA file
+#end
 def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False):
 	'It receives the paths of 1) the directory containing the common single-copy BUSCO FASTA files, 2) the output directory, and 3) the config file (optional). It generates alignments for each FASTA file using MAFFT.'
 	check_arguments(FASTADIR, OUTDIR, CONFIG_FILE)
@@ -35,6 +41,8 @@ def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False):
 		raise RuntimeError("Directory %s has no file." % FASTADIR)
 	for busco in files:
 		infile = os.path.join(FASTADIR, busco) #multi FASTA file to align
+		if not is_fasta(infile):
+			continue
 		settings = parse_mafft_config(CONFIG_FILE) #reading alignment settings
 		mafft_cmline = generate_cmdline(infile, settings) #generating MAFFT command
 		stdout, stderr = mafft_cmline() #running MAFFT
@@ -156,6 +164,8 @@ def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
     base_cmd_mafft = COMMAND
     for busco in os.listdir(FASTADIR):
         infile = os.path.join(FASTADIR, busco)
+        if not is_fasta(infile):
+            continue
         outfile = os.path.join(OUTDIR, busco.split(".")[0] + ".aln.fa")
         cmd_mafft = "mafft " + base_cmd_mafft + " " + infile + " > " + outfile
         subprocess.call([cmd_mafft], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
@@ -169,6 +179,8 @@ def trim_alns(MAFFTDIR, TRIMPARAMS=False):
         os.mkdir(trimal_dir)
     for aln in list_of_alns:
         infile = os.path.join(MAFFTDIR, aln)
+        if not is_fasta(infile):
+            continue
         outfile = os.path.join(trimal_dir, aln.split(".")[0] + ".aln.trimmed.fa")
         cmd_trimal = "trimal -in " + infile + " -out " + outfile + " "
         if TRIMPARAMS:
