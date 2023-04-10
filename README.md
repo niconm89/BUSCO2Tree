@@ -184,3 +184,41 @@ To test BUSCO2Tree, please decompress the [BUSCO results zip file](/example/BUSC
 Running BUSCO2Tree
 ========
 
+## Tests with example data
+### Single-steps commands
+#### Step 1. Find common BUSCO groups among set of genomes
+`BUSCO2Tree.py --steps 1 --buscodir Drosophila_proteins --lineage eukaryota --output B2T --threads 8`
+
+#### Step 2. Align common BUSCO groups
+`BUSCO2Tree.py --steps 2 --fastadir B2T/01_single-copy/common_busco_sequences --output B2T --threads 8`
+
+Note: it is possible to activate alignment trimming by setting `--trim` parameter. In addition, the parameter `--trimparams` can be set when necessary to use a user-defined command of trimAl.
+
+#### Step 3. Generate phylogenetic matrix and partitions files
+`BUSCO2Tree.py --steps 3 --aligndir B2T/02_alignments --output B2T --threads 8`
+
+#### Step 4. Build phylogenetic tree
+`BUSCO2Tree.py --steps 4 -m B2T/03_matrix/phylomatrix.phylip -p B2T/03_matrix/busco_coords.partitions.tsv --output B2T --threads 8`
+
+---
+
+### Multiple-steps commands
+#### Step 1 & 2.
+`BUSCO2Tree.py -s 1 2 -b Drosophila_proteins --config /path/to/BUSCO2Tree/example/mafft_config.txt --trim --trimparams "-gt 0.3" -o B2T -t 8`
+
+#### Step 1, 2 & 3.
+`BUSCO2Tree.py -s 1 2 3 -b Drosophila_proteins -cnf mafft_config.txt --trim --trimparams "-gt 0.3" --format nexus -o B2T -t 8`
+
+#### Step 2 & 3.
+`BUSCO2Tree.py -s 2 3 -b B2T/01_single-copy -cnf mafft_config.txt --trim --trimparams "-gt 0.3" -o B2T -t 8`
+
+#### Step 2, 3 & 4.
+`BUSCO2Tree.py -s 2 3 4 -b B2T/01_single-copy --trim --trimparams "-gt 0.3" -B 500 -P TEST234 -o B2T -t 8`
+
+#### Step 3 & 4.
+`BUSCO2Tree.py -s 3 4 -a B2T/02_alignments --trim -B 500 -P TEST34 -o B2T -t 8`
+
+#### Running the complete pipeline.
+`BUSCO2Tree.py -s 1 2 3 4 -b Drosophila_proteins --trim -o B2T -t 8`
+
+

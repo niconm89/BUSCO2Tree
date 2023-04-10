@@ -128,7 +128,7 @@ def usage():
 	step1_arguments = parser.add_argument_group('Step1: Find common single-copy BUSCO groups among BUSCO outputs')
 	step1_arguments.add_argument('-b', '--buscodir', type=str, required=False, help='Path to the directory where individual BUSCO outputs are located (you can select the BUSCO output when running in batch mode). Directories names will be taken as the genomes names.')
 	step1_arguments.add_argument('-d', '--odb', type=int, required=False, default=10, help='OrthoDB version. This parameter is only use to complete the path of the single copy sequences directory. Default: 10')
-	step1_arguments.add_argument('-l', '--lineage', type=str, required=False, default='eukaryota', help='OrthoDB lineage. This parameter is only use to complete the path of the single copy sequences directory. Default: lepidoptera')
+	step1_arguments.add_argument('-l', '--lineage', type=str, required=False, default='eukaryota', help='OrthoDB lineage. This parameter is only use to complete the path of the single copy sequences directory. Default: eukaryota')
 	#step 2
 	step2_arguments = parser.add_argument_group('Step2: Align common BUSCO groups')
 	step2_arguments.add_argument('-f', '--fastadir', type=str, required=False, help='Path to the directory containing the BUSCO groups in fasta format.')
