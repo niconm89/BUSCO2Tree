@@ -1,7 +1,5 @@
 # BUSCO2Tree User Guide
 
-**This GIT README is being created!!!!**
-
 ---
 **Author**
 ========
