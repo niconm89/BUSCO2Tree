@@ -33,7 +33,6 @@ Contents
     -   [BUSCO2tree](#busco2tree-components)
 -   [Example data](#example-data)
     -   [Data description](#data-description)
-    -   [Testing BUSCO2tree with genomes]
 -   [Running BUSCO2tree](#running-BUSCO2tree)
     -   [BUSCO2tree pipeline steps](#different-BUSCO2tree-pipeline-steps)
     -   [Description of command line options](#description-of-command-line-options)
@@ -285,6 +284,38 @@ The commands shown below were tested using example data.
 #### Step 3 & 4.
 `BUSCO2Tree.py -s 3 4 -a B2T/02_alignments --trim -B 1500 -P TEST34 -o B2T -t 8`
 
-
-
 ## Output of BUSCO2tree
+Running the complete pipeline will generate an output directory containing four main folder, one per each step:
+~~~~
+B2T/
+├── 01_single-copy
+│   ├── common_busco_sequences
+│   |   ├── #common BUSCO groups fasta files
+│   ├── genomes_names.txt
+│   └── list_common_busco.txt
+├── 02_alignments
+│   ├── #common BUSCO groups alignments
+│   ├── trimAl
+│   │   ├── #trimmed alignments
+├── 03_matrix
+│   ├── busco_coords.partitions.tsv
+│   └── matrix.phylip
+└── 04_phylogenetic_tree
+    ├── iqtree.log
+    └── iqtree.model.gz
+~~~~
+
+- **B2T/01_single-copy/common_busco_sequences**: it contains common BUSCO groups among species in fasta files.
+- **B2T/01_single-copy/genomes_names.txt**: file with names of the species placed in the directory set for --buscodir.
+- **B2T/01_single-copy/list_common_busco.txt**: file with IDs of common BUSCO group.
+- **B2T/02_alignments**: it contains alignments of common BUSCO groups in fasta format.
+- **B2T/02_alignments/trimAl**: it contains trimmed alignments in fasta format.
+- **B2T/03_matrix/busco_coords.partitions.tsv**: partition file in nexus format. Each partition corresponds to a BUSCO group.
+- **B2T/03_matrix/matrix.phylip**: phylogenetic matrix file in phylip format (nexus is also allowed).
+- **B2T/04_phylogenetic_tree**: it contains the IQtree outputs.
+
+When running BUSCO2Tree step by step (or using combinations of them), it is recommended to place the results (--outdir) in the same main directory where subdirectories containing files (fasta, aligment, and matrix/partitions files) are. For instance, following the tree directory shown above, if we want to run step 3:
+~~~~
+BUSCO2Tree.py --steps 3 --aligndir B2T/02_alignments/trimAl --outdir B2T --threads 8
+~~~~
+Check that --aligndir in set with a directry placed within the B2T directory and --outdir is thus set with B2T. As a result, a directory named "03_matrix" will be created within B2T.
