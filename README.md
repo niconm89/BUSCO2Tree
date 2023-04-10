@@ -21,7 +21,7 @@ This pipeline was developed to automatize the downstream phylogenomic analyses t
 We provide one data example to test funcionallity. Data was obtained from a study we have recently published [1]. Briefly, thirteen Drosophila genomes were assessed using BUSCO v5.4.6 (REF) to obtain completeness scores and dipteran single-copy orthologs. Common BUSCOs among all genomes were the input of this pipeline.
 
 ---
-Contents
+**Contents**
 ========
 
 -   [Author](#author)
@@ -30,18 +30,18 @@ Contents
     -   [Dependencies](#dependencies)
         -   [Mandatory tools](#mandatory-tools-and-python-modules)
         -   [Optional tools](#optional-tools)
-    -   [BUSCO2tree](#busco2tree-components)
+        -   [Installing dependencies with Anaconda](#installing-dependencies-with-anaconda)
+    -   [BUSCO2tree components](#busco2tree-components)
 -   [Example data](#example-data)
-    -   [Data description](#data-description)
 -   [Running BUSCO2tree](#running-BUSCO2tree)
-    -   [BUSCO2tree pipeline steps](#different-BUSCO2tree-pipeline-steps)
     -   [Description of command line options](#description-of-command-line-options)
+    -   [BUSCO2tree pipeline steps](#different-BUSCO2tree-pipeline-steps)
 -   [Output of BUSCO2tree](#output-of-BUSCO2tree)
+-   [License](#license-of-BUSCO2tree)
 
 
 ---
-
-Installation
+**Installation**
 ========
 
 # Dependencies
@@ -141,8 +141,7 @@ conda install -c bioconda iqtree
 Alternatively, user may install dependencies from each software's website.
 
 -------
-BUSCO2Tree components
-------------------------------------
+# BUSCO2Tree components
 
 BUSCO2Tree is a collection of five Python scripts. The main script that will be called in order to run the pipeline is [BUSCO2Tree.py](/BUSCO2Tree.py), and additional four Python scripts that employ different stages of the analysis are:
 
@@ -170,18 +169,16 @@ export PATH
 To make this `$PATH` modification available to all bash sessions, add the above lines to a startup script (e.g.`~/.bashrc`).
 
 ---
-
-Example data
+**Example data**
 ========
 The example data provide here was obtained from a study that was part of my PhD, in which I and my collegues search for genomic innovations that could be associated with cactophily and host plant specialization. The study is [Phylogenomics provides insights into the evolution of cactophily and host plant shifts in *Drosophila*](https://doi.org/10.1016/j.ympev.2022.107653). I employed the genomes of the thirteen species included in this study and run [BUSCO v5.4.6](https://busco.ezlab.org/) on each one in search of [BUSCO groups for the eukaryota lineage obtained from ODB v10](https://busco-data.ezlab.org/v5/data/lineages/eukaryota_odb10.2020-09-10.tar.gz).
 
 To test BUSCO2Tree, please decompress the [BUSCO results zip file](/example/BUSCO_results.zip) placed in the [example](/example) directory.
 
 ---
-Running BUSCO2Tree
+**Running BUSCO2Tree**
 ========
 ## Description of command line options
-
 ~~~~
 BUSCO2Tree.py --help
 
@@ -284,7 +281,9 @@ The commands shown below were tested using example data.
 #### Step 3 & 4.
 `BUSCO2Tree.py -s 3 4 -a B2T/02_alignments --trim -B 1500 -P TEST34 -o B2T -t 8`
 
-## Output of BUSCO2tree
+---
+**Output of BUSCO2tree**
+========
 Running the complete pipeline will generate an output directory containing four main folder, one per each step:
 ~~~~
 B2T/
@@ -319,3 +318,8 @@ When running BUSCO2Tree step by step (or using combinations of them), it is reco
 BUSCO2Tree.py --steps 3 --aligndir B2T/02_alignments/trimAl --outdir B2T --threads 8
 ~~~~
 Check that --aligndir in set with a directry placed within the B2T directory and --outdir is thus set with B2T. As a result, a directory named "03_matrix" will be created within B2T.
+
+---
+License
+========
+[GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007](/LICENSE).
