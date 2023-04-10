@@ -264,6 +264,8 @@ The commands shown below were tested using example data.
 #### Running the complete pipeline.
 `BUSCO2Tree.py -s 1 2 3 4 -b Drosophila_proteins --trim -o B2T -t 8`
 
+Note: this command takes ~23 minutes.
+
 #### Step 1 & 2.
 `BUSCO2Tree.py -s 1 2 -b Drosophila_proteins --config /path/to/BUSCO2Tree/example/mafft_config.txt --trim --trimparams "-gt 0.3" -o B2T -t 8`
 
