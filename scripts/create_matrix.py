@@ -43,7 +43,7 @@ def cat_alignments(ALIGNDIR, OUTDIR, FORMAT):
 	do_partitions(OUTDIR, coordinates) #create partition
 #end
 def do_partitions(OUTDIR, COORDINATES):
-	coords_out = os.path.join(OUTDIR, "busco_coords.partitions.nexus") #saving coordinates of each locus
+	coords_out = os.path.join(OUTDIR, "busco_coords.partitions.tsv") #saving coordinates of each locus
 	with open(coords_out, 'wt') as COORDS:
 		COORDS.write("#nexus\nbegin sets;\n")
 		for buscoid, x_y in COORDINATES.items():

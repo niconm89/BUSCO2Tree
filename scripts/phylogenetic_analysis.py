@@ -27,6 +27,8 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 	partitionfile = PARTITIONFILE
 	if not os.path.isabs(PARTITIONFILE):
 		partitionfile = os.path.join(cwd, PARTITIONFILE)
+	if BOOTSTRAP < 1000:
+		raise ValueError("Number of bootstrap replicates must be an integer >=1000.")
 	IQTree_MFP = "iqtree -s " + matrixfile + " -p " + partitionfile + " -m MFP --seqtype " + SEQTYPE + " --prefix " + PREFIX + " -B " + str(BOOTSTRAP) + " -T " + str(THREADS)
 	#run_iqtree = subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
