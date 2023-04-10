@@ -171,10 +171,10 @@ def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
         subprocess.call([cmd_mafft], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 #end
 def trim_alns(MAFFTDIR, TRIMPARAMS=False):
-    'Receive parameters to run TrimAl, avoiding input and output files.'
+    'Receive parameters to run trimAl, avoiding input and output files.'
     #do something
     list_of_alns = os.listdir(MAFFTDIR)
-    trimal_dir = os.path.join(MAFFTDIR, "TrimAl")
+    trimal_dir = os.path.join(MAFFTDIR, "trimAl")
     if not os.path.isdir(trimal_dir):
         os.mkdir(trimal_dir)
     for aln in list_of_alns:
@@ -196,8 +196,8 @@ def usage():
 	parser.add_argument('-o', '--outdir', type=str, required=False, default='02_alignments', help='Path to save results (aligments, phylogenetic matrix and partition files). If the output directory does not exists, it will be created. Default: 02_alignments')
 	parser.add_argument('-c', '--config', metavar='<config file>', type=str, required=False, help='Configuration file for the alignment. Users can find a template of this file in the example_data directory. If no file is provided, the alignments will be done using default parameters.')
 	parser.add_argument('-m', '--command', metavar='<command>', type=str, required=False, help='MAFFT parameters to apply to each alingment. The parmeters must be define in a command line style, between quote marks, and the avoiding the names of in/output files, e.g. "--thread 8 --unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
-	parser.add_argument('-t', '--trim', action='store_true', required=False, help='Trim poorlig regions of alignments using TrimAl. TrimAl will be run in automated mode and must be available in the system $PATH variable.')
-	parser.add_argument('-p', '--trimparams', type=str, required=False, help='Parameters to use in TrimAl. User must ONLY pass parameters that want to apply in TrimAl in quotes marks, and avoid file or the name of the program (e.g. "-gt 0.3 -nogaps -phylip").')
+	parser.add_argument('-t', '--trim', action='store_true', required=False, help='Trim poorlig regions of alignments using trimAl. TrimAl will be run in automated mode and must be available in the system $PATH variable.')
+	parser.add_argument('-p', '--trimparams', type=str, required=False, help='Parameters to use in TrimAl. User must ONLY pass parameters that want to apply in trimAl in quotes marks, and avoid file or the name of the program (e.g. "-gt 0.3").')
 	return parser.parse_args()
 #end
 #%% Main program

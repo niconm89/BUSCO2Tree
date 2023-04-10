@@ -192,13 +192,15 @@ Running BUSCO2Tree
 #### Step 2. Align common BUSCO groups
 `BUSCO2Tree.py --steps 2 --fastadir B2T/01_single-copy/common_busco_sequences --outdir B2T --threads 8`
 
-Note: it is possible to activate alignment trimming by setting `--trim` parameter. In addition, the parameter `--trimparams` can be set when necessary to use a user-defined command of trimAl.
+**Note**: it is possible to activate alignment trimming by setting `--trim` parameter. In addition, the parameter `--trimparams` can be set when it is necessary to use a timAl user-defined command.
 
 #### Step 3. Generate phylogenetic matrix and partitions files
 `BUSCO2Tree.py --steps 3 --aligndir B2T/02_alignments --outdir B2T --threads 8`
 
+**Note**: if step 2 was run using the --trim/trimparams parameters, trimmed alignments will be placed in BT2/02_alignments/trimAl.
+
 #### Step 4. Build phylogenetic tree
-`BUSCO2Tree.py --steps 4 -m B2T/03_matrix/phylomatrix.phylip -p B2T/03_matrix/busco_coords.partitions.tsv --outdir B2T --threads 8`
+`BUSCO2Tree.py --steps 4 -m B2T/03_matrix/matrix.phy -p B2T/03_matrix/busco_coords.partitions.nexus --outdir B2T --threads 8`
 
 ---
 

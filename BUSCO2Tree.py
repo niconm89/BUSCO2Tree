@@ -95,11 +95,9 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 			step3_dir = os.path.join(OUTDIR, "03_matrix")
 			os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
 			if 2 in STEPS and TRIM:
-				ALIGNDIR =  os.path.join(step2_dir, "TrimAl")
+				ALIGNDIR =  os.path.join(step2_dir, "trimAl")
 			elif 2 in STEPS and TRIMPARAMS:
-				ALIGNDIR =  os.path.join(step2_dir, "TrimAl")
-			else:
-				ALIGNDIR = step2_dir
+				ALIGNDIR =  os.path.join(step2_dir, "trimAl")
 			step3.cat_alignments(ALIGNDIR, step3_dir, FORMAT)
 		if step == 4: #Building the phylogenetic tree
 			print("4. Creating the phylogenetic tree with IQTree.")
@@ -111,7 +109,7 @@ def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND,
 					if '.phy' in file or '.nex' in file:
 						MATRIX = os.path.join(step3_dir, file)
 					else:
-						PARTITIONS = os.path.join(step3_dir, "busco_coords.partitions.tsv")
+						PARTITIONS = os.path.join(step3_dir, "busco_coords.partitions.nexus")
 			step4.model_partitions(MATRIX, PARTITIONS, step4_dir, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
 #end
 #%% Menu -> is executed when this script is called as main program
@@ -134,8 +132,8 @@ def usage():
 	step2_arguments.add_argument('-f', '--fastadir', type=str, required=False, help='Path to the directory containing the BUSCO groups in fasta format.')
 	step2_arguments.add_argument('-cnf', '--config', metavar='<config file>', type=str, required=False, help='Config file for alignment setting. Users can find a config file template in the docs directory. If no file is provided, the alignments will be done using default parameters.')
 	step2_arguments.add_argument('-cmd', '--command', metavar='<command>', type=str, required=False, help='MAFFT parameters to apply to each alingment. The parmeters must be defined in a command line style, between quote marks, and the avoiding the names of in/output files, e.g. "--unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
-	step2_arguments.add_argument('--trim', action='store_true', required=False, help='Trim alignments using TrimAl in automated mode, which must be available in the path.')
-	step2_arguments.add_argument('--trimparams', required=False, help='TrimAl parameters to apply when removing poorly aligned regions. The parameters must be defined in quotes marks and avoiding in/output files, e.g. "-gt 0.3 -nogaps -phylip".')
+	step2_arguments.add_argument('--trim', action='store_true', required=False, help='Trim alignments using trimAl in automated mode, which must be available in the path.')
+	step2_arguments.add_argument('--trimparams', required=False, help='trimAl parameters to apply when removing poorly aligned regions. The parameters must be defined in quotes marks and avoiding in/output files, e.g. "-gt 0.3".')
 	#step 3
 	step3_arguments = parser.add_argument_group('Step3: Create phylogenetic matrix and partition files')
 	step3_arguments.add_argument('-a', '--aligndir', type=str, required=False, help='Path to the directory containing the alignments in fasta format (step 3).')
