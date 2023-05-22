@@ -42,6 +42,12 @@ We provide one data example to test funcionallity. Data was obtained from a stud
 **Installation**
 ========
 
+```
+git clone https://github.com/niconm89/BUSCO2Tree.git
+cd BUSCO2Tree
+./BUSCO2Tree.py -h
+```
+
 # Dependencies
 
 Supported software versions
