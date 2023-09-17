@@ -12,34 +12,33 @@
 + Twitter: [@nicomoreyra](https://twitter.com/NicoMoreyra)
 
 ---
-**About**
+**About BUSCO2Tree**
 ========
 
-This pipeline was developed to automatize the downstream phylogenomic analyses to obtain a species tree after running BUSCO over several genomes/proteomes/transcriptomes.
-We provide one data example to test funcionallity. Data was obtained from a study we have recently published [1]. Briefly, thirteen Drosophila genomes were assessed using BUSCO v5.4.6 (REF) to obtain completeness scores and dipteran single-copy orthologs. Common BUSCOs among all genomes were the input of this pipeline.
+BUSCO2Tree is a pipeline designed to automate downstream phylogenomic analyses for generating a species tree after running BUSCO on multiple genomes/proteomes/transcriptomes. This guide provides an example data set obtained from a recent study [1] where four lepidopteran genomes were assessed using BUSCO v5.5.0 to obtain completeness scores and dipteran single-copy orthologs. These common BUSCOs among all genomes serve as the input for this pipeline.
 
 ---
-**Contents**
+**Table of Contents**
 ========
 
 -   [Author](#author)
--   [About BUSCO2tree?](#about)
--   [Installation](#installation)
-    -   [Dependencies](#dependencies)
-        -   [Mandatory tools](#mandatory-tools-and-python-modules)
-        -   [Optional tools](#optional-tools)
-        -   [Installing dependencies with Anaconda](#installing-dependencies-with-anaconda)
-    -   [BUSCO2tree components](#busco2tree-components)
--   [Example data](#example-data)
--   [Running BUSCO2tree](#running-BUSCO2tree)
-    -   [Description of command line options](#description-of-command-line-options)
-    -   [BUSCO2tree pipeline steps](#different-BUSCO2tree-pipeline-steps)
--   [Output of BUSCO2tree](#output-of-BUSCO2tree)
--   [License](#license-of-BUSCO2tree)
+-   [What is BUSCO2Tree?](#about)
+-   [Installation Guide](#installation)
+    -   [Software Dependencies](#dependencies)
+        -   [Required Tools](#mandatory-tools-and-python-modules)
+        -   [Optional Tools](#optional-tools)
+        -   [Installing Dependencies with Anaconda](#installing-dependencies-with-anaconda)
+    -   [Components of BUSCO2Tree](#busco2tree-components)
+-   [Example Data](#example-data)
+-   [How to Run BUSCO2Tree](#running-BUSCO2tree)
+    -   [Command Line Options](#description-of-command-line-options)
+    -   [Steps in the BUSCO2Tree Pipeline](#different-BUSCO2tree-pipeline-steps)
+-   [Understanding the Output of BUSCO2Tree](#output-of-BUSCO2tree)
+-   [License Information](#license-of-BUSCO2tree)
 
 
 ---
-**Installation**
+**Installation Guide**
 ========
 
 ```
