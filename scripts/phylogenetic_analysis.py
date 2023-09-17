@@ -10,9 +10,18 @@ import argparse
 import os
 import subprocess
 from time import time	
+
+# Importing necessary libraries. argparse for command line arguments, os for operating system related tasks,
+# subprocess for running commands in a subshell, time for timing operations.
+
 #%% Functionts definition
 def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTRAP, THREADS):
 	#iqtree -s supermatrix.aln.faa.phy -p partitions-scheme.txt -m MFP --seqtype AA --prefix Drosophila -B 1000 --mem 50 -T 8
+	
+	# This function runs the IQ-TREE software with the given parameters.
+	# It takes as input the matrix file, partition file, output directory, sequence type, prefix for the output files,
+	# number of bootstrap replicates and number of threads to use.
+
 	cwd = os.getcwd()
 	try:
 		if not os.path.isdir(OUTDIR):
@@ -20,6 +29,10 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 		os.chdir(OUTDIR)
 	except:
 		raise ValueError("Output directory %s can not be created." % OUTDIR)
+	
+	# The function first checks if the output directory exists, if not it creates it.
+	# If the directory cannot be created, it raises an error.
+
 	IQTree_MFP = ""
 	matrixfile = MATRIXFILE
 	if not os.path.isabs(MATRIXFILE):
@@ -27,11 +40,20 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 	partitionfile = PARTITIONFILE
 	if not os.path.isabs(PARTITIONFILE):
 		partitionfile = os.path.join(cwd, PARTITIONFILE)
+	
+	# The function then checks if the matrix and partition files are absolute paths, if not it makes them absolute.
+
 	if BOOTSTRAP < 1000:
 		raise ValueError("Number of bootstrap replicates must be an integer >=1000.")
+	
+	# It checks if the number of bootstrap replicates is at least 1000, if not it raises an error.
+
 	IQTree_MFP = "iqtree -s " + matrixfile + " -p " + partitionfile + " -m MFP --seqtype " + SEQTYPE + " --prefix " + PREFIX + " -B " + str(BOOTSTRAP) + " -T " + str(THREADS)
 	#run_iqtree = subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
+	
+	# The function then constructs the IQ-TREE command and runs it in a subshell.
+
 #end
 #%% Menu -> Usage
 def usage():
@@ -46,6 +68,10 @@ def usage():
 	parser.add_argument('-b', '--bootstrap', type=int, required=False, default="1000", help='Number of bootstrap replicates. Default: 1000')
 	parser.add_argument('-t', '--threads', type=int, required=False, default="8", help='Number of threads to run in IQ-Tree. Default: 8')
 	return parser.parse_args()
+	
+	# This function sets up the command line arguments for the script using argparse.
+	# It returns the parsed arguments.
+
 #%% Main program
 if __name__ == '__main__':
 	args = usage()
@@ -54,4 +80,8 @@ if __name__ == '__main__':
 	model_partitions(args.matrix, args.partitions, args.outdir, args.seqtype, args.prefix, args.bootstrap, args.threads)
 	print("IQ-Tree has finished.")
 	print(f'Time taken to run: {time() - start} seconds.')
+	
+	# This is the main part of the script. It first parses the command line arguments, then starts the timer,
+	# runs the model_partitions function with the parsed arguments, then prints the time taken to run.
+
 #end

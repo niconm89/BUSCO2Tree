@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
 """
 Created on Mon Aug  1 14:13:22 2022
@@ -22,12 +23,13 @@ def validate_steps(STEPS):
     if not checkConsecutive(STEPS):
         raise ValueError("Only consecutive step numbers are allowed, e.g. '1 2 3 4', '1 2', '1 2 3', '2 3 4', '3 4'.")    
 #end validate_steps
+
 def validate_params(ARGUMENTS):
 	'It receives the object of arguments and validates mandatory arguments to run the pipeline.'
 	mandatory_args = {}
 	if 1 in ARGUMENTS.steps:
-		if not ARGUMENTS.buscodir:
-			raise RuntimeError("The directory containing BUSCO outputs was not defined.")
+		if not ARGUMENTS.buscodir or not os.path.isdir(ARGUMENTS.buscodir):
+			raise RuntimeError("The directory containing BUSCO outputs was not defined or buscodir is not a directory.")
 	if 2 in ARGUMENTS.steps and 1 not in ARGUMENTS.steps:
 		if not ARGUMENTS.fastadir:
 			raise RuntimeError("The directory contining common BUSCO groups in fasta format was not defined.")
@@ -40,77 +42,100 @@ def validate_params(ARGUMENTS):
 		if not ARGUMENTS.partitions:
 			raise RuntimeError("The partitions file was not defined.")
 #end validate_params
+
 def checkConsecutive(l):
     'It receives a list of steps selected to run and return TRUE or FALSE whether the steps are consecutive or not. On the last case, the program will exit.'
     return sorted(l) == list(range(min(l), max(l)+1))
 #end
-def BUSCO2Tree(STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND, TRIM, TRIMPARAMS, ALIGNDIR, FORMAT, MATRIX, PARTITIONS, SEQTYPE, PREFIX, BOOTSTRAP, THREADS):
+
+def BUSCO2Tree(args):
+	#	STEPS, BUSCODIR, OUTDIR, ODB, LINEAGE, FASTADIR, CONFIG, COMMAND, TRIM, TRIMPARAMS, ALIGNDIR, FORMAT, MATRIX, PARTITIONS, SEQTYPE, PREFIX, BOOTSTRAP, THREADS):
 	'''
 	Main function that receives several arguments and run this pipeline.
 	BUSCO2Tree(args.steps, args.inputdir, args.outdir, args.odb, args.lineage, 
 	args.aligndir, args.config, args.command, args.trim, args.trimparams, 
 	args.aligndir, args.outformat)
-	Additional arguments: args.matrix, args.partitions, args.outdir, args.seqtype, args.prefix, args.bootstrap, args.threads
+	Additional arguments: args.matrGenerating the phylogenetic tree ir, args.seqtype, args.prefix, args.bootstrap, args.threads
 	'''
 	try:
-		if not os.path.isdir(OUTDIR):
-			os.mkdir(OUTDIR)
+		if not os.path.isdir(args.outdir):
+			os.mkdir(args.outdir)
 	except:
 		raise RuntimeError("Output directory can not be created. Check your path!")
 	step1_dir, step2_dir, step3_dir, step4_dir = ["","","",""]
 	for step in STEPS:
 		#01_single-copy 02_alignments 02_Matrix 03_Tree
 		if step == 1: #Finding single-copy BUSCOs...
-			print("1. Looking for single-copy BUSCO groups in the lineage %s obtained from the ODB v%d database..." % (args.lineage,args.odb))
-			step1_dir = os.path.join(OUTDIR, "01_single-copy")
-			os.mkdir(step1_dir) #creating output dir OUTDIR/01_single-copy
-            #first we find common single-copy BUSCOs among genomes
-			genomes_names, common_busco_ids = step1.find_singlecopy(BUSCODIR, step1_dir, ODB, LINEAGE)
-			#now we create multifasta files with common single-copy BUSCOs
-			step1.create_busco_fasta(BUSCODIR, step1_dir, ODB, LINEAGE, genomes_names, common_busco_ids, common_busco_dir="common_busco_sequences")
+			try:
+				print("1. Looking for single-copy BUSCO groups in the lineage %s obtained from the ODB v%d database..." % (args.lineage,args.odb))
+				step1_dir = os.path.join(args.outdir, "01_single-copy")
+				os.mkdir(step1_dir) #creating output dir OUTDIR/01_single-copy
+            	#first we find common single-copy BUSCOs among genomes
+				genomes_names, common_busco_ids = step1.find_singlecopy(args.buscodir, step1_dir, args.odb, args.lineage)
+				#now we create multifasta files with common single-copy BUSCOs
+				step1.create_busco_fasta(args.buscodir, step1_dir, args.odb, args.lineage, genomes_names, common_busco_ids, common_busco_dir="common_busco_sequences")
+			except Exception as e:
+				raise(f"Step 1: Find single_copy BUSCO groups has failed. Aborting.")
 		if step == 2: #Aligning BUSCOs multifasta files...
-			print("2. Aligning common single-copy BUSCOs...")
-			step2_dir = os.path.join(OUTDIR, "02_alignments")
-			os.mkdir(step2_dir) #creating output dir OUTDIR/02_alignments
-			if 1 in STEPS: #se hace en cadena
-				FASTADIR = os.path.join(step1_dir, "common_busco_sequences")
-			if COMMAND:
-				print("MAFFT will be excecuted using a user-defined command.")
-				step2.align_command_mafft(FASTADIR, step2_dir, COMMAND)
-			else:
-				print("MAFFT will be excecuted using a configuration file.")
-				step2.align_config_mafft(FASTADIR, step2_dir, CONFIG)
-			print("Alignments completed...")
-			if TRIM: #trimming alingments
-				print("Trimming alignments to remove poorly aligned regions...")
-				step2.trim_alns(step2_dir, TRIMPARAMS)
-				print("Poorly aligned regiones have been removed.")
-			else:
-				if TRIMPARAMS: #trimming alingments
+			try:
+				print("2. Aligning common single-copy BUSCOs...")
+				step2_dir = os.path.join(args.outdir, "02_alignments")
+				os.mkdir(step2_dir) #creating output dir OUTDIR/02_alignments
+				if 1 in STEPS: #se hace en cadena
+					FASTADIR = os.path.join(step1_dir, "common_busco_sequences")
+				else:
+					FASTADIR = args.fastadir
+				if args.commands:
+					print("MAFFT will be excecuted using a user-defined command.")
+					step2.align_command_mafft(FASTADIR, step2_dir, args.command)
+				else:
+					print("MAFFT will be excecuted using a configuration file.")
+					step2.align_config_mafft(FASTADIR, step2_dir, CONFIG)
+				print("Alignments completed...")
+				if args.trim: #trimming alingments
 					print("Trimming alignments to remove poorly aligned regions...")
-					step2.trim_alns(step2_dir, TRIMPARAMS)
+					step2.trim_alns(step2_dir, args.trimparams)
 					print("Poorly aligned regiones have been removed.")
+				else:
+					if args.trimparams: #trimming alingments
+						print("Trimming alignments to remove poorly aligned regions...")
+						step2.trim_alns(step2_dir, args.trimparams)
+						print("Poorly aligned regiones have been removed.")
+			except Exception as e:
+				raise("fStep 2: Alingning common single-copy BUSCO groups has failed. Aborting.")
 		if step == 3: #Generating the phylogenetic matrix
-			print("3. Generating the phylogenetic matrix.")
-			step3_dir = os.path.join(OUTDIR, "03_matrix")
-			os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
-			if 2 in STEPS and TRIM:
-				ALIGNDIR =  os.path.join(step2_dir, "trimAl")
-			elif 2 in STEPS and TRIMPARAMS:
-				ALIGNDIR =  os.path.join(step2_dir, "trimAl")
-			step3.cat_alignments(ALIGNDIR, step3_dir, FORMAT)
+			try:
+				print("3. Generating the phylogenetic matrix.")
+				step3_dir = os.path.join(args.outdir, "03_matrix")
+				os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
+				if 2 in STEPS and args.trim:
+					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
+				elif 2 in STEPS and TRIMPARAMS:
+					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
+				else:
+					ALIGNDIR = args.aligndir
+				step3.cat_alignments(ALIGNDIR, step3_dir, args.format)
+			except Exception as e:
+				raise("fStep 3: Generating the phylogenetic tree has failed. Aborting.")
 		if step == 4: #Building the phylogenetic tree
-			print("4. Creating the phylogenetic tree with IQTree.")
-			step4_dir = os.path.join(OUTDIR, "04_phylogenetic_tree")
-			os.mkdir(step4_dir) #creating output dir OUTDIR/04_phylogenetic_tree
-			if 3 in STEPS:
-				files_in_step3_dir = os.listdir(step3_dir) #['phylomatrix.phylip', 'busco_coords.partitions.tsv']
-				for file in files_in_step3_dir:
-					if '.phy' in file or '.nex' in file:
-						MATRIX = os.path.join(step3_dir, file)
-					else:
-						PARTITIONS = os.path.join(step3_dir, "busco_coords.partitions.tsv")
-			step4.model_partitions(MATRIX, PARTITIONS, step4_dir, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
+			try:
+				print("4. Creating the phylogenetic tree with IQTree.")
+				step4_dir = os.path.join(args.outdir, "04_phylogenetic_tree")
+				os.mkdir(step4_dir) #creating output dir OUTDIR/04_phylogenetic_tree
+				if 3 in STEPS:
+					files_in_step3_dir = os.listdir(step3_dir) #['phylomatrix.phylip', 'busco_coords.partitions.tsv']
+					for file in files_in_step3_dir:
+						if '.phy' in file or '.nex' in file:
+							MATRIX = os.path.join(step3_dir, file)
+						if '.tsv' in file:
+							PARTITIONS = os.path.join(step3_dir, file)
+				#step4.model_partitions(MATRIX, PARTITIONS, step4_dir, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
+				else: 
+					MATRIX = args.matrix
+					PARTITIONS = args.partitions
+				step4.model_partitions(MATRIX, PARTITIONS, step4_dir, args.seqtype, args.prefix, args.bootstrap, args.threads)
+			except Exception as e:
+				raise("fStep 4: Generating the phylogenetic tree has failed. Aborting.")
 #end
 #%% Menu -> is executed when this script is called as main program
 def usage():
@@ -158,7 +183,8 @@ if __name__ == '__main__':
     validate_params(args)
     print("\t\tSteps " + str(args.steps) + " selected.") #now we see which steps were requested
     print("0.3. Running BUSCO2Tree pipeline...")
-    BUSCO2Tree(args.steps, args.buscodir, args.outdir, args.odb, args.lineage, args.fastadir, args.config, args.command, args.trim, args.trimparams, args.aligndir, args.format, args.matrix, args.partitions, args.seqtype, args.prefix, args.bootstrap, args.threads)
+    BUSCO2Tree(args)
+	#.steps, args.buscodir, args.outdir, args.odb, args.lineage, args.fastadir, args.config, args.command, args.trim, args.trimparams, args.aligndir, args.format, args.matrix, args.partitions, args.seqtype, args.prefix, args.bootstrap, args.threads)
     print("BUSCO2Tree has finished.")
     print(f'Time taken to run: {time() - start} seconds.')
 #%% End

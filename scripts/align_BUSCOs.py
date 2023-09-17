@@ -4,6 +4,14 @@
 Created on Thu Jul 21 13:58:34 2022
 
 @author: Nicolás Nahuel Moreyra (niconm89@gmail.com)
+
+This script is used to align BUSCO groups among several genomes.
+It creates a multi FASTA file for each BUSCO group.
+The script works by reading the BUSCO output directories for each genome,
+identifying the single-copy BUSCO groups, and then concatenating the sequences
+for each group across all genomes into a multi FASTA file. This is not a simple
+concatenation like with the 'cat' command, but rather a matrix is built by joining
+the sequences corresponding to the same species from all alignments.
 """
 #%% Imports
 import os
@@ -14,7 +22,11 @@ from time import time
 import subprocess
 #%% Function definition
 def check_arguments(FASTADIR, OUTDIR, CONFIG_FILE=False):
-	'It checks the argumments.'
+	"""
+	This function checks the arguments passed to the script.
+	It verifies the existence of the directory containing fasta files,
+	the output directory and the config file (if provided).
+	"""
 	if not os.path.isdir(FASTADIR):
 		raise ValueError("Directory containing fasta files %s does not exists." % FASTADIR)
 	try:#check if output directory exists and (if not) can be created
@@ -27,12 +39,31 @@ def check_arguments(FASTADIR, OUTDIR, CONFIG_FILE=False):
 			raise ValueError("Config file %s does not exists." % CONFIG_FILE)
 #end
 def is_fasta(filename):
+    """
+    This function checks if a file is in FASTA format by inspecting the first line.
+    It does not check the entire file content to save time, especially for large files.
+    
+    Parameters:
+    filename (str): The path to the file to check.
+
+    Returns:
+    bool: True if the file is in FASTA format (i.e., the first line starts with '>'), False otherwise.
+
+    Note:
+    This function only checks the first line of the file. If the rest of the file is not in FASTA format,
+    this function will still return True. Therefore, it should be used when you are reasonably confident 
+    that your files are in FASTA format and just want to perform a quick check.
+    """
     with open(filename, "r") as handle:
-        fasta = SeqIO.parse(handle, "fasta")
-        return any(fasta)  # False when fasta is empty, i.e. wasn't a FASTA file
+        first_line = handle.readline()
+        return first_line.startswith('>')
 #end
 def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False):
-	'It receives the paths of 1) the directory containing the common single-copy BUSCO FASTA files, 2) the output directory, and 3) the config file (optional). It generates alignments for each FASTA file using MAFFT.'
+	"""
+	This function receives the paths of 1) the directory containing the common single-copy BUSCO FASTA files, 
+	2) the output directory, and 3) the config file (optional). 
+	It generates alignments for each FASTA file using MAFFT.
+	"""
 	check_arguments(FASTADIR, OUTDIR, CONFIG_FILE)
 	files = os.listdir(FASTADIR)
 	if len(files) > 0:
@@ -51,6 +82,11 @@ def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False):
 			alnout.write(stdout)
 #end
 def generate_cmdline(infile, settings):
+	"""
+	This function generates the command line for MAFFT.
+	It receives the input file and the settings for MAFFT.
+	It returns the command line to be executed.
+	"""
 	mafft_cmline = MafftCommandline(settings['mafft_bin'], input=infile)
 	if settings['align_method'] == 'auto':
 		#print("Running Mafft in auto mode.")
