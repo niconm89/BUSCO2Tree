@@ -63,7 +63,7 @@ def BUSCO2Tree(args):
 	except:
 		raise RuntimeError("Output directory can not be created. Check your path!")
 	step1_dir, step2_dir, step3_dir, step4_dir = ["","","",""]
-	for step in STEPS:
+	for step in args.steps:
 		#01_single-copy 02_alignments 02_Matrix 03_Tree
 		if step == 1: #Finding single-copy BUSCOs...
 			try:
@@ -81,7 +81,7 @@ def BUSCO2Tree(args):
 				print("2. Aligning common single-copy BUSCOs...")
 				step2_dir = os.path.join(args.outdir, "02_alignments")
 				os.mkdir(step2_dir) #creating output dir OUTDIR/02_alignments
-				if 1 in STEPS: #se hace en cadena
+				if 1 in args.steps: #se hace en cadena
 					FASTADIR = os.path.join(step1_dir, "common_busco_sequences")
 				else:
 					FASTADIR = args.fastadir
@@ -108,9 +108,9 @@ def BUSCO2Tree(args):
 				print("3. Generating the phylogenetic matrix.")
 				step3_dir = os.path.join(args.outdir, "03_matrix")
 				os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
-				if 2 in STEPS and args.trim:
+				if 2 in args.steps and args.trim:
 					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
-				elif 2 in STEPS and TRIMPARAMS:
+				elif 2 in args.steps and TRIMPARAMS:
 					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
 				else:
 					ALIGNDIR = args.aligndir
@@ -122,7 +122,7 @@ def BUSCO2Tree(args):
 				print("4. Creating the phylogenetic tree with IQTree.")
 				step4_dir = os.path.join(args.outdir, "04_phylogenetic_tree")
 				os.mkdir(step4_dir) #creating output dir OUTDIR/04_phylogenetic_tree
-				if 3 in STEPS:
+				if 3 in args.steps:
 					files_in_step3_dir = os.listdir(step3_dir) #['phylomatrix.phylip', 'busco_coords.partitions.tsv']
 					for file in files_in_step3_dir:
 						if '.phy' in file or '.nex' in file:
