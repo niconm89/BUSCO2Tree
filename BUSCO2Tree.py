@@ -85,12 +85,12 @@ def BUSCO2Tree(args):
 					FASTADIR = os.path.join(step1_dir, "common_busco_sequences")
 				else:
 					FASTADIR = args.fastadir
-				if args.commands:
+				if args.command:
 					print("MAFFT will be excecuted using a user-defined command.")
 					step2.align_command_mafft(FASTADIR, step2_dir, args.command)
 				else:
 					print("MAFFT will be excecuted using a configuration file.")
-					step2.align_config_mafft(FASTADIR, step2_dir, CONFIG)
+					step2.align_config_mafft(FASTADIR, step2_dir, args.config)
 				print("Alignments completed...")
 				if args.trim: #trimming alingments
 					print("Trimming alignments to remove poorly aligned regions...")
@@ -110,7 +110,7 @@ def BUSCO2Tree(args):
 				os.mkdir(step3_dir) #creating output dir OUTDIR/03_matrix
 				if 2 in args.steps and args.trim:
 					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
-				elif 2 in args.steps and TRIMPARAMS:
+				elif 2 in args.steps and args.trimparams:
 					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
 				else:
 					ALIGNDIR = args.aligndir
