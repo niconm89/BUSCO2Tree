@@ -112,7 +112,9 @@ def BUSCO2Tree(args):
 					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
 				elif 2 in args.steps and args.trimparams:
 					ALIGNDIR =  os.path.join(step2_dir, "trimAl")
-				else:
+				elif 2 in args.steps:
+					ALIGNDIR =  step2_dir
+				else: #if only running from step 3 onwards
 					ALIGNDIR = args.aligndir
 				step3.cat_alignments(ALIGNDIR, step3_dir, args.format)
 			except Exception as e:
