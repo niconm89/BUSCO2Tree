@@ -67,7 +67,7 @@ def do_partitions(OUTDIR, COORDINATES):
 	It creates a file with the coordinates of each locus.
 	"""
 	# Define the output file path
-	coords_out = os.path.join(OUTDIR, "busco_coords.partitions.tsv")
+	coords_out = os.path.join(OUTDIR, "partitions.tsv")
 	# Write the coordinates to the file
 	with open(coords_out, 'wt') as COORDS:
 		COORDS.write("#nexus\nbegin sets;\n")
