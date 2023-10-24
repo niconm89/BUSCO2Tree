@@ -10,7 +10,7 @@ Created on Mon Aug  1 14:13:22 2022
 import argparse
 import os
 from time import time
-from scripts import find_singlecopy_BUSCOs as step1
+from scripts import find_singlecopy_BUSCOs_fna as step1
 from scripts import align_BUSCOs as step2
 from scripts import create_matrix as step3
 from scripts import phylogenetic_analysis as step4
@@ -41,6 +41,8 @@ def validate_params(ARGUMENTS):
 			raise RuntimeError("The matrix file was not defined.")
 		if not ARGUMENTS.partitions:
 			raise RuntimeError("The partitions file was not defined.")
+		if ARGUMENTS.concordance and not ARGUMENTS.genetress:
+			raise RuntimeError("To estimate the concordance factors it is required to define the argument --genetrees.")
 #end validate_params
 
 def checkConsecutive(l):
