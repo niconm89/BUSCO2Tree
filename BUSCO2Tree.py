@@ -127,7 +127,7 @@ def BUSCO2Tree(args):
 				step4_dir = os.path.join(args.outdir, "04_phylogenetic_tree")
 				os.mkdir(step4_dir) #creating output dir OUTDIR/04_phylogenetic_tree
 				if 3 in args.steps:
-					files_in_step3_dir = os.listdir(step3_dir) #['phylomatrix.phylip', 'busco_coords.partitions.tsv']
+					files_in_step3_dir = os.listdir(step3_dir) #['phylomatrix.phylip', 'partitions.tsv']
 					for file in files_in_step3_dir:
 						if '.phy' in file or '.nex' in file:
 							MATRIX = os.path.join(step3_dir, file)
@@ -182,7 +182,7 @@ def usage():
 	step4_arguments.add_argument('-st', '--seqtype', type=str, required=False, choices=["DNA","AA"], default="AA", help='Type of sequence. Default: AA')
 	step4_arguments.add_argument('-gt', '--genetrees', action='store_true', required=False, help='Generate loci (gene) trees using iqtree')
 	step4_arguments.add_argument('-cf', '--concordance', action='store_true', required=False, help='Calculate concordance factors using iqtree. The gene trees estimation (-gt or --genetress) must also be set.')
-	
+
 	return parser.parse_args()
 #end
 #%% Main program
