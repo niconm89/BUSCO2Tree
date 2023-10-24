@@ -165,11 +165,14 @@ It is important that the `x` in `-rwxr-xr-x` is present for each script when you
 You may find it helpful to add the directories in which `BUSCO2Tree.py` and supplementary python scripts reside to your `$PATH` environment variable. For a single bash session, enter:
 
 ```
-PATH=/your_path_to_galba/:$PATH
+PATH=/your_path_to_BUSCO2Tree/:$PATH
 export PATH
 ```
 
 To make this `$PATH` modification available to all bash sessions, add the above lines to a startup script (e.g.`~/.bashrc`).
+
+## BUSCO2Tree DNA for genome mode
+This repository also provides the script [BUSCO2Tree_fna.py](BUSCO2Tree_fna.py), which follows the same methodology but utilizes the coding sequences of orthologs to generate the phylogenetic tree instead of using amino acid sequence alignments. This functionality is specifically designed for use with the results of BUSCO runs in genome mode.
 
 ---
 **Example data**
