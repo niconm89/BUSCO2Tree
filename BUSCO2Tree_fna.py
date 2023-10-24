@@ -57,7 +57,7 @@ def BUSCO2Tree(args):
 	BUSCO2Tree(args.steps, args.inputdir, args.outdir, args.odb, args.lineage, 
 	args.aligndir, args.config, args.command, args.trim, args.trimparams, 
 	args.aligndir, args.outformat)
-	Additional arguments: args.matrGenerating the phylogenetic tree ir, args.seqtype, args.prefix, args.bootstrap, args.threads
+	Additional arguments: args.matrGenerating the phylogenetic tree ir, 'DNA', args.prefix, args.bootstrap, args.threads
 	'''
 	try:
 		if not os.path.isdir(args.outdir):
@@ -139,7 +139,7 @@ def BUSCO2Tree(args):
 				else: 
 					MATRIX = args.matrix
 					PARTITIONS = args.partitions
-				step4.model_partitions(MATRIX, PARTITIONS, step4_dir, args.seqtype, args.prefix, args.bootstrap, args.threads)
+				step4.model_partitions(MATRIX, PARTITIONS, step4_dir, 'DNA', args.prefix, args.bootstrap, args.threads)
 				if args.genetrees:
 					if args.concordance:
 						step4.gene_trees(MATRIX, step4_dir, args.prefix, args.threads)
@@ -181,7 +181,6 @@ def usage():
 	step4_arguments.add_argument('-p', '--partitions', type=str, required=False, help='Path to the partitions file in nexus format.')
 	step4_arguments.add_argument('-P', '--prefix', type=str, required=False, default="iqtree", help='Prefix to name the output dataset and results. Default: iqtree')
 	step4_arguments.add_argument('-B', '--bootstrap', type=int, required=False, default="1000", help='Number of bootstrap replicate to run. Default: 1000')
-	step4_arguments.add_argument('-st', '--seqtype', type=str, required=False, choices=["DNA","AA"], default="AA", help='Type of sequence. Default: AA')
 	step4_arguments.add_argument('-gt', '--genetrees', action='store_true', required=False, help='Generate loci (gene) trees using iqtree')
 	step4_arguments.add_argument('-cf', '--concordance', action='store_true', required=False, help='Calculate concordance factors using iqtree. The gene trees estimation (-gt or --genetress) must also be set.')
 	
