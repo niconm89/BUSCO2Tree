@@ -47,7 +47,7 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 #end
 def gene_trees(MATRIXFILE, OUTDIR, PREFIX, THREADS):
 	cwd = os.getcwd()
-	os.chdir(OUTDIR)
+	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
 	# If the directory cannot be created, it raises an error.
 	IQTree_GENE = ""
@@ -62,7 +62,7 @@ def gene_trees(MATRIXFILE, OUTDIR, PREFIX, THREADS):
 #end
 def concordance_factors(MATRIXFILE, OUTDIR, PREFIX, THREADS):
 	cwd = os.getcwd()
-	os.chdir(OUTDIR)
+	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
 	# If the directory cannot be created, it raises an error.
 	IQTree_CF = ""
