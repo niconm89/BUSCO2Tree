@@ -55,7 +55,7 @@ def gene_trees(MATRIXFILE, OUTDIR, PREFIX, THREADS):
 	if not os.path.isabs(MATRIXFILE):
 		matrixfile = os.path.join(cwd, MATRIXFILE)
 	# The function then checks if the matrix and partition files are absolute paths, if not it makes them absolute.
-	IQTree_GENE = "iqtree -s " + matrixfile + " -S " + PREFIX + ".best_scheme.nex" + " --prefix " + loci + " -T " + str(THREADS)
+	IQTree_GENE = "iqtree -s " + matrixfile + " -S " + PREFIX + ".best_scheme.nex" + " --prefix loci" + " -T " + str(THREADS)
 	#run_iqtree = subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_GENE], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
