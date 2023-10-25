@@ -56,7 +56,7 @@ def concordance_factors(MATRIXFILE, PREFIX, THREADS):
 	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
 	# If the directory cannot be created, it raises an error.
-	IQTree_gCF = "iqtree -s " + PREFIX + ".treefile" + " --gcf " + "loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF" + " -T " + str(THREADS)
+	IQTree_gCF = "iqtree -t " + PREFIX + ".treefile" + " --gcf " + "loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF" + " -T " + str(THREADS)
 	#iqtree2 -t $prefix.treefile --gcf loci.treefile --prefix $prefix.treefile.gCF
 	IQTree_sCF = "iqtree -te " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + MATRIXFILE + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
 	#iqtree2 -te $prefix.treefile.gCF.cf.tree -s matrix.phylip -p $prefix.best_scheme.nex -blfix --scf 100 --prefix $prefix.treefile.sCF -T $cpu
