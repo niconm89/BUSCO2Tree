@@ -142,10 +142,10 @@ def BUSCO2Tree(args):
 				step4.model_partitions(MATRIX, PARTITIONS, step4_dir, 'DNA', args.prefix, args.bootstrap, args.threads)
 				if args.genetrees:
 					if args.concordance:
-						step4.gene_trees(MATRIX, step4_dir, args.prefix, args.threads)
-						step4.concordance_factors(MATRIX, step4_dir, args.prefix, args.threads)
+						step4.gene_trees(MATRIX, args.prefix, args.threads)
+						step4.concordance_factors(MATRIX, args.prefix, args.threads)
 					else:
-						step4.gene_trees(MATRIX, step4_dir, args.prefix, args.threads)
+						step4.gene_trees(MATRIX, args.prefix, args.threads)
 			except Exception as e:
 				raise("fStep 4: Generating the phylogenetic tree has failed. Aborting.")
 #end
