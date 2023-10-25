@@ -45,7 +45,7 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 	subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
 #end
-def gene_trees(MATRIXFILE, OUTDIR, PREFIX, THREADS):
+def gene_trees(MATRIXFILE, PREFIX, THREADS):
 	cwd = os.getcwd()
 	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
@@ -60,7 +60,7 @@ def gene_trees(MATRIXFILE, OUTDIR, PREFIX, THREADS):
 	subprocess.call([IQTree_GENE], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
 #end
-def concordance_factors(MATRIXFILE, OUTDIR, PREFIX, THREADS):
+def concordance_factors(MATRIXFILE, PREFIX, THREADS):
 	cwd = os.getcwd()
 	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
@@ -104,16 +104,21 @@ if __name__ == '__main__':
 	args = usage()
 	start = time() #time 0
 	print("Starting the phylogenetic analysis with IQ-Tree...")
+	cwd = os.getcwd()
 	model_partitions(args.matrix, args.partitions, args.outdir, args.seqtype, args.prefix, args.bootstrap, args.threads)
 	if args.genetrees:
+		if not os.path.isabs(args.matrix):
+			matrixfile = os.path.join(cwd, args.matrix)
+		else:
+			matrixfile = args.matrix
 		if args.concordance:
 			print("Estimating gene trees using IQ-Tree...")
-			gene_trees(args.matrix, args.outdir, args.prefix, args.threads)
+			gene_trees(matrixfile, args.prefix, args.threads)
 			print("Calculating concordance factors using IQ-Tree...")
-			concordance_factors(args.matrix, args.outdir, args.prefix, args.threads)
+			concordance_factors(matrixfile, args.prefix, args.threads)
 		else:
 			print("Estimating gene trees using IQ-Tree...")
-			gene_trees(args.matrix, args.outdir, args.prefix, args.threads)
+			gene_trees(args.matrix, args.prefix, args.threads)
 	print("IQ-Tree has finished.")
 	print(f'Time taken to run: {time() - start} seconds.')
 	
