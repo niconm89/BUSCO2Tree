@@ -58,9 +58,9 @@ def concordance_factors(MATRIXFILE, PREFIX, THREADS):
 	# If the directory cannot be created, it raises an error.
 	IQTree_gCF = "iqtree -t " + PREFIX + ".treefile" + " --gcf " + "loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF" + " -T " + str(THREADS)
 	#iqtree2 -t $prefix.treefile --gcf loci.treefile --prefix $prefix.treefile.gCF
-	IQTree_sCF = "iqtree -te " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + MATRIXFILE + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
+	
+	IQTree_sCF = "iqtree -t " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + MATRIXFILE + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
 	#iqtree2 -te $prefix.treefile.gCF.cf.tree -s matrix.phylip -p $prefix.best_scheme.nex -blfix --scf 100 --prefix $prefix.treefile.sCF -T $cpu
-	subprocess.call([IQTree_gCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_sCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
 #end
