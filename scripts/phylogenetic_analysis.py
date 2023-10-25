@@ -90,6 +90,10 @@ if __name__ == '__main__':
 	start = time() #time 0
 	print("Starting the phylogenetic analysis with IQ-Tree...")
 	cwd = os.getcwd()
+	if not os.path.isfile(args.matrix):
+			raise ValueError("The matrix file can not be found.")
+	if not os.path.isfile(args.partitions):
+			raise ValueError("The partition file can not be found.")
 	model_partitions(args.matrix, args.partitions, args.outdir, args.seqtype, args.prefix, args.bootstrap, args.threads)
 	if args.genetrees:
 		if not os.path.isabs(args.matrix):
@@ -103,7 +107,7 @@ if __name__ == '__main__':
 			concordance_factors(matrixfile, args.prefix, args.threads)
 		else:
 			print("Estimating gene trees using IQ-Tree...")
-			gene_trees(args.matrix, args.prefix, args.threads)
+			gene_trees(matrixfile, args.prefix, args.threads)
 	print("IQ-Tree has finished.")
 	print(f'Time taken to run: {time() - start} seconds.')
 	

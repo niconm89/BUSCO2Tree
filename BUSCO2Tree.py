@@ -39,8 +39,12 @@ def validate_params(ARGUMENTS):
 	if 4 in ARGUMENTS.steps and 3 not in ARGUMENTS.steps:
 		if not ARGUMENTS.matrix:
 			raise RuntimeError("The matrix file was not defined.")
+		elif not os.path.isfile(ARGUMENTS.matrix):
+			raise ValueError("The matrix file can not be found.")
 		if not ARGUMENTS.partitions:
 			raise RuntimeError("The partitions file was not defined.")
+		elif not os.path.isfile(ARGUMENTS.partitions):
+			raise ValueError("The partition file can not be found.")
 #end validate_params
 
 def checkConsecutive(l):
