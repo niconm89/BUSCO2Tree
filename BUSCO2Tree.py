@@ -137,13 +137,20 @@ def BUSCO2Tree(args):
 				else: 
 					MATRIX = args.matrix
 					PARTITIONS = args.partitions
-				step4.model_partitions(MATRIX, PARTITIONS, step4_dir, args.seqtype, args.prefix, args.bootstrap, args.threads)
+				#create full paths variables for matrix and partition files
+				if not os.path.isabs(MATRIX):
+					matrixfile = os.path.join(cwd, MATRIX)
+				if not os.path.isabs(PARTITIONS):
+					partitionsfile = os.path.join(cwd, PARTITIONS)
+				#run iqtree with model partition
+				step4.model_partitions(matrixfile, partitionsfile, step4_dir, args.seqtype, args.prefix, args.bootstrap, args.threads)
+				#if set, run gene trees and concordance factors
 				if args.genetrees:
 					if args.concordance:
-						step4.gene_trees(MATRIX, args.prefix, args.threads)
-						step4.concordance_factors(MATRIX, args.prefix, args.threads)
+						step4.gene_trees(matrixfile, args.prefix, args.threads)
+						step4.concordance_factors(matrixfile, args.prefix, args.threads)
 					else:
-						step4.gene_trees(MATRIX, args.prefix, args.threads)
+						step4.gene_trees(matrixfile, args.prefix, args.threads)
 			except Exception as e:
 				raise("fStep 4: Generating the phylogenetic tree has failed. Aborting.")
 #end
