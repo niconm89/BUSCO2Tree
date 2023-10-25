@@ -57,6 +57,7 @@ def BUSCO2Tree(args):
 	args.aligndir, args.outformat)
 	Additional arguments: args.matrGenerating the phylogenetic tree ir, args.seqtype, args.prefix, args.bootstrap, args.threads
 	'''
+	cwd = os.getcwd()
 	try:
 		if not os.path.isdir(args.outdir):
 			os.mkdir(args.outdir)

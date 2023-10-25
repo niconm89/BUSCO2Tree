@@ -46,16 +46,7 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
 #end
 def gene_trees(MATRIXFILE, PREFIX, THREADS):
-	cwd = os.getcwd()
-	#os.chdir(OUTDIR)
-	# The function first checks if the output directory exists, if not it creates it.
-	# If the directory cannot be created, it raises an error.
-	IQTree_GENE = ""
-	matrixfile = MATRIXFILE
-	if not os.path.isabs(MATRIXFILE):
-		matrixfile = os.path.join(cwd, MATRIXFILE)
-	# The function then checks if the matrix and partition files are absolute paths, if not it makes them absolute.
-	IQTree_GENE = "iqtree -s " + matrixfile + " -S " + PREFIX + ".best_scheme.nex" + " --prefix loci" + " -T " + str(THREADS)
+	IQTree_GENE = "iqtree -s " + MATRIXFILE + " -S " + PREFIX + ".best_scheme.nex" + " --prefix loci" + " -T " + str(THREADS)
 	#run_iqtree = subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_GENE], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
@@ -65,15 +56,9 @@ def concordance_factors(MATRIXFILE, PREFIX, THREADS):
 	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
 	# If the directory cannot be created, it raises an error.
-	IQTree_CF = ""
-	matrixfile = MATRIXFILE
-	if not os.path.isabs(MATRIXFILE):
-		matrixfile = os.path.join(cwd, MATRIXFILE)
-	# Gets the path to the directory containing the MATRIXFILE file
-	matrixfile_directory = os.path.dirname(matrixfile)
 	IQTree_gCF = "iqtree -s " + PREFIX + ".treefile" + " --gcf " + "loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF" + " -T " + str(THREADS)
 	#iqtree2 -t $prefix.treefile --gcf loci.treefile --prefix $prefix.treefile.gCF
-	IQTree_sCF = "iqtree -te " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + matrixfile + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
+	IQTree_sCF = "iqtree -te " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + MATRIXFILE + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
 	#iqtree2 -te $prefix.treefile.gCF.cf.tree -s matrix.phylip -p $prefix.best_scheme.nex -blfix --scf 100 --prefix $prefix.treefile.sCF -T $cpu
 	subprocess.call([IQTree_gCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_sCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
