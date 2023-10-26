@@ -52,13 +52,11 @@ def gene_trees(MATRIXFILE, PREFIX, THREADS):
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
 #end
 def concordance_factors(MATRIXFILE, PREFIX, THREADS):
-	cwd = os.getcwd()
-	#os.chdir(OUTDIR)
 	# The function first checks if the output directory exists, if not it creates it.
 	# If the directory cannot be created, it raises an error.
 	IQTree_gCF = "iqtree -t " + PREFIX + ".treefile" + " --gcf " + "loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF" + " -T " + str(THREADS)
 	#iqtree2 -t $prefix.treefile --gcf loci.treefile --prefix $prefix.treefile.gCF
-	
+	subprocess.call([IQTree_gCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	IQTree_sCF = "iqtree -t " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + MATRIXFILE + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
 	#iqtree2 -te $prefix.treefile.gCF.cf.tree -s matrix.phylip -p $prefix.best_scheme.nex -blfix --scf 100 --prefix $prefix.treefile.sCF -T $cpu
 	subprocess.call([IQTree_sCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)

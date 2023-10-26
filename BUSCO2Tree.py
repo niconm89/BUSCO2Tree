@@ -138,7 +138,6 @@ def BUSCO2Tree(args):
 							MATRIX = os.path.join(step3_dir, file)
 						if '.tsv' in file:
 							PARTITIONS = os.path.join(step3_dir, file)
-				#step4.model_partitions(MATRIX, PARTITIONS, step4_dir, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
 				else: 
 					MATRIX = args.matrix
 					PARTITIONS = args.partitions
@@ -148,6 +147,7 @@ def BUSCO2Tree(args):
 				if not os.path.isabs(PARTITIONS):
 					partitionsfile = os.path.join(cwd, PARTITIONS)
 				#run iqtree with model partition
+				#step4.model_partitions(MATRIX, PARTITIONS, step4_dir, SEQTYPE, PREFIX, BOOTSTRAP, THREADS)
 				step4.model_partitions(matrixfile, partitionsfile, step4_dir, args.seqtype, args.prefix, args.bootstrap, args.threads)
 				#if set, run gene trees and concordance factors
 				if args.genetrees:
