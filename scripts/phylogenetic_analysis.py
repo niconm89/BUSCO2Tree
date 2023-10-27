@@ -47,6 +47,8 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 #end
 def gene_trees(MATRIXFILE, PREFIX, THREADS):
 	IQTree_GENE = "iqtree -s " + MATRIXFILE + " -S " + PREFIX + ".best_scheme.nex" + " --prefix loci" + " -T " + str(THREADS)
+	print("gene_trees", os.getcwd())
+	print(IQTree_GENE)
 	#run_iqtree = subprocess.call([IQTree_MFP], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	subprocess.call([IQTree_GENE], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
@@ -54,10 +56,14 @@ def gene_trees(MATRIXFILE, PREFIX, THREADS):
 def concordance_factors(MATRIXFILE, PREFIX, THREADS):
 	# The function first checks if the output directory exists, if not it creates it.
 	# If the directory cannot be created, it raises an error.
-	IQTree_gCF = "iqtree -t " + PREFIX + ".treefile" + " --gcf " + "loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF" + " -T " + str(THREADS)
+	IQTree_gCF = "iqtree -t " + PREFIX + ".treefile" + " --gcf " + " loci.treefile" + " --prefix " + PREFIX + ".treefile.gCF " + " -T " + str(THREADS)
+	print("gCF", os.getcwd())
+	print(IQTree_gCF)
 	#iqtree2 -t $prefix.treefile --gcf loci.treefile --prefix $prefix.treefile.gCF
 	subprocess.call([IQTree_gCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	IQTree_sCF = "iqtree -t " + PREFIX + ".treefile.gCF.cf.tree" + " -s " + MATRIXFILE + " -p " + PREFIX + ".best_scheme.nex" + " -blfix -scf 100 " + " --prefix " + PREFIX + ".treefile.sCF" + " -T " + str(THREADS)
+	print("sCF", os.getcwd())
+	print(IQTree_sCF)
 	#iqtree2 -te $prefix.treefile.gCF.cf.tree -s matrix.phylip -p $prefix.best_scheme.nex -blfix --scf 100 --prefix $prefix.treefile.sCF -T $cpu
 	subprocess.call([IQTree_sCF], shell=True, stdout=subprocess.DEVNULL,stderr=subprocess.STDOUT)
 	# The function then constructs the IQ-TREE command and runs it in a subshell.
@@ -98,14 +104,11 @@ if __name__ == '__main__':
 			matrixfile = os.path.join(cwd, args.matrix)
 		else:
 			matrixfile = args.matrix
+		print("Estimating gene trees using IQ-Tree...")
+		gene_trees(matrixfile, args.prefix, args.threads)
 		if args.concordance:
-			print("Estimating gene trees using IQ-Tree...")
-			gene_trees(matrixfile, args.prefix, args.threads)
 			print("Calculating concordance factors using IQ-Tree...")
 			concordance_factors(matrixfile, args.prefix, args.threads)
-		else:
-			print("Estimating gene trees using IQ-Tree...")
-			gene_trees(matrixfile, args.prefix, args.threads)
 	print("IQ-Tree has finished.")
 	print(f'Time taken to run: {time() - start} seconds.')
 	
