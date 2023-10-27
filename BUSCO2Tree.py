@@ -152,7 +152,9 @@ def BUSCO2Tree(args):
 				#if set, run gene trees and concordance factors
 				if args.genetrees:
 					if args.concordance:
+						print("Vamos con gene trees..")
 						step4.gene_trees(matrixfile, args.prefix, args.threads)
+						print("Vamos con concordance factors..")
 						step4.concordance_factors(matrixfile, args.prefix, args.threads)
 					else:
 						step4.gene_trees(matrixfile, args.prefix, args.threads)
