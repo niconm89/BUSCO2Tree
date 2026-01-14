@@ -70,7 +70,7 @@ def model_partitions(MATRIXFILE, PARTITIONFILE, OUTDIR, SEQTYPE, PREFIX, BOOTSTR
 
     # Comando (lista, sin shell)
     cmd = [
-        "iqtree2",  # si tu binario es "iqtree", cambiá esto
+        "iqtree",  # si tu binario es "iqtree", cambiá esto
         "-s", str(matrixfile),
         "-p", str(partitionfile),
         "-m", "MFP",
@@ -175,7 +175,7 @@ def gene_trees(MATRIXFILE, PREFIX, THREADS, OUTDIR):
 	# -S test_sp.best_scheme.nex --prefix test_sp.loci -T 8
 	print("### Estimating gene trees")
 	cmd = [
-        "iqtree2",
+        "iqtree",
         "-s", str(matrixfile),
         "-S", str(best_scheme), #cambio -S por -p
         "--prefix", str(f"{PREFIX}.loci"),
@@ -225,7 +225,7 @@ def concordance_factors(MATRIXFILE, PREFIX, THREADS, OUTDIR):
     # gCF
 	print("### Estimating gene concordance factors")
 	cmd_gcf = [
-        "iqtree2",
+        "iqtree",
         "-t", str(treefile),
         "--gcf", str(loci_treefile),
         "--prefix", f"{PREFIX}.loci.gCF",
@@ -246,7 +246,7 @@ def concordance_factors(MATRIXFILE, PREFIX, THREADS, OUTDIR):
 		raise FileNotFoundError(f"Missing gCF tree output: {gcf_tree}")
 
 	cmd_scf = [
-        "iqtree2",
+        "iqtree",
         "-te", str(gcf_tree),
         "-s", str(matrixfile),
         "-p", str(best_scheme),
