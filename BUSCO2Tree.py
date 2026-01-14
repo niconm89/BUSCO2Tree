@@ -231,7 +231,7 @@ def usage():
 	#step 2
 	step2_arguments = parser.add_argument_group('Step2: Align common BUSCO groups')
 	step2_arguments.add_argument('-f', '--fastadir', type=str, required=False, help='Path to the directory containing the BUSCO groups in fasta format.')
-	step2_arguments.add_argument('-cnf', '--config', metavar='<config file>', type=str, required=False, help='Config file for alignment setting. Users can find a config file template in the docs directory. If no file is provided, the alignments will be done using default parameters.')
+	step2_arguments.add_argument('-c', '--config', metavar='<config file>', type=str, required=False, help='Config file for alignment setting. Users can find a config file template in the docs directory. If no file is provided, the alignments will be done using default parameters.')
 	step2_arguments.add_argument('-cmd', '--command', metavar='<command>', type=str, required=False, help='MAFFT parameters to apply to each alingment. The parmeters must be defined in a command line style, between quote marks, and the avoiding the names of in/output files, e.g. "--unalignlevel 0.1 --leavegappyregion --ep 0.12 --globalpair --maxiterate 1000".')
 	step2_arguments.add_argument('--trim', action='store_true', required=False, help='Trim alignments using trimAl in automated mode, which must be available in the path.')
 	step2_arguments.add_argument('--trimparams', required=False, default=None, help='trimAl parameters to apply when removing poorly aligned regions. The parameters must be defined in quotes marks and avoiding in/output files, e.g. "-gt 0.3".')

@@ -9,7 +9,6 @@ Adaptado por ChatGPT para usar configuración desde config.yaml (YAML).
 #%% Imports
 from pathlib import Path
 import argparse
-from Bio.Align.Applications import MafftCommandline
 from time import time
 import subprocess
 
@@ -41,27 +40,59 @@ def parse_mafft_config(CONFIG_FILE):
         import yaml
         try:
             with open(CONFIG_FILE) as f:
-                config = yaml.safe_load(f)
-                align = config.get("alignment", {})
+                config = yaml.safe_load(f) or {}
+                align = config.get("alignment", None)
+                if align is None:
+                    align = config.get("align", {})
+                if not isinstance(align, dict):
+                    raise ValueError("YAML section 'alignment'/'align' must be a dict.")
+                
                 settings.update({
                     "mafft_bin": align.get("mafft_path", "mafft"),
                     "align_method": align.get("align_method", "auto"),
-                    "threads": align.get("threads", 4)
+                    "threads": int(align.get("threads", 4))
                 })
         except Exception as e:
             raise ValueError(f"Error al leer archivo de configuración YAML: {CONFIG_FILE}\n{e}")
     return settings
 
 def generate_cmdline(infile, settings):
-    mafft_cmline = MafftCommandline(settings['mafft_bin'], input=str(infile))
+    """
+    Build MAFFT command line as a list of arguments.
+    """
+    mafft_cmd = [settings["mafft_bin"], "--thread", str(settings["threads"])]
 
-    if settings['align_method'] == 'auto':
-        mafft_cmline.set_parameter("--auto", True)
-        mafft_cmline.set_parameter("--thread", settings['threads'])
+    if settings.get("align_method", "auto") == "auto":
+        mafft_cmd.append("--auto")
 
-    # Podés seguir agregando más métodos si querés mapear más valores de align_method a opciones
+    mafft_cmd.append(str(infile))
+    return mafft_cmd
 
-    return mafft_cmline
+def run_mafft(infile, outfile, settings):
+    """
+    Run MAFFT and write alignment to outfile.
+    """
+    mafft_cmd = generate_cmdline(infile, settings)
+
+    outfile = Path(outfile)
+    outfile.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(outfile, "w") as out_fh:
+        result = subprocess.run(
+            mafft_cmd,
+            stdout=out_fh,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"MAFFT failed for {infile}\n"
+            f"Command: {' '.join(mafft_cmd)}\n"
+            f"STDERR:\n{result.stderr}"
+        )
+
+    return mafft_cmd
 
 def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False, THREADS=None):
     if CONFIG_FILE:
@@ -85,11 +116,12 @@ def align_config_mafft(FASTADIR, OUTDIR, CONFIG_FILE=False, THREADS=None):
         infile = busco
         if not is_fasta(infile):
             continue
-        mafft_cmline = generate_cmdline(infile, settings)
-        stdout, stderr = mafft_cmline()
+        #mafft_cmline = generate_cmdline(infile, settings)
+        #stdout, stderr = mafft_cmline()
         outfile = Path(OUTDIR) / f"{busco.stem}.aln.fa"
-        with open(outfile, "wt") as alnout:
-            alnout.write(stdout)
+        run_mafft(infile, outfile, settings)
+        #with open(outfile, "wt") as alnout:
+        #    alnout.write(stdout)
 
 def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
     check_arguments(FASTADIR, OUTDIR)
@@ -104,9 +136,6 @@ def align_command_mafft(FASTADIR, OUTDIR, COMMAND):
             result = subprocess.run(cmd_mafft, stdout=out, stderr=subprocess.PIPE, text=True)
         if result.returncode != 0:
             raise RuntimeError(f"MAFFT failed for {infile}\nSTDERR:\n{result.stderr}")
-        #result = subprocess.run(cmd_mafft, shell=True, capture_output=True, text=True)
-        #if result.returncode != 0:
-        #    raise RuntimeError(f"MAFFT failed for {infile}\nSTDERR:\n{result.stderr}\nSTDOUT:\n{result.stdout}")
 
 def trim_alns(ALIGNDIR, OUTDIR_TRIM, TRIMPARAMS=False):
     list_of_alns = [p for p in Path(ALIGNDIR).iterdir() if p.is_file()]
@@ -163,7 +192,12 @@ if __name__ == '__main__':
 
     if args.trim or args.trimparams:
         print("Step 2.3: Trimming alignments with trimAl...")
-        trim_alns(raw_aln_dir, trim_aln_dir, args.trimparams)
-        print("→ Poorly aligned regions removed.")
+
+    trimparams = args.trimparams
+    if args.trim and not args.trimparams:
+        trimparams = "-automated1"
+
+    trim_alns(raw_aln_dir, trim_aln_dir, trimparams)
+    print("→ Poorly aligned regions removed.")
 
     print(f'Total time: {time() - start:.2f} seconds.')
