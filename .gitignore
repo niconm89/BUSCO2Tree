@@ -1,0 +1,12 @@
+B2T_output/
+B2T_eval/
+B2T_full_*/
+B2T_step4_*/
+*.log
+*.ckp.gz
+*.treefile
+*.contree
+*.iqtree
+*.model.gz
+*.mldist
+*.splits.nex
