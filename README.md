@@ -76,7 +76,7 @@ BUSCO2Tree/
 ## Installation
 
 BUSCO2Tree can be executed either using a local installation of the dependencies
-or via Docker ([Go to Docker execution](#docker-execution))for fully reproducible runs.
+or via Docker for fully reproducible runs ([Go to Docker execution](#docker-execution)).
 
 ### Clone repository
 
