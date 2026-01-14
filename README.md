@@ -165,6 +165,13 @@ This test:
 
 ## Running BUSCO2Tree
 
+BUSCO2Tree can be executed either using a local installation of the dependencies
+or via Docker for fully reproducible runs.
+
+BUSCO2Tree expects BUSCO v5 results as input and runs downstream steps including
+BUSCO filtering, multiple sequence alignment, matrix construction, and phylogenetic
+inference.
+
 ### Step 1: Find shared single-copy BUSCOs
 
 ```bash
@@ -206,6 +213,43 @@ BUSCO2Tree.py   -s 4   -m B2T_output/03_matrix/matrix.phylip   -p B2T_output/03_
 ```bash
 BUSCO2Tree.py   -s 1 2 3 4   -b <BUSCO_results_directory>   -c example/config/config_mafft.yaml   --trim   -o B2T_output   -t 8
 ```
+
+---
+
+### Docker execution
+
+BUSCO2Tree can be executed using Docker, which provides a fully reproducible
+environment including all required dependencies (MAFFT, trimAl, IQ-TREE).
+
+#### Build the Docker image
+
+From the root of the repository:
+
+```bash
+docker build -t busco2tree:latest -f docker/Dockerfile .
+```
+
+#### Run BUSCO2Tree using Docker
+
+A helper script is provided to simplify execution:
+
+```bash
+chmod +x scripts/run_docker.sh
+```
+
+Example run:
+
+```bash
+./scripts/run_docker.sh \
+  -b /path/to/BUSCO_results_directory \
+  -t 8
+```
+
+Notes:
+
+- The BUSCO input directory is mounted read-only inside the container.
+- All outputs are written to the current working directory.
+- The Docker image uses IQ-TREE v3 for phylogenetic inference.
 
 ---
 
