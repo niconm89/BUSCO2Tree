@@ -1,7 +1,18 @@
+# Smoke test outputs
+.smoke_out/
+
+# Python
+__pycache__/
+*.pyc
+
+# Pipeline outputs (common patterns)
 B2T_output/
 B2T_eval/
-B2T_full_*/
-B2T_step4_*/
+B2T_full*/
+B2T_step*/
+
+
+# IQ-TREE outputs
 *.log
 *.ckp.gz
 *.treefile
@@ -10,3 +21,7 @@ B2T_step4_*/
 *.model.gz
 *.mldist
 *.splits.nex
+
+# Environments
+.venv/
+.env
