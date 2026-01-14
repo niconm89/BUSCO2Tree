@@ -1,0 +1,22 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+YOtrMO023547         -            405 708105at2759         -            224   5.6e-47  159.4  23.5   1   4   1.4e-12   3.1e-09   36.0   0.0     8    58    35    88    29   102 0.83 -
+YOtrMO023547         -            405 708105at2759         -            224   5.6e-47  159.4  23.5   2   4   7.5e-35   1.6e-31  108.8   7.9    70   165   159   278   116   293 0.85 -
+YOtrMO023547         -            405 708105at2759         -            224   5.6e-47  159.4  23.5   3   4   5.6e-08   0.00012   21.0   3.2   160   206   298   351   290   373 0.78 -
+YOtrMO023547         -            405 708105at2759         -            224   5.6e-47  159.4  23.5   4   4       0.3   6.5e+02   -1.0   0.4   197   218   370   392   352   402 0.60 -
+YOtrMO016976         -            457 708105at2759         -            224    0.0013   17.6   0.0   1   1   9.5e-07    0.0021   16.9   0.0    69   145   247   329   232   369 0.83 -
+YOtrMO012168         -           2309 708105at2759         -            224    0.0079   15.0   0.6   1   1   9.9e-06     0.022   13.6   0.6   102   142   811   851   769   855 0.84 -
+YOtrMO001520         -            530 708105at2759         -            224     0.031   13.1   0.0   1   1   2.5e-05     0.055   12.3   0.0   115   145   378   408   316   416 0.75 -
+YOtrMO004263         -            924 708105at2759         -            224     0.035   12.9   0.0   1   1   3.3e-05     0.071   11.9   0.0   104   144   755   795   741   798 0.82 -
+YOtrMO016510         -            825 708105at2759         -            224     0.042   12.7   0.1   1   1   3.6e-05      0.08   11.8   0.1   119   143   679   703   596   710 0.73 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/708105at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmoj.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dmoj/run_eukaryota_odb10/hmmer_output/initial_run_results/708105at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/708105at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmoj.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:23:23 2023
+# [ok]

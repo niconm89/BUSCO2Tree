@@ -1,0 +1,20 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+FBtr0080290          -            462 664730at2759         -            349  3.1e-194  644.3   0.3   1   2    3e-142  1.1e-138  461.7   0.0     1   247    62   322    62   334 0.96 -
+FBtr0080290          -            462 664730at2759         -            349  3.1e-194  644.3   0.3   2   2   1.7e-56     6e-53  179.7   0.6   250   349   352   462   347   462 0.91 -
+FBtr0339524          -            123 664730at2759         -            349   8.2e-09   34.5   0.1   1   1   3.2e-12   1.1e-08   34.1   0.1     1    29    62    90    62    97 0.91 -
+FBtr0344987          -            781 664730at2759         -            349   0.00069   18.3   0.0   1   3      0.16   5.7e+02   -1.1   0.0     3    73    29   101    27   137 0.66 -
+FBtr0344987          -            781 664730at2759         -            349   0.00069   18.3   0.0   2   3   1.1e-06    0.0039   15.8   0.0   158   204   216   263   206   279 0.84 -
+FBtr0344987          -            781 664730at2759         -            349   0.00069   18.3   0.0   3   3      0.76   2.7e+03   -3.3   0.0   308   328   454   474   451   479 0.85 -
+FBtr0345817          -            576 664730at2759         -            349     0.052   12.1   0.0   1   1     3e-05       0.1   11.1   0.0    75   134   398   460   391   468 0.84 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/664730at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmel.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dmel/run_eukaryota_odb10/hmmer_output/initial_run_results/664730at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/664730at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmel.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:23:04 2023
+# [ok]

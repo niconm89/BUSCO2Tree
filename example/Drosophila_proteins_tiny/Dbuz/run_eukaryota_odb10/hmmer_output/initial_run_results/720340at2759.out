@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz02104-RA         -            541 720340at2759         -            227   1.7e-57  193.8  11.6   1   4    0.0006       7.8    5.1   0.0     1    29     2    30     2    42 0.77 protein AED:0.04 eAED:0.04 QI:103|1|1|1|0.8|0.66|6|289|541
+Dbuz02104-RA         -            541 720340at2759         -            227   1.7e-57  193.8  11.6   2   4   3.9e-12     5e-08   31.9   0.0    16    77    52   123    45   146 0.75 protein AED:0.04 eAED:0.04 QI:103|1|1|1|0.8|0.66|6|289|541
+Dbuz02104-RA         -            541 720340at2759         -            227   1.7e-57  193.8  11.6   3   4   1.7e-05      0.22   10.2   0.1    54    88   211   245   163   251 0.76 protein AED:0.04 eAED:0.04 QI:103|1|1|1|0.8|0.66|6|289|541
+Dbuz02104-RA         -            541 720340at2759         -            227   1.7e-57  193.8  11.6   4   4   5.4e-47     7e-43  145.9   5.1    93   227   377   532   363   532 0.82 protein AED:0.04 eAED:0.04 QI:103|1|1|1|0.8|0.66|6|289|541
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/720340at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dbuz/run_eukaryota_odb10/hmmer_output/initial_run_results/720340at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/720340at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:21:22 2023
+# [ok]

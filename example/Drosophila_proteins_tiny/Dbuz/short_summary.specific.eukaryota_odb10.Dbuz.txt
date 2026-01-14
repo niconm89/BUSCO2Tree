@@ -1,0 +1,18 @@
+# BUSCO version is: 5.4.6 
+# The lineage dataset is: eukaryota_odb10 (Creation date: 2020-09-10, number of genomes: 70, number of BUSCOs: 255)
+# Summarized benchmarking in BUSCO notation for file /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:92.2%[S:91.4%,D:0.8%],F:2.4%,M:5.4%,n:255	   
+	235	Complete BUSCOs (C)			   
+	233	Complete and single-copy BUSCOs (S)	   
+	2	Complete and duplicated BUSCOs (D)	   
+	6	Fragmented BUSCOs (F)			   
+	14	Missing BUSCOs (M)			   
+	255	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	busco: 5.4.6

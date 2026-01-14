@@ -1,0 +1,32 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+FBpp0234927          -            402 1358374at2759        -            213   1.6e-80  269.2  26.7   1   1   1.7e-82   2.4e-79  265.4  26.7     3   206    16   257    14   262 0.82 -
+FBpp0227957          -            393 1358374at2759        -            213   4.9e-08   32.3   3.6   1   3   1.1e-06    0.0015   17.7   0.0    65   108    24    68    13    84 0.75 -
+FBpp0227957          -            393 1358374at2759        -            213   4.9e-08   32.3   3.6   2   3       1.5   2.1e+03   -2.4   0.4   147   160   163   175   162   222 0.67 -
+FBpp0227957          -            393 1358374at2759        -            213   4.9e-08   32.3   3.6   3   3   1.2e-05     0.016   14.3   0.4   146   167   320   340   287   361 0.79 -
+FBpp0401139          -            279 1358374at2759        -            213   3.5e-07   29.5  13.4   1   4     0.011        15    4.6   0.2    64    85    38    61     8    66 0.73 -
+FBpp0401139          -            279 1358374at2759        -            213   3.5e-07   29.5  13.4   2   4   6.4e-07   0.00087   18.4   0.3    63    91    66    94    63   103 0.90 -
+FBpp0401139          -            279 1358374at2759        -            213   3.5e-07   29.5  13.4   3   4   0.00055      0.75    8.8   0.4    60    85   117   144   112   148 0.86 -
+FBpp0401139          -            279 1358374at2759        -            213   3.5e-07   29.5  13.4   4   4    0.0083        11    5.0   0.0    64    85   147   168   145   174 0.91 -
+FBpp0231657          -            267 1358374at2759        -            213   5.2e-06   25.7   2.2   1   2   6.1e-06    0.0084   15.2   0.5    59   142    10    96     6   112 0.79 -
+FBpp0231657          -            267 1358374at2759        -            213   5.2e-06   25.7   2.2   2   2   0.00018      0.24   10.4   0.0    56   105   146   194   105   201 0.79 -
+FBpp0229157          -           1023 1358374at2759        -            213   9.4e-05   21.6   0.2   1   2   6.9e-08   9.4e-05   21.6   0.2    34    86   432   483   426   492 0.90 -
+FBpp0229157          -           1023 1358374at2759        -            213   9.4e-05   21.6   0.2   2   2        10   1.4e+04   -7.5   7.5    22    60   977  1015   968  1020 0.59 -
+FBpp0228711          -            428 1358374at2759        -            213      0.01   14.9   0.0   1   1   1.3e-05     0.017   14.2   0.0    47    89   145   187   106   203 0.78 -
+FBpp0232980          -            183 1358374at2759        -            213     0.012   14.7   0.0   1   1   1.4e-05     0.019   14.0   0.0    64    89    95   120    60   130 0.74 -
+FBpp0399174          -            628 1358374at2759        -            213     0.097   11.7   0.1   1   1   0.00015       0.2   10.7   0.1    29   105   319   397   300   403 0.79 -
+FBpp0231883          -            403 1358374at2759        -            213      0.21   10.6   3.7   1   2   0.00076         1    8.4   1.8    66    85     3    22     2    36 0.83 -
+FBpp0231883          -            403 1358374at2759        -            213      0.21   10.6   3.7   2   2      0.14   1.9e+02    1.0   0.0    97   136    71   110    53   151 0.53 -
+FBpp0230057          -            573 1358374at2759        -            213      0.26   10.3   2.3   1   2     0.085   1.2e+02    1.7   0.1     7    55    73   121    66   140 0.77 -
+FBpp0230057          -            573 1358374at2759        -            213      0.26   10.3   2.3   2   2   0.00092       1.3    8.1   0.2     8    50   346   387   342   400 0.73 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1358374at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dvir/run_eukaryota_odb10/hmmer_output/initial_run_results/1358374at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1358374at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:24:05 2023
+# [ok]

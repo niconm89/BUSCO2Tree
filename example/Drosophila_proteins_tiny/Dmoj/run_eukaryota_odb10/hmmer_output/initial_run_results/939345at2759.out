@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+YOtrMO017145         -            227 939345at2759         -            113   1.5e-34  118.3   5.4   1   4   2.3e-08    0.0003   20.7   0.0    12    36    25    49     1    60 0.87 -
+YOtrMO017145         -            227 939345at2759         -            113   1.5e-34  118.3   5.4   2   4     7e-18   9.2e-14   51.3   0.1    32    73    87   130    77   139 0.83 -
+YOtrMO017145         -            227 939345at2759         -            113   1.5e-34  118.3   5.4   3   4   1.8e-05      0.23   11.4   0.0    56    86   137   166   126   172 0.77 -
+YOtrMO017145         -            227 939345at2759         -            113   1.5e-34  118.3   5.4   4   4   6.5e-13   8.5e-09   35.4   0.3    87   112   183   208   180   209 0.94 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/939345at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmoj.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dmoj/run_eukaryota_odb10/hmmer_output/initial_run_results/939345at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/939345at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmoj.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:23:26 2023
+# [ok]

@@ -1,0 +1,19 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz09427-RA         -           1012 257318at2759         -            324   1.3e-82  277.0  19.3   1   2   4.7e-59     2e-55  187.6   6.3     9   211   550   804   543   814 0.81 protein AED:0.09 eAED:0.09 QI:77|0.66|0.42|0.85|0.5|0.28|7|205|1012
+Dbuz09427-RA         -           1012 257318at2759         -            324   1.3e-82  277.0  19.3   2   2   3.9e-28   1.7e-24   86.0   5.1   203   305   822   956   815   962 0.77 protein AED:0.09 eAED:0.09 QI:77|0.66|0.42|0.85|0.5|0.28|7|205|1012
+Dbuz13035-RA         -            434 257318at2759         -            324     0.001   17.8   0.0   1   2     4e-05      0.17   10.4   0.0    40    74    83   117    75   123 0.90 protein AED:0.32 eAED:0.32 QI:0|0|0|0.5|1|1|2|0|434
+Dbuz13035-RA         -            434 257318at2759         -            324     0.001   17.8   0.0   2   2    0.0016         7    5.1   0.0   126   174   151   198   127   283 0.66 protein AED:0.32 eAED:0.32 QI:0|0|0|0.5|1|1|2|0|434
+Dbuz12136-RA         -            785 257318at2759         -            324     0.022   13.4   1.4   1   2       0.1   4.5e+02   -0.8   0.0    47    70   231   254   225   258 0.80 protein AED:0.31 eAED:0.31 QI:78|1|1|1|1|1|5|30|785
+Dbuz12136-RA         -            785 257318at2759         -            324     0.022   13.4   1.4   2   2   1.5e-05     0.065   11.8   0.3   115   165   280   333   268   387 0.75 protein AED:0.31 eAED:0.31 QI:78|1|1|1|1|1|5|30|785
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/257318at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dbuz/run_eukaryota_odb10/hmmer_output/initial_run_results/257318at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/257318at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:21:28 2023
+# [ok]

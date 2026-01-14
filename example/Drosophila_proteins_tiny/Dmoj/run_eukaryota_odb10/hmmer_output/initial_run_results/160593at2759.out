@@ -1,0 +1,33 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+YOtrMO021966         -           2413 160593at2759         -           1419         0 1651.6  32.0   1   5   5.7e-05      0.12    9.6   0.2     3   133    35   183    33   226 0.64 -
+YOtrMO021966         -           2413 160593at2759         -           1419         0 1651.6  32.0   2   5    0.0017       3.8    4.7   0.3   145   202   566   622   540   671 0.79 -
+YOtrMO021966         -           2413 160593at2759         -           1419         0 1651.6  32.0   3   5    0.0053        12    3.1   0.1   842   872   824   854   811   866 0.83 -
+YOtrMO021966         -           2413 160593at2759         -           1419         0 1651.6  32.0   4   5    0.0035       7.7    3.7   0.1   934   960   866   892   860   898 0.92 -
+YOtrMO021966         -           2413 160593at2759         -           1419         0 1651.6  32.0   5   5         0         0 1632.3  12.1   319  1403   970  2172   964  2188 0.90 -
+YOtrMO030442         -            893 160593at2759         -           1419   1.7e-08   32.4   0.4   1   5     0.041        89    0.2   0.0   734   790    95   150    78   194 0.75 -
+YOtrMO030442         -            893 160593at2759         -           1419   1.7e-08   32.4   0.4   2   5     0.021        46    1.1   0.0  1017  1103   216   306   210   310 0.78 -
+YOtrMO030442         -            893 160593at2759         -           1419   1.7e-08   32.4   0.4   3   5   4.3e-09   9.4e-06   23.3   0.2   553   661   384   497   375   502 0.82 -
+YOtrMO030442         -            893 160593at2759         -           1419   1.7e-08   32.4   0.4   4   5     0.011        25    2.0   0.0  1051  1091   480   522   475   531 0.73 -
+YOtrMO030442         -            893 160593at2759         -           1419   1.7e-08   32.4   0.4   5   5     0.055   1.2e+02   -0.3   0.0   728   757   670   699   657   756 0.50 -
+YOtrMO022000         -           1104 160593at2759         -           1419   2.4e-08   31.9   1.2   1   4      0.11   2.5e+02   -1.3   0.1  1323  1379     7    62     5    77 0.71 -
+YOtrMO022000         -           1104 160593at2759         -           1419   2.4e-08   31.9   1.2   2   4   0.00048       1.1    6.5   0.1   807   867   134   194    54   209 0.73 -
+YOtrMO022000         -           1104 160593at2759         -           1419   2.4e-08   31.9   1.2   3   4     1e-06    0.0022   15.4   0.0   718   781   390   457   373   500 0.82 -
+YOtrMO022000         -           1104 160593at2759         -           1419   2.4e-08   31.9   1.2   4   4    0.0025       5.4    4.2   0.0   571   640   907   979   897   990 0.68 -
+YOtrMO016784         -           1333 160593at2759         -           1419   1.4e-05   22.7   0.7   1   3   8.8e-05      0.19    9.0   0.0   783   863   653   735   623   776 0.76 -
+YOtrMO016784         -           1333 160593at2759         -           1419   1.4e-05   22.7   0.7   2   3   0.00025      0.55    7.5   0.0  1301  1352   937   989   930  1030 0.83 -
+YOtrMO016784         -           1333 160593at2759         -           1419   1.4e-05   22.7   0.7   3   3     0.049   1.1e+02   -0.1   0.0  1001  1039  1183  1221  1145  1227 0.74 -
+YOtrMO003217         -            227 160593at2759         -           1419     0.066   10.5   0.7   1   1   3.2e-05      0.07   10.5   0.7    88   178    19   109     1   150 0.80 -
+YOtrMO001757         -           1512 160593at2759         -           1419       5.1    4.3  14.3   1   2      0.86   1.9e+03   -4.2  11.8   140   196    58   111    44   134 0.49 -
+YOtrMO001757         -           1512 160593at2759         -           1419       5.1    4.3  14.3   2   2   0.00011      0.25    8.6   0.0   731   762   693   724   688   760 0.82 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/160593at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmoj.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dmoj/run_eukaryota_odb10/hmmer_output/initial_run_results/160593at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/160593at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dmoj.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:23:23 2023
+# [ok]

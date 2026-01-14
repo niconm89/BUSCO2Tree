@@ -1,0 +1,27 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+FBpp0224550          -            337 976469at2759         -            233   4.8e-60  202.5   9.3   1   2   1.3e-52   1.8e-49  167.9   0.4     1   150    18   200    18   204 0.90 -
+FBpp0224550          -            337 976469at2759         -            233   4.8e-60  202.5   9.3   2   2   5.2e-11   7.1e-08   31.8   3.1   144   231   214   325   206   327 0.66 -
+FBpp0224528          -            308 976469at2759         -            233   2.7e-09   36.5   0.3   1   1   4.4e-11   5.9e-08   32.1   0.3     2   108    27   167    26   237 0.76 -
+FBpp0224672          -            327 976469at2759         -            233   6.5e-05   22.1   0.0   1   2     0.016        22    4.0   0.0     2    27    50    80    49   103 0.69 -
+FBpp0224672          -            327 976469at2759         -            233   6.5e-05   22.1   0.0   2   2     4e-06    0.0054   15.9   0.0    42   101   118   185   106   200 0.72 -
+FBpp0237709          -            280 976469at2759         -            233   0.00044   19.4   0.2   1   1   5.6e-06    0.0077   15.4   0.2    19    99    30   132     9   135 0.79 -
+FBpp0233552          -            967 976469at2759         -            233     0.059   12.5   0.1   1   1   9.2e-05      0.13   11.4   0.1   147   214   706   773   693   788 0.89 -
+FBpp0395536          -            509 976469at2759         -            233      0.61    9.1   8.7   1   1    0.0012       1.6    7.7   8.7   162   202   192   232   179   259 0.76 -
+FBpp0224907          -           1132 976469at2759         -            233       1.3    8.1  12.0   1   1    0.0019       2.6    7.1  12.0   158   226   189   258   177   265 0.71 -
+FBpp0392448          -            649 976469at2759         -            233       2.7    7.0   5.3   1   2      0.08   1.1e+02    1.8   0.6   177   196   308   327   278   332 0.79 -
+FBpp0392448          -            649 976469at2759         -            233       2.7    7.0   5.3   2   2    0.0024       3.3    6.7   0.4   143   199   505   560   502   582 0.87 -
+FBpp0231185          -            522 976469at2759         -            233       8.1    5.5  23.2   1   2    0.0017       2.4    7.2   8.3   175   212    88   125    60   154 0.62 -
+FBpp0231185          -            522 976469at2759         -            233       8.1    5.5  23.2   2   2     0.024        32    3.5   6.9   158   186   475   503   439   514 0.53 -
+FBpp0237360          -            624 976469at2759         -            233       8.5    5.4  26.7   1   1     0.012        16    4.5  26.7   144   231   292   381   282   383 0.64 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/976469at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dvir/run_eukaryota_odb10/hmmer_output/initial_run_results/976469at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/976469at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:24:17 2023
+# [ok]

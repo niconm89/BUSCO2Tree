@@ -1,0 +1,47 @@
+{
+    "parameters": {
+        "out_path": "/home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023",
+        "cpu": "8",
+        "force": "False",
+        "restart": "False",
+        "quiet": "False",
+        "download_path": "/home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads",
+        "datasets_version": "odb10",
+        "offline": "True",
+        "download_base_url": "https://busco-data.ezlab.org/v5/data/",
+        "auto-lineage": "False",
+        "auto-lineage-prok": "False",
+        "auto-lineage-euk": "False",
+        "update-data": "False",
+        "use_augustus": "False",
+        "batch_mode": "False",
+        "tar": "False",
+        "in": "/home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta",
+        "out": "Results/00_proteins/Dbuz",
+        "mode": "proteins",
+        "lineage_dataset": "/home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10",
+        "main_out": "/home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dbuz",
+        "lineage_results_dir": "run_eukaryota_odb10",
+        "domain": "eukaryota"
+    },
+    "lineage_dataset": {
+        "name": "eukaryota_odb10",
+        "creation_date": "2020-09-10",
+        "number_of_buscos": "255",
+        "number_of_species": "70"
+    },
+    "versions": {
+        "hmmsearch": 3.1,
+        "busco": "5.4.6"
+    },
+    "results": {
+        "one_line_summary": "C:92.2%[S:91.4%,D:0.8%],F:2.4%,M:5.4%,n:255",
+        "Complete": 92.2,
+        "Single copy": 91.4,
+        "Multi copy": 0.8,
+        "Fragmented": 2.4,
+        "Missing": 5.4,
+        "n_markers": 255,
+        "domain": "eukaryota"
+    }
+}
