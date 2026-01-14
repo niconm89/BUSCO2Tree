@@ -1,0 +1,24 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz03262-RA         -            548 1010730at2759        -            275    3e-124  413.2   0.0   1   1    3e-127  4.2e-124  412.7   0.0     1   262     3   282     3   290 0.93 protein AED:0.01 eAED:0.01 QI:89|1|1|1|1|1|4|1769|548
+Dbuz07150-RA         -            581 1010730at2759        -            275   2.3e-21   75.7   0.4   1   1   2.7e-24   3.9e-21   74.9   0.4    76   258   195   397   189   410 0.80 protein AED:0.01 eAED:0.01 QI:180|1|1|1|1|1|3|158|581
+Dbuz02383-RA         -            621 1010730at2759        -            275   1.5e-12   46.8   1.2   1   2       1.7   2.4e+03   -3.1   0.0    76   102   287   313   277   318 0.75 protein AED:0.00 eAED:0.00 QI:210|1|1|1|0.5|0.66|3|602|621
+Dbuz02383-RA         -            621 1010730at2759        -            275   1.5e-12   46.8   1.2   2   2   1.4e-15   2.1e-12   46.3   0.5   132   256   373   507   338   520 0.80 protein AED:0.00 eAED:0.00 QI:210|1|1|1|0.5|0.66|3|602|621
+Dbuz09555-RA         -            366 1010730at2759        -            275    0.0012   17.6   0.5   1   1   1.7e-06    0.0025   16.5   0.5   142   224    65   159    43   167 0.68 protein AED:0.06 eAED:0.06 QI:295|1|1|1|0.5|0.57|7|131|366
+Dbuz01350-RA         -            315 1010730at2759        -            275    0.0015   17.3   0.1   1   1   2.3e-06    0.0033   16.1   0.1    85   225    59   197    50   212 0.84 protein AED:0.25 eAED:0.24 QI:0|0|0.5|1|0|0.5|2|557|315
+Dbuz02149-RA         -            571 1010730at2759        -            275    0.0066   15.2   0.1   1   1     7e-06      0.01   14.6   0.1   169   222   368   427   321   446 0.79 protein AED:0.46 eAED:0.46 QI:0|-1|0|1|-1|1|1|0|571
+Dbuz12395-RA         -            328 1010730at2759        -            275     0.011   14.5   0.3   1   1   1.4e-05      0.02   13.6   0.3   148   227   119   210    58   214 0.70 protein AED:0.01 eAED:0.02 QI:0|0|0|1|1|1|4|0|328
+Dbuz09066-RA         -           1310 1010730at2759        -            275     0.029   13.0   0.3   1   2   4.2e-05     0.061   12.0   0.0   188   222   109   143    28   173 0.66 protein AED:0.09 eAED:0.08 QI:0|0.75|0.66|0.88|0.87|0.77|9|517|1310
+Dbuz09066-RA         -           1310 1010730at2759        -            275     0.029   13.0   0.3   2   2       2.6   3.7e+03   -3.7   0.0   237   264   238   265   232   273 0.73 protein AED:0.09 eAED:0.08 QI:0|0.75|0.66|0.88|0.87|0.77|9|517|1310
+Dbuz04913-RA         -            224 1010730at2759        -            275     0.071   11.8   0.0   1   1   8.2e-05      0.12   11.0   0.0   182   222   104   143    85   162 0.80 protein AED:0.45 eAED:0.45 QI:0|-1|0|1|-1|1|1|0|224
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1010730at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dbuz/run_eukaryota_odb10/hmmer_output/initial_run_results/1010730at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1010730at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:21:15 2023
+# [ok]

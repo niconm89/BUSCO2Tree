@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+FBpp0229224          -            633 777920at2759         -            342    1e-121  405.7  27.7   1   4   1.2e-96   1.6e-92  309.8   5.1     2   222     3   257     2   267 0.86 -
+FBpp0229224          -            633 777920at2759         -            342    1e-121  405.7  27.7   2   4   4.3e-34   5.9e-30  104.0   0.3   217   305   322   432   318   439 0.85 -
+FBpp0229224          -            633 777920at2759         -            342    1e-121  405.7  27.7   3   4       0.2   2.7e+03   -3.4   0.0   246   268   463   485   461   492 0.84 -
+FBpp0229224          -            633 777920at2759         -            342    1e-121  405.7  27.7   4   4   0.00099        13    4.2   3.8   300   340   556   601   552   603 0.76 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/777920at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dvir/run_eukaryota_odb10/hmmer_output/initial_run_results/777920at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/777920at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:24:17 2023
+# [ok]

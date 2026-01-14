@@ -1,0 +1,24 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+FBpp0233354          -            391 1323575at2759        -            114   1.2e-50  170.1   1.5   1   1   1.5e-53   1.9e-50  169.5   1.5     1   114   259   388   259   388 0.94 -
+FBpp0226886          -            172 1323575at2759        -            114   1.1e-47  160.5   0.8   1   1   1.1e-50   1.4e-47  160.2   0.8     2   114    37   165    36   165 0.93 -
+FBpp0227672          -            195 1323575at2759        -            114   4.5e-10   39.4   0.2   1   1   5.5e-13   6.8e-10   38.8   0.2     7   112    22   149    19   151 0.82 -
+FBpp0230073          -            175 1323575at2759        -            114   5.6e-07   29.4   0.2   1   1   6.8e-10   8.4e-07   28.8   0.2     7   108    23   141    18   149 0.80 -
+FBpp0234769          -            179 1323575at2759        -            114   8.8e-06   25.5   0.1   1   1     1e-08   1.3e-05   25.0   0.1    29   104    54   140    34   151 0.75 -
+FBpp0232380          -            184 1323575at2759        -            114   0.00019   21.2   0.1   1   1   5.5e-07   0.00068   19.4   0.1     8   105    24   141    17   152 0.68 -
+FBpp0231622          -            281 1323575at2759        -            114    0.0053   16.6   0.0   1   1   8.4e-06      0.01   15.6   0.0    43    97   218   275   191   280 0.84 -
+FBpp0234218          -            776 1323575at2759        -            114    0.0092   15.8   0.1   1   1   1.4e-05     0.017   14.9   0.1    32   103   682   755   664   759 0.78 -
+FBpp0397407          -            282 1323575at2759        -            114     0.014   15.2   0.0   1   1     2e-05     0.025   14.4   0.0    43    96   219   275   185   280 0.81 -
+FBpp0399514          -            279 1323575at2759        -            114     0.023   14.5   0.0   1   1   4.4e-05     0.054   13.3   0.0    42   103   139   210   133   223 0.73 -
+FBpp0232168          -            285 1323575at2759        -            114      0.07   13.0   0.0   1   1   0.00012      0.15   11.9   0.0    43    94   205   262   193   273 0.79 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1323575at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dvir/run_eukaryota_odb10/hmmer_output/initial_run_results/1323575at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1323575at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dvir.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:24:05 2023
+# [ok]

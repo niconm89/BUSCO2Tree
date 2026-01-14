@@ -1,0 +1,38 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Dbuz02162-RA         -            266 1228942at2759        -            164   7.6e-56  187.9   0.3   1   1   6.2e-58   3.8e-55  185.6   0.3     2   164    52   241    51   241 0.85 protein AED:0.34 eAED:0.34 QI:194|1|1|1|1|1|3|761|266
+Dbuz07312-RA         -            231 1228942at2759        -            164   5.9e-44  149.3   0.6   1   1   4.5e-46   2.7e-43  147.1   0.6     2   162    17   204    16   206 0.84 protein AED:0.01 eAED:0.01 QI:0|-1|0|1|-1|1|1|0|231
+Dbuz06567-RA         -            222 1228942at2759        -            164     4e-10   39.2   0.2   1   2   6.8e-11   4.2e-08   32.7   0.4     1    62    11    73    11    83 0.91 protein AED:0.01 eAED:0.01 QI:88|1|1|1|1|1|3|49|222
+Dbuz06567-RA         -            222 1228942at2759        -            164     4e-10   39.2   0.2   2   2     0.032        19    4.5   0.0   131   164   162   195   130   195 0.90 protein AED:0.01 eAED:0.01 QI:88|1|1|1|1|1|3|49|222
+Dbuz10808-RA         -            315 1228942at2759        -            164   1.7e-08   33.9   0.0   1   1   8.2e-11     5e-08   32.4   0.0     3    64    42   104    40   223 0.74 protein AED:0.01 eAED:0.20 QI:0|0|0|1|1|1|3|0|315
+Dbuz04496-RA         -            268 1228942at2759        -            164     8e-08   31.7   0.2   1   2   5.1e-10   3.1e-07   29.8   0.1     1    58    32    90    32   101 0.87 protein AED:0.09 eAED:0.26 QI:0|0|0|0.5|1|0.75|4|0|268
+Dbuz04496-RA         -            268 1228942at2759        -            164     8e-08   31.7   0.2   2   2       1.2   7.7e+02   -0.7   0.0   130   152   182   204   124   215 0.68 protein AED:0.09 eAED:0.26 QI:0|0|0|0.5|1|0.75|4|0|268
+Dbuz01908-RA         -            221 1228942at2759        -            164   8.3e-08   31.7   0.6   1   1   7.2e-10   4.4e-07   29.3   0.6     4   164     8   189     6   189 0.70 protein AED:0.03 eAED:0.02 QI:69|1|0.5|1|1|1|2|0|221
+Dbuz01896-RA         -            216 1228942at2759        -            164   1.1e-07   31.3   0.4   1   1   1.3e-09   7.9e-07   28.5   0.4     4   164     8   184     6   184 0.68 protein AED:0.04 eAED:0.04 QI:69|0.5|0.33|1|0.5|0.33|3|0|216
+Dbuz08931-RA         -            270 1228942at2759        -            164   5.9e-07   28.9   0.0   1   1   4.8e-09     3e-06   26.7   0.0     3    70    37   106    35   218 0.80 protein AED:0.44 eAED:0.44 QI:99|1|1|1|1|1|3|122|270
+Dbuz08668-RA         -            213 1228942at2759        -            164   4.9e-06   25.9   0.3   1   1   1.2e-08   7.6e-06   25.3   0.3     4   163     8   180     6   181 0.78 protein AED:0.07 eAED:0.70 QI:0|0|0|1|1|1|3|0|213
+Dbuz02139-RA         -            207 1228942at2759        -            164   6.4e-06   25.6   0.0   1   1   4.5e-08   2.8e-05   23.5   0.0     5   122    10   145     7   157 0.76 protein AED:0.00 eAED:-0.00 QI:0|-1|0|1|-1|1|1|0|207
+Dbuz06386-RA         -            314 1228942at2759        -            164   7.2e-06   25.4   0.1   1   2   2.8e-08   1.7e-05   24.2   0.1     5    62    71   129    68   173 0.81 protein AED:0.01 eAED:0.00 QI:0|0|0|1|1|1|2|0|314
+Dbuz06386-RA         -            314 1228942at2759        -            164   7.2e-06   25.4   0.1   2   2       6.2   3.8e+03   -3.0   0.0   104   152   185   239   179   243 0.51 protein AED:0.01 eAED:0.00 QI:0|0|0|1|1|1|2|0|314
+Dbuz12281-RA         -            325 1228942at2759        -            164   2.3e-05   23.8   0.0   1   2     1e-07   6.2e-05   22.4   0.0     5    60    73   129    70   143 0.88 protein AED:0.50 eAED:0.42 QI:90|0.5|0.33|0.66|1|1|3|0|325
+Dbuz12281-RA         -            325 1228942at2759        -            164   2.3e-05   23.8   0.0   2   2         5   3.1e+03   -2.7   0.0   128   154   217   243   183   249 0.58 protein AED:0.50 eAED:0.42 QI:90|0.5|0.33|0.66|1|1|3|0|325
+Dbuz08646-RA         -            222 1228942at2759        -            164   6.3e-05   22.3   0.2   1   1   7.6e-07   0.00047   19.5   0.2     4    66     8    72     6   190 0.57 protein AED:0.02 eAED:0.02 QI:0|0|0|1|1|1|2|0|222
+Dbuz08647-RA         -            206 1228942at2759        -            164   7.3e-05   22.1   0.2   1   1   9.9e-07   0.00061   19.1   0.2     4    60     8    65     6   190 0.62 protein AED:0.09 eAED:0.09 QI:0|0|0|0.66|0.5|0.66|3|0|206
+Dbuz08665-RA         -            222 1228942at2759        -            164   7.4e-05   22.1   0.3   1   1     9e-07   0.00055   19.3   0.3     4    66     8    72     6   190 0.59 protein AED:0.02 eAED:0.02 QI:0|0|0|1|1|1|2|0|222
+Dbuz08650-RA         -            143 1228942at2759        -            164   0.00045   19.5   0.1   1   1   8.9e-07   0.00054   19.3   0.1     4    59     8    64     5   134 0.89 protein AED:0.10 eAED:0.10 QI:0|0|0|0.66|1|1|3|0|143
+Dbuz02112-RA         -            205 1228942at2759        -            164   0.00046   19.5   0.0   1   1   4.3e-06    0.0026   17.1   0.0     5   154     8   181     5   191 0.74 protein AED:0.00 eAED:-0.00 QI:0|-1|0|1|-1|1|1|0|205
+Dbuz03988-RA         -            129 1228942at2759        -            164    0.0027   17.0   0.1   1   1   5.7e-06    0.0035   16.6   0.1     7    65    41   100    34   110 0.86 protein AED:0.78 eAED:0.78 QI:0|0|0|0.5|0|0|2|0|129
+Dbuz07773-RA         -            206 1228942at2759        -            164     0.027   13.8   0.1   1   1   0.00053      0.33   10.3   0.1     8   163     4   183     2   184 0.63 protein AED:0.24 eAED:0.24 QI:214|1|1|1|1|1|3|261|206
+Dbuz04030-RA         -            234 1228942at2759        -            164      0.03   13.6   0.1   1   1   0.00017      0.11   11.8   0.1     4    64    31    91    28   183 0.73 protein AED:0.27 eAED:0.27 QI:107|1|1|1|1|1|5|156|234
+Dbuz02848-RA         -            223 1228942at2759        -            164      0.03   13.6   0.1   1   1   0.00024      0.15   11.4   0.1     7    72     5    72     1   186 0.68 protein AED:0.01 eAED:0.01 QI:0|0|0|1|0|0.5|2|0|223
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1228942at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dbuz/run_eukaryota_odb10/hmmer_output/initial_run_results/1228942at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1228942at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dbuz.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:21:13 2023
+# [ok]

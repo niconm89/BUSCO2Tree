@@ -1,0 +1,12 @@
+name: busco2tree
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.9
+  - biopython
+  - pyyaml
+  - mafft
+  - trimal
+  - iqtree=2
+

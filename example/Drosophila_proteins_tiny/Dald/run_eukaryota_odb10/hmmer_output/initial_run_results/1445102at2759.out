@@ -1,0 +1,28 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DALD006152-1.p1      -            242 1445102at2759        -            192     8e-87  289.8   0.0   1   1   1.2e-89   1.1e-86  289.3   0.0     1   192     7   235     7   235 0.91 -
+DALD009215-1.p1      -           6325 1445102at2759        -            192   1.3e-29  103.2   0.0   1   1   2.7e-32   2.6e-29  102.2   0.0    25   183  2503  2690  2498  2698 0.83 -
+DALD012151-1.p1      -            327 1445102at2759        -            192   2.6e-05   23.9   0.0   1   1   1.4e-07   0.00014   21.5   0.0     2    85    68   173    67   268 0.78 -
+DALD013267-1.p1      -            559 1445102at2759        -            192   9.4e-05   22.1   0.0   1   1   1.5e-07   0.00015   21.4   0.0    21    89   135   205   107   219 0.78 -
+DALD014363-1.p1      -            813 1445102at2759        -            192   0.00019   21.1   0.0   1   1   3.5e-07   0.00034   20.3   0.0     3    78   496   584   494   596 0.74 -
+DALD005219-1.p1      -            650 1445102at2759        -            192   0.00036   20.2   0.0   1   1   5.9e-07   0.00057   19.5   0.0    22    96   214   297   184   304 0.75 -
+DALD003735-1.p1      -            656 1445102at2759        -            192   0.00036   20.2   0.0   1   1     6e-07   0.00058   19.5   0.0    22    96   220   303   190   310 0.75 -
+DALD012213-1.p1      -            605 1445102at2759        -            192     0.002   17.8   0.0   1   1   4.6e-06    0.0045   16.6   0.0     2    82   164   252   163   269 0.73 -
+DALD013875-2.p1      -            634 1445102at2759        -            192    0.0065   16.1   0.0   1   1   1.5e-05     0.015   14.9   0.0    22    98   221   305   212   310 0.76 -
+DALD010316-1.p1      -            669 1445102at2759        -            192     0.016   14.8   0.0   1   1     3e-05     0.029   13.9   0.0    21    81   180   248   153   265 0.70 -
+DALD004538-1.p1      -            592 1445102at2759        -            192     0.025   14.1   0.0   1   1   4.7e-05     0.045   13.3   0.0    22    92   173   251   155   258 0.78 -
+DALD006467-1.p1      -            674 1445102at2759        -            192     0.081   12.5   0.0   1   1   0.00013      0.13   11.8   0.0    22    98   237   321   207   328 0.70 -
+DALD011272-1.p1      -            587 1445102at2759        -            192     0.099   12.2   0.0   1   1   0.00016      0.15   11.6   0.0    21    93   185   260   156   267 0.72 -
+DALD011274-1.p1      -            611 1445102at2759        -            192       0.1   12.1   0.0   1   1   0.00017      0.16   11.5   0.0    21    93   209   284   180   291 0.72 -
+DALD006922-1.p1      -            630 1445102at2759        -            192      0.11   12.1   0.0   1   1   0.00017      0.17   11.5   0.0    21    93   228   303   199   310 0.72 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1445102at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dald.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dald/run_eukaryota_odb10/hmmer_output/initial_run_results/1445102at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1445102at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dald.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:19:35 2023
+# [ok]

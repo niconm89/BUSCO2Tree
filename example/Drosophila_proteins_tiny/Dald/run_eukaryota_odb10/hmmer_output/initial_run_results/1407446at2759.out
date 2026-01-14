@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DALD001835-1.p1      -            175 1407446at2759        -            101   1.7e-17   62.9   5.1   1   2   1.3e-07   0.00091   18.8   0.1     1    41     9    51     9    60 0.83 -
+DALD001835-1.p1      -            175 1407446at2759        -            101   1.7e-17   62.9   5.1   2   2   8.3e-16     6e-12   45.1   1.9    18    94    61   140    55   143 0.83 -
+DALD001146-1.p1      -            158 1407446at2759        -            101         2    8.1   7.6   1   2   0.00026       1.9    8.2   3.7    30    99    19    93     3    95 0.71 -
+DALD001146-1.p1      -            158 1407446at2759        -            101         2    8.1   7.6   2   2     0.033   2.4e+02    1.4   0.1    12    36   116   140   110   146 0.64 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1407446at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dald.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dald/run_eukaryota_odb10/hmmer_output/initial_run_results/1407446at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1407446at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dald.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:19:33 2023
+# [ok]

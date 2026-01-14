@@ -1,0 +1,37 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+DALD003548-1.p1      -            972 1182451at2759        -            154   1.4e-41  141.6  16.3   1   2   7.6e-14   9.3e-11   41.5   3.1     1    91   689   796   689   802 0.85 -
+DALD003548-1.p1      -            972 1182451at2759        -            154   1.4e-41  141.6  16.3   2   2   8.6e-33     1e-29  103.0   5.4    78   154   870   946   850   946 0.89 -
+DALD011978-1.p1      -            292 1182451at2759        -            154   3.7e-17   62.3  20.3   1   3       0.1   1.3e+02    2.1   0.2    86   136    10    60     4    67 0.77 -
+DALD011978-1.p1      -            292 1182451at2759        -            154   3.7e-17   62.3  20.3   2   3    0.0014       1.7    8.2   9.3     6    81    52   128    47   189 0.87 -
+DALD011978-1.p1      -            292 1182451at2759        -            154   3.7e-17   62.3  20.3   3   3   1.6e-18   1.9e-15   56.7   2.0    84   153   194   263   187   264 0.94 -
+DALD016043-1.p1      -            298 1182451at2759        -            154   4.4e-11   42.5   6.8   1   2     0.076        92    2.5   3.7    30    96    45   111    35   146 0.88 -
+DALD016043-1.p1      -            298 1182451at2759        -            154   4.4e-11   42.5   6.8   2   2   3.6e-14   4.4e-11   42.5   6.8    73   153   185   268   177   269 0.86 -
+DALD006842-1.p1      -            280 1182451at2759        -            154   7.8e-11   41.7   8.2   1   2      0.21   2.5e+02    1.1   0.9    31    75    59   107    50   116 0.65 -
+DALD006842-1.p1      -            280 1182451at2759        -            154   7.8e-11   41.7   8.2   2   2   6.4e-14   7.8e-11   41.7   8.2    26   150   117   248   109   252 0.73 -
+DALD001058-1.p1      -            469 1182451at2759        -            154   1.3e-10   41.0   1.2   1   3       5.2   6.3e+03   -3.5   1.8    62    88    10    36     5    41 0.72 -
+DALD001058-1.p1      -            469 1182451at2759        -            154   1.3e-10   41.0   1.2   2   3      0.21   2.6e+02    1.0   3.2    53    85   274   306   204   313 0.61 -
+DALD001058-1.p1      -            469 1182451at2759        -            154   1.3e-10   41.0   1.2   3   3   1.1e-13   1.3e-10   41.0   1.2    83   146   374   437   347   445 0.84 -
+DALD005914-1.p1      -            319 1182451at2759        -            154     5e-07   29.4   5.2   1   2       1.6     2e+03   -1.8   0.0    70    80    93   103    67   127 0.54 -
+DALD005914-1.p1      -            319 1182451at2759        -            154     5e-07   29.4   5.2   2   2   4.1e-10     5e-07   29.4   5.2    83   153   222   292   160   293 0.83 -
+DALD006817-1.p1      -            268 1182451at2759        -            154     2e-05   24.2  14.4   1   2      0.78   9.4e+02   -0.8   5.1    30    83    70   125    43   145 0.49 -
+DALD006817-1.p1      -            268 1182451at2759        -            154     2e-05   24.2  14.4   2   2   1.6e-08     2e-05   24.2  14.4    57   147   142   232    99   239 0.71 -
+DALD005570-1.p1      -            301 1182451at2759        -            154   3.1e-05   23.5   0.7   1   2       1.4   1.7e+03   -1.6   0.3    97    97    58    58     9    92 0.53 -
+DALD005570-1.p1      -            301 1182451at2759        -            154   3.1e-05   23.5   0.7   2   2   2.5e-08   3.1e-05   23.5   0.7    93   153   160   220   124   221 0.84 -
+DALD007932-1.p1      -            213 1182451at2759        -            154    0.0028   17.2   0.6   1   2   0.00056      0.69    9.4   0.0   117   148    53    84    13    87 0.91 -
+DALD007932-1.p1      -            213 1182451at2759        -            154    0.0028   17.2   0.6   2   2    0.0055       6.6    6.2   0.1    75   127   137   189   134   204 0.95 -
+DALD007382-4.p1      -            802 1182451at2759        -            154    0.0037   16.8   0.0   1   1     6e-06    0.0072   15.8   0.0    64   129   420   484   382   496 0.83 -
+DALD000232-1.p1      -            284 1182451at2759        -            154    0.0052   16.3   0.6   1   2      0.94   1.1e+03   -1.0   1.2    85    97    60    72    29   129 0.61 -
+DALD000232-1.p1      -            284 1182451at2759        -            154    0.0052   16.3   0.6   2   2   4.2e-06    0.0052   16.3   0.6    68   146   202   279   192   283 0.85 -
+DALD009574-1.p1      -            269 1182451at2759        -            154     0.037   13.6   0.3   1   1   5.6e-05     0.068   12.7   0.3    29   112   105   191    87   213 0.80 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1182451at2759.hmm
+# Target file:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dald.fasta
+# Option settings: hmmsearch --domtblout /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/Results/00_proteins/Dald/run_eukaryota_odb10/hmmer_output/initial_run_results/1182451at2759.out --cpu 1 /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/busco_downloads/lineages/eukaryota_odb10/hmms/1182451at2759.hmm /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023/00_proteins/Dald.fasta 
+# Current dir:     /home/nmoreyra/Documents/Academico/Repositorios/BUSCO2Tree/test_marzo2023
+# Date:            Thu Mar 23 14:19:32 2023
+# [ok]
