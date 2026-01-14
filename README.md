@@ -56,10 +56,14 @@ BUSCO2Tree/
 │   ├── align_BUSCOs.py
 │   ├── create_matrix.py
 │   └── phylogenetic_analysis.py
+|── docker/
+│   └── Dockerfile/
 ├── example/
 │   ├── Drosophila_proteins_tiny/
 │   └── config/
 │       └── config_mafft.yaml
+|── scripts/
+│   └── run_docker.sh
 ├── tests/
 │   └── smoke_test.sh
 ├── environment.yml
@@ -70,6 +74,9 @@ BUSCO2Tree/
 ---
 
 ## Installation
+
+BUSCO2Tree can be executed either using a local installation of the dependencies
+or via Docker ([Go to Docker execution](#docker-execution))for fully reproducible runs.
 
 ### Clone repository
 
@@ -164,9 +171,6 @@ This test:
 ---
 
 ## Running BUSCO2Tree
-
-BUSCO2Tree can be executed either using a local installation of the dependencies
-or via Docker for fully reproducible runs.
 
 BUSCO2Tree expects BUSCO v5 results as input and runs downstream steps including
 BUSCO filtering, multiple sequence alignment, matrix construction, and phylogenetic
