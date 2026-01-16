@@ -23,10 +23,10 @@ RUN micromamba create -y -n b2t -c conda-forge -c bioconda \
     biopython pyyaml \
   && micromamba clean -a -y
 
-RUN ln -sf /opt/micromamba/envs/b2t/bin/iqtree3 /usr/local/bin/iqtree
-
-# 4) Asegurar que el entorno quede activo por defecto
+# Activar el environment por defecto
 ENV PATH=/opt/micromamba/envs/b2t/bin:$PATH
+
+RUN ln -sf /opt/micromamba/envs/b2t/bin/iqtree3 /usr/local/bin/iqtree
 
 # 5) Copiar tu código
 COPY BUSCO2Tree.py ./BUSCO2Tree.py
@@ -38,4 +38,3 @@ RUN python -c "import Bio; import yaml" \
  && trimal -h | head -n 2 \
  && iqtree2 -h | head -n 2
 
-ENTRYPOINT ["python", "/opt/busco2tree/BUSCO2Tree.py"]

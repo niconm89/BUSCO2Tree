@@ -191,13 +191,12 @@ if __name__ == '__main__':
     print("Step 2.2: Alignments completed.")
 
     if args.trim or args.trimparams:
-        print("Step 2.3: Trimming alignments with trimAl...")
-
-    trimparams = args.trimparams
-    if args.trim and not args.trimparams:
-        trimparams = "-automated1"
-
-    trim_alns(raw_aln_dir, trim_aln_dir, trimparams)
-    print("→ Poorly aligned regions removed.")
+        trimparams = args.trimparams
+        if args.trim and not args.trimparams:
+            trimparams = "-automated1"
+        trim_alns(raw_aln_dir, trim_aln_dir, trimparams)
+        print("→ Poorly aligned regions removed.")
+    else:
+        print("→ Trimming skipped.")
 
     print(f'Total time: {time() - start:.2f} seconds.')
