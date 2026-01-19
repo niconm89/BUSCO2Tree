@@ -25,3 +25,7 @@ B2T_step*/
 # Environments
 .venv/
 .env
+
+#Nextflow run
+.nextflow/
+work/

@@ -62,6 +62,10 @@ BUSCO2Tree/
 │   ├── Drosophila_proteins_tiny/
 │   └── config/
 │       └── config_mafft.yaml
+├── nextflow/
+│   ├── main.nf
+│   ├── nextflow.config
+│   └── README_nextlow.md
 |── scripts/
 │   └── run_docker.sh
 ├── tests/
@@ -75,8 +79,17 @@ BUSCO2Tree/
 
 ## Installation
 
+BUSCO2Tree can be executed in three supported ways:
+
+1. Using a local installation of the required dependencies (standalone Python execution).
+2. Using Docker for fully reproducible, containerized runs ([Docker execution](#docker-execution)).
+3. Using Nextflow on top of the Docker image for scalable and fully reproducible workflows ([Nextflow execution](#nextflow-execution)).
+
+For most users, Docker or Nextflow execution is recommended.
+See the corresponding sections below for details.
+
 BUSCO2Tree can be executed either using a local installation of the dependencies
-or via Docker for fully reproducible runs ([Go to Docker execution](#docker-execution)).
+or via Docker or Nextflow for fully reproducible runs ).
 
 ### Clone repository
 
@@ -255,6 +268,36 @@ Notes:
 - All outputs are written to the current working directory.
 - The Docker image uses IQ-TREE v3 for phylogenetic inference.
 
+---
+
+### Nextflow execution
+
+BUSCO2Tree includes an initial Nextflow workflow (DSL2)  available under `nextflow/` that orchestrates steps 1-4 using the BUSCO2Tree Docker image.
+See: `nextflow/README_nextflow.md`.
+
+Example Run:
+
+```bash
+nextflow run nextflow/main.nf -profile docker \
+  --buscodir /path/to/BUSCO_results_dir \
+  --outdir B2T_output_nf \
+  --steps 1,2,3,4
+```
+
+Optional flags:
+```bash
+--config <config_mafft.yaml>: MAFFT YAML config for Step2
+--trim / --trimparams "<trimal params>": enable trimming
+--format {phylip,nexus}: matrix format (Step3)
+--seqtype {AA,DNA}: sequence type
+--prefix, --bootstrap, --threads: IQ-TREE options
+```
+
+Notes:
+
+- The Docker image must not define an ENTRYPOINT (Nextflow needs to execute arbitrary commands).
+
+- Step3 writes 03_matrix/metadata.yaml, which Step4 reads to locate the matrix and partitions.
 ---
 
 ## Output structure
